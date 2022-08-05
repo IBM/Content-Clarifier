@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      "angularjs-color-picker",
+      "/Users/Sushank/Text-Simplification"
+    ]
+  ],
+  "_from": "angularjs-color-picker@latest",
+  "_id": "angularjs-color-picker@3.4.8",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angularjs-color-picker",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angularjs-color-picker-3.4.8.tgz_1507247840506_0.7115840020123869"
+  },
+  "_npmUser": {
+    "email": "timothy.ruhle@gmail.com",
+    "name": "ruhley"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "angularjs-color-picker",
+    "raw": "angularjs-color-picker",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angularjs-color-picker/-/angularjs-color-picker-3.4.8.tgz",
+  "_shasum": "0f21dd7b7975999c82e3065b25f3d698018f1cb9",
+  "_shrinkwrap": null,
+  "_spec": "angularjs-color-picker",
+  "_where": "/Users/Sushank/Text-Simplification",
+  "author": {
+    "email": "timothy.ruhle@gmail.com",
+    "name": "Timothy Ruhle"
+  },
+  "bugs": {
+    "url": "https://github.com/ruhley/angular-color-picker/issues"
+  },
+  "contributors": [
+    {
+      "email": "benoror@gmail.com",
+      "name": "Benjamin Orozco"
+    }
+  ],
+  "dependencies": {
+    "angular": "^1.4.0",
+    "tinycolor2": "^1.3.0"
+  },
+  "description": "Color Picker Directive For AngularJS",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "glob": "^7.0.0",
+    "grunt": "^1.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-notify": "^0.4.1",
+    "grunt-run": "^0.8.0",
+    "load-grunt-tasks": "^3.5.0",
+    "moment": "^2.14.1",
+    "protractor": "^5.0.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.0",
+    "rollup-plugin-uglify": "^2.0.0",
+    "time-grunt": "^1.3.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "0f21dd7b7975999c82e3065b25f3d698018f1cb9",
+    "tarball": "https://registry.npmjs.org/angularjs-color-picker/-/angularjs-color-picker-3.4.8.tgz"
+  },
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "gitHead": "21e95f24781184f971bb47bcf52bb025ff72357a",
+  "homepage": "https://github.com/ruhley/angular-color-picker#readme",
+  "license": "MIT",
+  "main": "dist/angularjs-color-picker.min.js",
+  "maintainers": [
+    {
+      "email": "benoror@gmail.com",
+      "name": "benoror"
+    },
+    {
+      "email": "timothy.ruhle@gmail.com",
+      "name": "ruhley"
+    }
+  ],
+  "name": "angularjs-color-picker",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ruhley/angular-color-picker.git"
+  },
+  "scripts": {
+    "pretest": "webdriver-manager update --standalone",
+    "test": "protractor ./test/protractor-config.js"
+  },
+  "version": "3.4.8"
+}

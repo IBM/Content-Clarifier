@@ -1,0 +1,75 @@
+{
+  "name": "ContentClarifierApp",
+  "version": "2.35.0",
+  "author": "IBM Corp.",
+  "contributors": [
+    {
+      "name": "Will Scott",
+      "email": "scottw1@us.ibm.com"
+    },
+    {
+      "name": "Sushank Reddy",
+      "email": "srvadde@us.ibm.com"
+    },
+    {
+      "name": "Shlomit Becker",
+      "email": "SHLOMITB@il.ibm.com"
+    },
+    {
+      "name": "Niyati Patel",
+      "email": "patelni@us.ibm.com"
+    },
+    {
+      "name": "Wilson Tiu",
+      "email": "9tiuwc@ph.ibm.com"
+    }
+  ],
+  "description": "This app serves as the enduser application for the Content Clarifier API, a Cognitive Computing effort to perform content summarization, simplification and enhancement.",
+  "dependencies": {
+    "angular-route": "~1.4.1",
+    "automated-readability": "0.1.0",
+    "bluemix-objectstorage": "0.1.2",
+    "body-parser": "^1.5.2",
+    "cfenv": "1.0.3",
+    "coleman-liau": "0.1.0",
+    "compression": "1.7.2",
+    "cors": "2.8.1",
+    "download-file": "^0.1.5",
+    "errorhandler": "~1.4.1",
+    "express": "3.x",
+    "express-session": "1.14.0",
+    "flesch-kincaid": "0.1.0",
+    "full-text-search-light": "0.0.16",
+    "html-to-text": "3.3.0",
+    "hyphenation.en-us": "0.2.1",
+    "hypher": "0.2.5",
+    "java": "0.10.0",
+    "lodash": "3.10.0",
+    "multer": "1.1.0",
+    "mysql": "2.11.1",
+    "natural": "0.4.0",
+    "node-gyp": "3.4.0",
+    "node-schedule": "1.1.1",
+    "request": "2.70.0",
+    "sentence-tokenizer": "0.0.7",
+    "sparql-client": "0.2.0",
+    "stanford-simple-nlp": "git+https://github.com/kareem1234/node-stanford-simple-nlp",
+    "striptags": "3.0.1",
+    "syllable": "2.0.0",
+    "uuid": "2.0.2",
+    "validator": "8.0.0",
+    "watson-developer-cloud": "^3.16.1",
+    "word-count": "0.2.2"
+  },
+  "engines": {
+    "node": "6.14.4"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha test/cases/ --timeout 20000"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.1",
+    "request-promise": "^4.2.1"
+  }
+}

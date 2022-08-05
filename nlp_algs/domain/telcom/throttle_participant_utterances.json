@@ -1,0 +1,104 @@
+{
+    "participants": {
+        "agent": [
+                {
+                    "UTTERANCE": "button"
+                }, 
+                {
+                    "UTTERANCE": "bye"
+                },             
+                {
+                    "UTTERANCE": "chat"
+                },
+                {
+                    "UTTERANCE": "cheers"
+                },              
+                {
+                    "UTTERANCE": "feedback"
+                },          
+                {
+                    "UTTERANCE": "give me"
+                }, 
+                {
+                    "UTTERANCE": "good evening"
+                },             
+                {
+                    "UTTERANCE": "good morning"
+                }, 
+                {
+                    "UTTERANCE": "good night"
+                }, 
+                {
+                    "UTTERANCE": "goodnight"
+                },    
+                {
+                    "UTTERANCE": "great day"
+                }, 
+                {
+                    "UTTERANCE": "great weekend"
+                },  
+                {
+                    "UTTERANCE": "hi "
+                },   
+                {
+                    "UTTERANCE": "hello"
+                },  
+                {
+                    "UTTERANCE": "how are you"
+                },           
+                {
+                    "UTTERANCE": "may i "
+                },                
+                {
+                    "UTTERANCE": "no worries"
+                },            
+                {
+                    "UTTERANCE": "patience"
+                },             
+                {
+                    "UTTERANCE": "thank you"
+                },    
+                {
+                    "UTTERANCE": "thanks for"
+                },
+                {
+                    "UTTERANCE": "the delay"
+                },            
+                {
+                    "UTTERANCE": "survey"
+                }            
+        ],
+        "visitor": [
+                {
+                    "UTTERANCE": "bye"
+                },  
+                {
+                    "UTTERANCE": "cheers"
+                },            
+                {
+                    "UTTERANCE": "good evening"
+                },             
+                {
+                    "UTTERANCE": "good morning"
+                }, 
+                {
+                    "UTTERANCE": "good night"
+                }, 
+                {
+                    "UTTERANCE": "goodnight"
+                },
+                {
+                    "UTTERANCE": "great weekend"
+                },            
+                {
+                    "UTTERANCE": "great day"
+                },             
+                {
+                    "UTTERANCE": "how are you"
+                }, 
+                {
+                    "UTTERANCE": "thanks"
+                }   
+        ]
+    }
+}

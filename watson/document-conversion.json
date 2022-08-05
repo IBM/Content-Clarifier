@@ -1,0 +1,8 @@
+{
+  "username":    "fd258d61-6d1b-415f-a941-6c9da5550348",
+  "password":    "L0lgoAnTkJWK",
+  "host":        "gateway.watsonplatform.net",
+  "base_url":    "/document-conversion/api/v1/convert_document",
+  "version":     "v1",
+  "version_date": "2015-12-15"
+}

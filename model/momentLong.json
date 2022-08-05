@@ -1,0 +1,176 @@
+[{
+	"ParticipantName": "Scott Chapman",
+	"Message": "it is interesting to go through the NLP info too. For example it found basically 4 \"sentences\"",
+	"MessageId": "58dd0fb0e4b0c5168c40aafd",
+	"TimeStamp": 1490882480581
+}, {
+	"ParticipantName": "Jon Brunn",
+	"Message": "...and sometimes I ask questions like that when I'm really requesting something because I want people to feel free to contradict me if they disagree with the request, and I want people to feel they are bought into the decision as well - so there are some social reasons to put a request in the form of a question sometimes.",
+	"MessageId": "58dd0fb3e4b0c5168c40ab02",
+	"TimeStamp": 1490882483625
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "like \"we change the admin doc\", \"we add some more words\", \"remind the end user to wait...\" etc",
+	"MessageId": "58dd0fede4b0c5168c40ab34",
+	"TimeStamp": 1490882541488
+}, {
+	"ParticipantName": "Jon Brunn",
+	"Message": "yeah, so to me there is an action embedded in there - and the decision on whether to carry out the action or not is just part of the fulfillment process in that action",
+	"MessageId": "58dd100de4b0c5168c40ab5a",
+	"TimeStamp": 1490882573736
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "it did a reasonable job finding those structures in the phrase",
+	"MessageId": "58dd1012e4b0c5168c40ab5c",
+	"TimeStamp": 1490882578090
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "right.",
+	"MessageId": "58dd1016e4b0c5168c40ab61",
+	"TimeStamp": 1490882582214
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "though...",
+	"MessageId": "58dd1018e4b0c5168c40ab63",
+	"TimeStamp": 1490882584750
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "It might have been reasonable to find mutiple intents.",
+	"MessageId": "58dd1028e4b0c5168c40ab7e",
+	"TimeStamp": 1490882600645
+}, {
+	"ParticipantName": "Jon Brunn",
+	"Message": "that's true - the \"conclusion\" would not be \"yes\" or \"no\" - the conclusion is not simply the answer to the question",
+	"MessageId": "58dd1031e4b0c5168c40ab8e",
+	"TimeStamp": 1490882609968
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "But I think that is hard because it does that for the entire phrase.",
+	"MessageId": "58dd1039e4b0c5168c40ab90",
+	"TimeStamp": 1490882617098
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "hmmm.... ",
+	"MessageId": "58dd1091e4b0c5168c40abc4",
+	"TimeStamp": 1490882705158
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "at the risk of making a suggestion that would blow up our use of coversation even more, it would be interesting to, instead of running each sentence through, to run each of the \"sentences\" alchemy relations identifies...",
+	"MessageId": "58dd10dde4b0c5168c40abf5",
+	"TimeStamp": 1490882781980
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "this is a test",
+	"MessageId": "58dd1c3ee4b0c5168c40b32b",
+	"TimeStamp": 1490885694305
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "did we pass?",
+	"MessageId": "58dd1c52e4b0c5168c40b33a",
+	"TimeStamp": 1490885714045
+}, {
+	"ParticipantName": "Hiroyuki OKAMOTO",
+	"Message": "for iOS ? :)",
+	"MessageId": "58dd1c58e4b0c5168c40b33c",
+	"TimeStamp": 1490885720920
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "haha we did pass",
+	"MessageId": "58dd1c65e4b0c5168c40b345",
+	"TimeStamp": 1490885733481
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "Look! \n<$image|ibm0@default@5717e0d09932fed8d0ed575d@file-a802d8f6-61ee-469d-be2e-4553867ccee9|644x162>\n",
+	"MessageId": "58dd1c75e4b0c5168c40b356",
+	"TimeStamp": 1490885749802
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "Now you can tell if `you` said something 😂",
+	"MessageId": "58dd1c8be4b0c5168c40b367",
+	"TimeStamp": 1490885771951
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "notification?",
+	"MessageId": "58dd1ca8e4b0c5168c40b38c",
+	"TimeStamp": 1490885800557
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "Nono, prepending \"you\" to your own messages",
+	"MessageId": "58dd1cbbe4b0c5168c40b3b1",
+	"TimeStamp": 1490885819556
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "its most helpful in DM's",
+	"MessageId": "58dd1cbfe4b0c5168c40b3b6",
+	"TimeStamp": 1490885823443
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "which client is that in?",
+	"MessageId": "58dd1cd3e4b0c5168c40b3c0",
+	"TimeStamp": 1490885843211
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "my local machine :[",
+	"MessageId": "58dd1cdce4b0c5168c40b3c7",
+	"TimeStamp": 1490885852370
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "its an NPS bug on web-client",
+	"MessageId": "58dd1cf2e4b0c5168c40b3d8",
+	"TimeStamp": 1490885874116
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "oh I see, on the spaces side-bar",
+	"MessageId": "58dd1d02e4b0c5168c40b3e7",
+	"TimeStamp": 1490885890716
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "?",
+	"MessageId": "58dd1d0ae4b0c5168c40b3f0",
+	"TimeStamp": 1490885898312
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "yeah, it affects spaces, search and DM",
+	"MessageId": "58dd1d12e4b0c5168c40b401",
+	"TimeStamp": 1490885906655
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "only show yours? Or do others show up similarly?",
+	"MessageId": "58dd1d2de4b0c5168c40b410",
+	"TimeStamp": 1490885933234
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "They only want yours for now",
+	"MessageId": "58dd1d35e4b0c5168c40b419",
+	"TimeStamp": 1490885941847
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "weird.",
+	"MessageId": "58dd1d3be4b0c5168c40b422",
+	"TimeStamp": 1490885947651
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "Agreed",
+	"MessageId": "58dd1d41e4b0c5168c40b427",
+	"TimeStamp": 1490885953963
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "I would expect they would come to their sense and be consistent for all",
+	"MessageId": "58dd1d61e4b0c5168c40b43f",
+	"TimeStamp": 1490885985466
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": ";-)",
+	"MessageId": "58dd1d66e4b0c5168c40b444",
+	"TimeStamp": 1490885990752
+}, {
+	"ParticipantName": "Scott Chapman",
+	"Message": "(I'm sure that's some kind of emoji)",
+	"MessageId": "58dd1d70e4b0c5168c40b450",
+	"TimeStamp": 1490886000870
+}, {
+	"ParticipantName": "DENNIS CHEN",
+	"Message": "ahaha, I'll ask ethan about it :]",
+	"MessageId": "58dd1d73e4b0c5168c40b453",
+	"TimeStamp": 1490886003510
+}]

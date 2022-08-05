@@ -1,0 +1,35 @@
+{
+  "title": "APIs",
+  "description": "The Content Clarifier is also available as API, complemented by IBM Watson deep learning technology, to dynamically simplify, summarize or enhance digital content. To request access to the API, send an email to <a href='mailto:scottw1@us.ibm.com'>scottw1@us.ibm.com</a>",
+  "items": {
+    "left": [
+      {
+        "title": "Simplify API",
+        "description": "Replaces difficult words or non-literal phrases make reading easier",
+        "iconClass": "public/images/actions/simplify-api_home.png"
+      },
+     {
+        "title": "Summarize API",
+        "description": "Content is summarized for quick reading",
+        "iconClass": "public/images/actions/condense-api_home.png"
+      }
+    ],
+    "right": [
+      
+      {
+        "title": "Summarize-Simplify API",
+        "description": " The content is first summarized and then simplified",
+        "iconClass": "public/images/actions/condense-simplify-api_home.png"
+      },
+      {
+        "title": "Chat Summarization API",
+        "description": "Summarizes chat and emails conversations",
+        "iconClass": "public/images/actions/chat-api_home.png"
+      }
+    ],
+    "center": {
+      "src": "public/images/logoHiResBlue.png",
+      "alt": "Center image"
+    }
+  }
+}

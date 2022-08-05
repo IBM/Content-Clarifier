@@ -1,0 +1,19 @@
+@font-face {  
+
+   font-family: "OpenDyslexic3-Regular";  
+
+   src: url(/ckeditor/customfonts/OpenDyslexic3-Regular.eot); /* IE */  
+
+   src: local("OpenDyslexic3-Regular"), url("/ckeditor/customfonts/OpenDyslexic3-Regular.ttf") format("truetype"); /*non-IE*/  
+
+}
+
+@font-face {  
+
+   font-family: "OpenDyslexic3-Bold";  
+
+   src: url(/ckeditor/customfonts/OpenDyslexic3-Bold.eot); /* IE */  
+
+   src: local("OpenDyslexic3-Bold"), url("/ckeditor/customfonts/OpenDyslexic3-Bold.ttf") format("truetype"); /*non-IE*/  
+
+}

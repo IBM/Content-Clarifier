@@ -1,0 +1,579 @@
+[
+    {
+        "WORD": "asthma",
+        "REPLACEMENT": "breathing sickness"
+    },    
+    {
+        "WORD": "account",
+        "REPLACEMENT": "report"
+    },    
+    {
+        "WORD": "afforded",
+        "REPLACEMENT": "given"
+    },      
+    {
+        "WORD": "annual",
+        "REPLACEMENT": "every year"
+    },  
+    {
+        "WORD": "anarchist",
+        "REPLACEMENT": "terrorist"
+    }, 
+    {
+        "WORD": "anarchists",
+        "REPLACEMENT": "terrorists"
+    },   
+    {
+        "WORD": "anti-inflammatory",
+        "REPLACEMENT": "reduce swelling"
+    },      
+    {
+        "WORD": "attitude",
+        "REPLACEMENT": "mood"
+    },
+    {
+        "WORD": "agency",
+        "REPLACEMENT": "business group"
+    },  
+    {
+        "WORD": "agendas",
+        "REPLACEMENT": "plans"
+    },   
+    {
+        "WORD": "attractive",
+        "REPLACEMENT": "nice"
+    }, 
+    {
+        "WORD": "application",
+        "REPLACEMENT": "program"
+    },
+    {
+        "WORD": "applications",
+        "REPLACEMENT": "programs"
+    },  
+    {
+        "WORD": "backers",
+        "REPLACEMENT": "supporters"
+    },
+    {
+        "WORD": "bursting",
+        "REPLACEMENT": "full"
+    },   
+    {
+        "WORD": "characteristics",
+        "REPLACEMENT": "types"
+    },
+    {
+        "WORD": "chronic",
+        "REPLACEMENT": "long-term"
+    },    
+    {
+        "WORD": "classifier",
+        "REPLACEMENT": "sorter"
+    },    
+    {
+        "WORD": "classifiers",
+        "REPLACEMENT": "sorters"
+    },
+    {
+        "WORD": "classify",
+        "REPLACEMENT": "group"
+    },
+    {
+        "WORD": "classification",
+        "REPLACEMENT": "grouping"
+    }, 
+    {
+        "WORD": "coalitions",
+        "REPLACEMENT": "friendships"
+    }, 
+    {
+        "WORD": "compounds",
+        "REPLACEMENT": "blends"
+    },      
+    {
+        "WORD": "cognitive",
+        "REPLACEMENT": "mind"
+    },  
+    {
+        "WORD": "considerable",
+        "REPLACEMENT": "big"
+    },  
+    {
+        "WORD": "cordoned",
+        "REPLACEMENT": "roped"
+    }, 
+    {
+        "WORD": "cordon",
+        "REPLACEMENT": "rope"
+    },      
+    {
+        "WORD": "delay",
+        "REPLACEMENT": "slow down"
+    },  
+    {
+        "WORD": "delegates",
+        "REPLACEMENT": "members"
+    },   
+    {
+        "WORD": "determine",
+        "REPLACEMENT": "figure out"
+    }, 
+    {
+        "WORD": "designed",
+        "REPLACEMENT": "created"
+    },    
+    {
+        "WORD": "dangerous",
+        "REPLACEMENT": "unsafe"
+    },     
+    {
+        "WORD": "determining",
+        "REPLACEMENT": "figuring out"
+    },  
+    {
+        "WORD": "different",
+        "REPLACEMENT": "other"
+    },   
+    {
+        "WORD": "dietician",
+        "REPLACEMENT": "food expert"
+    },     
+    {
+        "WORD": "disease",
+        "REPLACEMENT": "sickness"
+    },  
+    {
+        "WORD": "diseases",
+        "REPLACEMENT": "sickness"
+    },         
+    {
+        "WORD": "divided",
+        "REPLACEMENT": "split"
+    },
+    {
+        "WORD": "don't",
+        "REPLACEMENT": "do not"
+    }, 
+    {
+        "WORD": "doesn't",
+        "REPLACEMENT": "does not"
+    },    
+    {
+        "WORD": "dramatically",
+        "REPLACEMENT": "greatly"
+    },        
+    {
+        "WORD": "education",
+        "REPLACEMENT": "learning"
+    },   
+    {
+        "WORD": "educate",
+        "REPLACEMENT": "teach"
+    }, 
+    {
+        "WORD": "educator",
+        "REPLACEMENT": "teacher"
+    },    
+    {
+        "WORD": "educating",
+        "REPLACEMENT": "teaching"
+    },     
+    {
+        "WORD": "employers",
+        "REPLACEMENT": "jobs"
+    }, 
+    {
+        "WORD": "entrepreneur",
+        "REPLACEMENT": "businessperson"
+    },     
+    {
+        "WORD": "expanded",
+        "REPLACEMENT": "bigger"
+    }, 
+    {
+        "WORD": "excellent",
+        "REPLACEMENT": "great"
+    },     
+    {
+        "WORD": "expert",
+        "REPLACEMENT": "pro"
+    }, 
+    {
+        "WORD": "favorable",
+        "REPLACEMENT": "good"
+    },   
+    {
+        "WORD": "habitat",
+        "REPLACEMENT": "home"
+    }, 
+    {
+        "WORD": "graffiti",
+        "REPLACEMENT": "paint"
+    },    
+    {
+        "WORD": "helm",
+        "REPLACEMENT": "direction"
+    },  
+    {
+        "WORD": "highlighted",
+        "REPLACEMENT": "displayed"
+    },   
+    {
+        "WORD": "i'm",
+        "REPLACEMENT": "i am"
+    },  
+    {
+        "WORD": "it's",
+        "REPLACEMENT": "it is"
+    },   
+    {
+        "WORD": "initiative",
+        "REPLACEMENT": "program"
+    },    
+    {
+        "WORD": "moment",
+        "REPLACEMENT": "time"
+    }, 
+    {
+        "WORD": "loot",
+        "REPLACEMENT": "take"
+    },     
+    {
+        "WORD": "looted",
+        "REPLACEMENT": "took from"
+    },     
+    {
+        "WORD": "not infrequently",
+        "REPLACEMENT": "very often"
+    },  
+    {
+        "WORD": "neutral",
+        "REPLACEMENT": "not for and not against"
+    }, 
+    {
+        "WORD": "parish",
+        "REPLACEMENT": "area"
+    }, 
+    {
+        "WORD": "parishes",
+        "REPLACEMENT": "areas"
+    }, 
+    {
+        "WORD": "protection",
+        "REPLACEMENT": "safety"
+    },     
+    {
+        "WORD": "we're",
+        "REPLACEMENT": "we are"
+    }, 
+    {
+        "WORD": "they're",
+        "REPLACEMENT": "they are"
+    }, 
+    {
+        "WORD": "we'll",
+        "REPLACEMENT": "we will"
+    }, 
+    {
+        "WORD": "they'll",
+        "REPLACEMENT": "they will"
+    },     
+    {
+        "WORD": "individualized",
+        "REPLACEMENT": "personal"
+    }, 
+    {
+        "WORD": "infusing",
+        "REPLACEMENT": "including"
+    }, 
+    {
+        "WORD": "influences",
+        "REPLACEMENT": "affects"
+    },     
+    {
+        "WORD": "intellectual",
+        "REPLACEMENT": "mental"
+    },
+    {
+        "WORD": "intensely",
+        "REPLACEMENT": "greatly"
+    },    
+    {
+        "WORD": "investment",
+        "REPLACEMENT": "spending"
+    },   
+    {
+        "WORD": "labor",
+        "REPLACEMENT": "work"
+    },    
+    {
+        "WORD": "leverage",
+        "REPLACEMENT": "use"
+    },  
+    {
+        "WORD": "low-income",
+        "REPLACEMENT": "poor"
+    },     
+    {
+        "WORD": "merchandising",
+        "REPLACEMENT": "products"
+    },
+    {
+        "WORD": "migrate",
+        "REPLACEMENT": "move"
+    },       
+    {
+        "WORD": "migrated",
+        "REPLACEMENT": "moved"
+    },    
+    {
+        "WORD": "monitoring",
+        "REPLACEMENT": "watching"
+    },        
+    {
+        "WORD": "n't",
+        "REPLACEMENT": "not"
+    },   
+    {
+        "WORD": "offer",
+        "REPLACEMENT": "give"
+    },     
+    {
+        "WORD": "opposed",
+        "REPLACEMENT": "not supported"
+    },
+    {
+        "WORD": "optimal",
+        "REPLACEMENT": "best"
+    },       
+    {
+        "WORD": "peacefully",
+        "REPLACEMENT": "calmly"
+    },    
+    {
+        "WORD": "personalized",
+        "REPLACEMENT": "personal"
+    },      
+    {
+        "WORD": "observation",
+        "REPLACEMENT": "review"
+    },
+    {
+        "WORD": "observations",
+        "REPLACEMENT": "reviews"
+    },
+    {
+        "WORD": "one-half",
+        "REPLACEMENT": "one out of every two"
+    },   
+    {
+        "WORD": "one-third",
+        "REPLACEMENT": "one out of every three"
+    }, 
+    {
+        "WORD": "one-fourth",
+        "REPLACEMENT": "one out of every four"
+    }, 
+    {
+        "WORD": "patience",
+        "REPLACEMENT": "ability to wait"
+    },     
+    {
+        "WORD": "policy",
+        "REPLACEMENT": "plan"
+    }, 
+    {
+        "WORD": "populations",
+        "REPLACEMENT": "groups"
+    },     
+    {
+        "WORD": "preliminary",
+        "REPLACEMENT": "early"
+    },  
+    {
+        "WORD": "radical",
+        "REPLACEMENT": "new"
+    },    
+    {
+        "WORD": "rallied",
+        "REPLACEMENT": "met"
+    },    
+    {
+        "WORD": "real-time",
+        "REPLACEMENT": "fast"
+    }, 
+    {
+        "WORD": "receive",
+        "REPLACEMENT": "get"
+    },    
+    {
+        "WORD": "reduce",
+        "REPLACEMENT": "lower"
+    },      
+    {
+        "WORD": "regarding",
+        "REPLACEMENT": "about"
+    },     
+    {
+        "WORD": "recommendation",
+        "REPLACEMENT": "tip"
+    }, 
+    {
+        "WORD": "resources",
+        "REPLACEMENT": "property"
+    },   
+    {
+        "WORD": "recommendations",
+        "REPLACEMENT": "tips"
+    },
+    {
+        "WORD": "remaining",
+        "REPLACEMENT": "other"
+    }, 
+    {
+        "WORD": "research",
+        "REPLACEMENT": "science study"
+    }, 
+    {
+        "WORD": "researcher",
+        "REPLACEMENT": "scientist"
+    }, 
+    {
+        "WORD": "researchers",
+        "REPLACEMENT": "scientists"
+    },        
+    {
+        "WORD": "routinely",
+        "REPLACEMENT": "usually"
+    },   
+    {
+        "WORD": "salaries",
+        "REPLACEMENT": "pay"
+    },
+    {
+        "WORD": "salary",
+        "REPLACEMENT": "pay"
+    }, 
+    {
+        "WORD": "security",
+        "REPLACEMENT": "safety"
+    },  
+    {
+        "WORD": "self-avowed",
+        "REPLACEMENT": "self-called"
+    }, 
+    {
+        "WORD": "seemingly",
+        "REPLACEMENT": "it seems"
+    }, 
+    {
+        "WORD": "self-interested",
+        "REPLACEMENT": "selfish"
+    },     
+    {
+        "WORD": "shall",
+        "REPLACEMENT": "must"
+    }, 
+    {
+        "WORD": "short-sighted",
+        "REPLACEMENT": "careless"
+    },    
+    {
+        "WORD": "stall",
+        "REPLACEMENT": "stop"
+    },    
+    {
+        "WORD": "still-hunt",
+        "REPLACEMENT": "ambush"
+    },     
+    {
+        "WORD": "succeeded",
+        "REPLACEMENT": "won"
+    },
+    {
+        "WORD": "storefront",
+        "REPLACEMENT": "store"
+    },      
+    {
+        "WORD": "storefronts",
+        "REPLACEMENT": "stores"
+    },     
+    {
+        "WORD": "swoop",
+        "REPLACEMENT": "fall"
+    },  
+    {
+        "WORD": "swoops",
+        "REPLACEMENT": "falls"
+    },        
+    {
+        "WORD": "therefore",
+        "REPLACEMENT": "so"
+    },  
+    {
+        "WORD": "there's",
+        "REPLACEMENT": "there is"
+    },     
+    {
+        "WORD": "temporarily",
+        "REPLACEMENT": "for a short amount of time"
+    }, 
+    {
+        "WORD": "touting",
+        "REPLACEMENT": "bragging about"
+    }, 
+    {
+        "WORD": "toxicity",
+        "REPLACEMENT": "poison"
+    },  
+    {
+        "WORD": "toxicities",
+        "REPLACEMENT": "poisons"
+    },     
+    {
+        "WORD": "tuition",
+        "REPLACEMENT": "school costs"
+    },     
+    {
+        "WORD": "truce",
+        "REPLACEMENT": "peace"
+    }, 
+    {
+        "WORD": "urban",
+        "REPLACEMENT": "city"
+    },    
+    {
+        "WORD": "utterly",
+        "REPLACEMENT": "all"
+    },
+    {
+        "WORD": "union",
+        "REPLACEMENT": "group"
+    },
+    {
+        "WORD": "unions",
+        "REPLACEMENT": "groups"
+    },
+    {
+        "WORD": "vibrant",
+        "REPLACEMENT": "bright"
+    },   
+    {
+        "WORD": "vibrantly",
+        "REPLACEMENT": "brightly"
+    },      
+    {
+        "WORD": "vouchers",
+        "REPLACEMENT": "payments"
+    },
+    {
+        "WORD": "vegetables",
+        "REPLACEMENT": "veggie foods"
+    },    
+    {
+        "WORD": "won't",
+        "REPLACEMENT": "will not"
+    }     
+]
+

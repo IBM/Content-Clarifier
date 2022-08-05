@@ -1,0 +1,83 @@
+//  *********************************************************************
+//  =app
+//
+//  Author : @douglasdeodato
+//  Project: angular-slick-carousel
+//  Date   : 24/08/2016
+//  Version: package.json
+//  *********************************************************************
+
+
+@font-face {
+    font-family: 'Pacifico';
+    src: url('#{$slick-font-path}pacifico.eot');
+    src: url('#{$slick-font-path}pacifico.eot?#iefix') format('embedded-opentype'),
+    url('#{$slick-font-path}pacifico.woff') format('woff'),
+    url('#{$slick-font-path}pacifico.ttf') format('truetype'),
+    url('#{$slick-font-path}pacifico.svg#Pacifico') format('svg');
+}
+
+.header {
+    padding: 20px 0px;
+    & .title {
+    color: palette(blue);
+    font-size: 48px;
+    line-height: 100px;
+    font-family: 'Pacifico';
+    }
+    & .sub-title {
+        color: $grey;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 400;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+
+.blue {
+    background: palette(blue);
+    color: $white;
+    h3 {
+    background: $white;
+    color: palette(blue);
+    font-size: 36px;
+    line-height: 100px;
+    margin: 10px;
+    padding: 2%;
+    position: relative;
+    text-align: center;
+}
+}
+
+
+
+.content  {
+    & .content-title {
+    text-align: center;
+    line-height: 100px;
+    font-family: 'Pacifico';
+    }
+}
+
+
+.footer {
+    padding: 20px 0px;
+    .title {
+    color: palette(blue);
+    font-size: 48px;
+    line-height: 100px;
+    font-family: 'Pacifico';
+}
+.sub-title {
+    color: $grey;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 10px auto;
+    text-align: center;
+}
+}
+
+

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://contentclarifier.mybluemix.net/" />
+<title>Test Static Content</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test Static Content</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/#/index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=h1.post-h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1.post-h1</td>
+	<td>Content Clarifier</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p</td>
+	<td>This app serves as a demo for the Content Clarifier API, a Cognitive Computing effort to perform content simplification, summarization, and enhancement. (Release v2.1.0, 1/06/2017)</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=img.header-left</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=img.logout-img</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=h3.post-h2</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3.post-h2</td>
+	<td>Try the service</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=div.container &gt; div &gt; div.container</td>
+	<td></td>
+</tr>
+<!--Tried to verify text under "Try the Service" heading but the text value exceeds that body area-->
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-conversation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=label</td>
+	<td>Conversational content</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//label[2]</td>
+	<td>News content</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-technical</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//label[3]</td>
+	<td>Technical content</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-announcement</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//label[4]</td>
+	<td>Corporate announcement</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-owntext</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//label[5]</td>
+	<td>Your own text</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//label[6]</td>
+	<td>URL</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=userAnswer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=small</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.bold-responsive &gt; font</td>
+	<td>Enhanced content</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td>Analyze</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=input-news</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

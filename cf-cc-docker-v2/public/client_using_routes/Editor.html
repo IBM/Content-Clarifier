@@ -1,0 +1,329 @@
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editor</title>
+     <link href="public/css/main.css" rel="stylesheet">
+    <link href="public/css/editor.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="public/images/blank.png"/>  
+   
+    <style>
+	hr.currPage{
+		border: 1px solid !important;
+		color:#E0E0E0 !important;
+	}
+
+   </style>
+   <style>
+	.preloader-wrapper-currPage{
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  z-index: 10000;
+	  /* background: #ffffff; */
+	}
+	.loader-currPage {
+	    border-radius: 50%;
+	    width: 120px;
+	    height: 120px;
+	    animation: spin 2s linear infinite;
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    margin: -60px;
+	    border: 16px solid #f6f6f6; /* Light grey */
+	    border-top: 16px solid #3b54ec; /* Blue */
+	}
+</style> 
+     
+ 
+  </head>
+
+<body id="home" class="app" data-spy="affix" data-target=".navbar" data-offset="1000">
+    <div class="main" ng-controller="editorCtrl" data-ng-init="init()">
+	   	 <!-- Preloader -->
+	    	<div class="preloader-wrapper">
+	      		<div class="loader"></div>
+		</div>
+	    	<!-- End Preloader -->
+
+
+	    	<!-- Navbar -->
+	    	<nav class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="150" ng-controller="initAashuAppPage">
+
+		      	<div class="container">
+				<div class="navbar-header">
+			 		 <button type="button" class="navbar-toggle btn collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+			    			<i class="fa fa-bars"></i>
+			 		 </button>
+
+			 		 <a class="navbar-brand page-scroll" href="#" ng-href="#home">
+			   		 	<!--img src="images/blank.png" ng-src="{{ navbar.items.logoTransperant }}" alt="Logo"   data-logo-white="{{ navbar.items.logoTransperant }}" / --> <!-- 						added by Sushank -->
+			    			Content Clarifier
+			  		 </a>
+				</div> <!-- close navbar-header-->
+
+				<div class="navbar-right navbar-extra" ng-if="navbar.items.isSearchActive">
+			  		<a href="#block-search" class="btn btn-transparent navbar-btn" data-toggle="collapse" data-target="#block-search">
+				   		 <i class="fa fa-search">
+				      			<span class="sr-only">Search</span>
+				    		</i>
+			  		</a>
+				</div><!-- close navbar-right div-->
+
+				<div id="navbar" class="navbar-collapse collapse">
+			  		<ul class="nav navbar-nav navbar-right">
+				    				<!--li><a tabindex="1" ng-click="reload()" target="{{ item.target }}" >Home</a></li-->
+				    	   	<li ng-repeat="item in navbareditor.items.mainMenu"><a tabindex="1" class="{{ item.class }}" href="#" ng-href="{{ item.url }}" 						target="{{ item.target }}">{{ item.title }}</a></li>
+				         </ul>
+		       		</div><!--/.nav-collapse -->
+		     	 </div>
+		</nav>
+	    	<!-- End Navbar -->
+
+		</br></br>
+
+   
+		<!------------------------------------ App Title Div ------------------------------------------------->
+		<!-- div class="container" -->
+		<!-- img src="public/img/power.png" ng-click="logout();" class="logout-img" title="Log out"--> 
+		<!-- div class="container" -->        
+		<!-- div class="header-row">
+			<div class="header-container">
+				<img class="header-left" src="public/img/logo.png" />
+				<h1 class="post-h1">Content Clarifier</h1>
+				<div style="clear: both"></div>      
+				</div>
+			</div --> 
+	   	
+		<!-- div class="post-input-textarea2"   ng-model=myText    ckeditor="editorOptions" contenteditable= true></div -->
+		
+			
+                <div style="width:90%; margin-left:5%; background-color:#fff; float:left; " >
+			<!------------------------------------ Left Div with CKEditor------------------------------------------------->
+			<br /> 
+ 			<div  class="Editor_Contents_Input" >
+		                   <!--form name="myForm">
+	    				<label for="Format" >Select Input Type:
+						<select name="Text" style="display: inline-block;" ng-model="data.singleSelect" tabindex="2">
+		      					<option value="option-1">Text</option>
+		      					<option value="option-2">URL</option>
+							<option value="option-3">Document</option>
+	    					</select>
+		                       </label>
+				 </form-->
+		                 <div style="display:inline-block; width:100%";  > 
+					<img  title="" ng-click="toggleRight()" ng-hide="OutputModeActive" style="width:7%;height:7%; margin:10px" src="public/images/actions/write_on.png" tabindex="3">
+					 </img>
+				      <img  title="" ng-click="toggleRight()" ng-hide="OutputModeActive" style="width:7%;height:7%; margin:10px" src="public/images/actions/open_file_disabled.png"> </img>
+				      <img  title="" ng-click="toggleRight()" ng-hide="OutputModeActive" style="width:7%;height:7%; margin:10px" src="public/images/actions/url_entry_disabled.png"> </img>
+					<img  title="" ng-click="toggleRight()" ng-hide="isOpenRight()" style="width:5%;height:5%; margin:10px; float:right" src="public/images/speak.png" tabindex="5"> </img>
+					<img  title="" ng-click="toggleRight()" ng-hide="isOpenRight()" style="width:5%;height:5%; margin:10px; float:right" src="public/images/stats.png" tabindex="4"> </img>
+				
+				 </div>
+			  	
+ 			  
+			
+		                <br/>
+		            
+				<div id="toolbarLocation" ng-hide="OutputModeActive"></div>
+				</br>
+				<!-- input and output in single div-->
+				<!--div id="post-input-textarea2" class="post-input-textarea2" ng-bind-html="outputcontext"  ng-model=myText tabindex="3"  ckeditor="editorOptions" contenteditable= true >
+				</div-->
+				<div  class="post-input-div" ng-hide="OutputModeActive"  ng-model=myText tabindex="6"  ckeditor="editorOptions" contenteditable= true >
+				</div>
+				<div id="post-output-div" class="post-output-div" ng-bind-html="outputcontext"  tabindex="3">
+				</div>
+					<!------------------------------------ Show Animation for proress ------------------------------------------------->
+				<!--div id="showAnimation"   ng-show="showLoadingAnimation();"  style="position: absolute; z-index: 100;">
+					<img   style="display: inline; margin-left: auto;  margin-right: auto; opacity: 0.9; padding:200px" ; src="public/img/loading.gif";" /> 
+				</div-->
+				 <!-- Preloader -->
+			    	<div class="preloader-wrapper-currPage" ng-show="showLoadingAnimation();" >
+			      		<div class="loader-currPage"></div>
+				</div>
+			
+			
+
+			<!--div style ="text-align: center; " >
+				<button style="width:25%; color:#3b54ec; background:#fff; border: solid #3b54ec 2px;  " type="submit" ng-click="condense();"><b>Analyze</b></button> <!-- Analyse BUTTON -->
+			<!--/div-->
+				
+			</div>
+			<!------------------------------------ Right Div with Editor Options ------------------------------------------------->
+			<div class="post-output-textarea2">
+			
+									      <!--div class="wordcount" style ="color: #3b54ec; float:left;" >
+			
+										<p>Word count</p>
+										<span ng-bind="countOf(myText)"></span>   
+									      </div>
+									      <div class="paracount" style ="color: #3b54ec; float:right; padding-right:10px;">
+										<p  class="post-h4">Para count</p>
+										<span  ng-bind="paraOf(myText)"></span> 
+									      </div--> 
+				
+										<!--h3 class="highlightedText" ng-click="applyHtml('iphone')"><b>Highlight Iphone</b></h3-->
+										<!--h3 class="highlightedText" ng-click="applyHtml( 'the')"><b>Highlight THE</b></h3 -->
+										<!-- piece of code for Auto Highlight --->
+										<!-- span ng-bind="highlight(myText, 'iphone')"></span -->  
+
+									      
+									      <!--md-button class="md-primary">
+										    Tools
+										  </md-button -->
+					</br>	
+					<div ng-hide="OutputModeActive" style="display:inline-block;  margin-left:26% ">
+							
+						<p href="" style ="color: #3b54ec;  " >Pick Analyze Option</p>
+						
+					 </div>
+					<div style="display:inline-block; " ng-show="OutputModeActive" tabindex="7">
+						<a href=""  style ="color: #3b54ec;  " ng-click="undoAction();"> 
+							<img style="width:10%; height:10% " title=""    src="public/images/actions/back.png"> </img>
+							&nbsp;&nbsp;&nbsp;&nbsp;Back to Write Mode
+						</a>
+					
+					</div>   
+					
+					 <br  ng-show="OutputModeActive"></br>
+		                       
+					<hr class="currPage" style="color:F8F8F8; width:75%; ">	
+		                      	</br>
+		                     	<div  style="float:left;width:45%;  ">
+		                               
+				      		<img tabindex="8" title="" ng-click="contextualSimplifyText(0, 0)"  ng-hide="closeActive()" src="public/images/actions/simplify.png" id="btn"> </img>
+						<img  title=""   ng-show="closeActive()" src="public/images/actions/simplify_disabled.png" ng-src="{{simplifyBack}}" id="btn"> </img>
+						<!--img  title=""   ng-show="showback()"  src="public/images/actions/back.png" id="btn"> </img-->
+		                     		<p style="color: #3b54ec; text-align:justify; ">Simplify</p> 
+
+
+				     		<img tabindex="10" title="" ng-click="condensesimplify();" ng-hide="closeActive()" src="public/images/actions/summarizeAndSimplify.png" id="btn"></img>
+						<img  title=""   ng-show="closeActive()" src="public/images/actions/summarizeAndSimplify_disabled.png" ng-src="{{simplifySummarizeBack}}" id="btn"></img>
+	 				        <p style=" color: #3b54ec; text-align:Justify">Summarize-Simplify</p>
+
+	 			     		<img tabindex="12" title="" ng-click="contextualSimplifyText(0, 2)" ng-hide="closeActive()" src="public/images/actions/show_definitions.png" id="btn"></img>
+						<img  title=""   ng-show="closeActive()" src="public/images/actions/show_definitions_disabled.png" ng-src="{{defintionsBack}}" id="btn"></img>
+						<p style="color: #3b54ec; text-align:justify">Show Definitions</p>
+						<div ng-show="showmore()";>
+					     		<img  tabindex="14" title="" ng-click="toggleRight()" ng-hide="closeActive()" src="public/images/actions/show_emotions.png" id="btn"></img>
+							<img  title=""   ng-show="closeActive()" src="public/images/actions/show_emotions_disabled.png" id="btn"></img>
+						 	<p style="color: #3b54ec; text-align:justify">Show Emotions</p>
+
+					      		<img tabindex="16" title="" ng-click="toggleRight()" ng-hide="closeActive()" src="public/images/actions/complex_phrases.png" id="btn"></img>
+							<img  title=""   ng-show="closeActive()" src="public/images/actions/complex_phrases_disabled.png" id="btn"></img>
+							<p style="color: #3b54ec; text-align:justify">Complex Phrases</p>
+
+							<img tabindex="18" title="" ng-click="toggleRight()" ng-hide="closeActive()" src="public/images/actions/syllables.png" id="btn"></img>
+							<img  title=""  ng-show="closeActive()" src="public/images/actions/syllables_disabled.png" id="btn"></img>
+						 	<p style="color: #3b54ec; text-align:justify">Show Syllables</p>
+						</div>
+
+				     	 </div>
+
+				   	  <div style="float:right; width:45%; ">
+						 <img tabindex="9" title="" ng-click="condenceText();" ng-hide="closeActive()" src="public/images/actions/summarize.png" id="btn"></img>
+							 <img  title=""  ng-show="closeActive()" src="public/images/actions/summarize_disabled.png" ng-src="{{summarizeBack}}" id="btn"></img>
+				                         <p style="color: #3b54ec; text-align:justify">Summarize</p>
+
+					     	  <img tabindex="11" title="" ng-click="contextualSimplifyText(0, 1)" ng-hide="closeActive()" src="public/images/actions/show_topics.png" id="btn"></img>
+							<img  title=""  ng-show="closeActive()" src="public/images/actions/show_topics_disabled.png" ng-src="{{topicsBack}}"  id="btn"></img>
+							<p style="color: #3b54ec; text-align:justify">Show Topics</p>
+					     		
+		 				
+		 			     	<img tabindex="13" title="" ng-click="contextualSimplifyText(0, 3)" ng-hide="closeActive()" src="public/images/actions/show_symbols.png" id="btn"></img>
+							<img  title=""  ng-show="closeActive()" src="public/images/actions/show_symbols_disabled.png" ng-src="{{symbolsBack}}" id="btn"></img>
+							 <p style="color: #3b54ec; text-align:justify">AAC Symbols</p>
+					
+							<div  ng-show="showmore()";>
+						      		<img tabindex="15"  title="" ng-click="toggleRight()" ng-hide="closeActive()" src="public/images/actions/pos.png" id="btn"></img>
+								<img  title=""  ng-show="closeActive()" src="public/images/actions/pos_disabled.png" id="btn"></img>
+								<p style="color: #3b54ec; text-align:justify">Parts of Speech</p>
+							 	
+							 
+						      	<img tabindex="17" title="" ng-click="toggleRight()" ng-hide="closeActive()" src="public/images/actions/complex_words.png" id="btn"></img>
+								<img  title=""  ng-show="closeActive()" src="public/images/actions/complex_words_disabled.png" id="btn"></img>
+								<p style="color: #3b54ec; text-align:justify">Complex Words</p>
+					
+				
+							<img tabindex="19" title="" ng-click="toggleRight()" ng-hide="closeActive()" src="public/images/actions/add_spaces.png" id="btn"></img>
+								<img  title=""  ng-show="closeActive()" src="public/images/actions/add_spaces_disabled.png" id="btn"></img>
+								<p style="color: #3b54ec; text-align:justify">Add Spacing</p>
+							</div>
+					 
+				 
+				   	   </div>
+					  </br>
+					   <div  style="display:inline-block;  margin-left:30%  ">
+								<a href=""  ng-hide="showmore()" ng-click="enableShowMore()" " > Show More
+									<img style="width:4%; height:4% " title=""   src="public/images/moreArrow.png"> </img>
+								</a>
+								<a href=""  ng-show="showmore()" ng-click="enableShowless()" > Show Less
+								
+									<img style="width:4%; height:4% " title=""    src="public/images/lessArrow.png"> </img>	
+					       			</a>
+			      		   </div>
+
+			</div>
+
+		      
+                      </div>
+			
+	      
+			<!-- div ng-mouseover="showPopover()" ng-mouseleave="hidePopover()">
+				more info
+			</div -->
+
+			<!--/br></br></br>
+	       		<div class="popover" ng-show="popoverIsVisible">Popover Content</div>
+			</br></br></br>
+			<span  tooltips tooltip-template="{{htmltooltip}}" tooltip-close-button="true" tooltip-hide-trigger="focus">{{text2}}</span>
+
+			<div dynamic="html"></div -->
+
+			<!------------------------------------ Sample Modal Popup ------------------------------------------------->
+			<div class="remodal" data-remodal-id="modal2" data-remodal-options="hashTracking: false">
+				<button data-remodal-action="close" class="remodal-close"></button>      
+				<h3>Change of Text </h3>
+				<button  type="submit"><img style="height:25px; width:25px; margin-left:12px"" src="public/img/molecule.png" /></button>
+				<button ng-click="changetext()" type="submit"><img style="height:25px; width:25px; margin-left:12px"" src="public/img/lightbulb.png" /> </button>
+				<button ng-click="changetext()" type="submit"><img style="height:25px; width:25px; margin-left:12px"" src="public/img/flask.png" /></button>
+				<button ng-click="changetext()" data-remodal-action="confirm" class="remodal-confirm" >OK</button> 
+
+			</div>
+
+                         <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+		      		<button data-remodal-action="close" class="remodal-close"></button>
+		     		<!-- <h3 class="post-h3">Watson Identified Concept</h3> -->
+		      		<h3 class="post-h3"> <span   class="displayname"></span></h3>
+		     		<!-- WS <figure style="float:left"> -->
+		      		<figure>
+		          		<img style="display: block; margin-left: auto;  margin-right: auto; height:auto; max-height:40vh; width:auto; padding:200px ng-model="thumbnail" class="thumbnail" >
+	 			</figure>
+		      		<div align="justify">
+		      			<span ng-model="abstractDB"  class="abstract"></span>
+		      		</div>
+		       		<br>
+		      		<div  align="justify">
+		      			<span   class="relevance"></span>
+		      		</div>
+		       		<br>
+		      		<div align="justify">
+		      			<span   class="website"></span>
+		      		</div>
+		      		<div ng-show="response_data"></div>
+		      		<br>
+		  		<!--     <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button> -->
+		     		<button data-remodal-action="confirm" class="remodal-confirm">OK</button> 
+		 	</div> 
+		 
+		
+	     
+	       </div>
+	
+	
+</body>

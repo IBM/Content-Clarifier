@@ -1,0 +1,94 @@
+
+/* APP LEVEL CSS */
+.app{
+background: #fff ;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+margin: 0 0 8px;
+padding: 20px 0;
+
+}
+
+
+.main {
+    background: #fff ;
+    margin: 0px 0px 0px 0px; 
+    
+
+}
+
+.post-output-textarea2{
+    border: 2px solid #3b54ec;
+    border-style: none none none none;
+    
+    width: 25%;
+    height:auto; 
+    min-height:70vh;
+    float:right;
+    background:#fff;
+    word-wrap: break-word;
+}
+
+.Editor_Contents_Input{
+   border: 2px solid  #3b54ec;
+    border-style: none none none none;
+    float:left;
+    width: 70%;
+    height: auto;
+    background:#fff;
+    font-size:16px;
+    
+    word-wrap: break-word;
+}
+.post-input-textarea2{
+    border: 2px solid  #3b54ec;
+    border-style: none none none none;
+    float:left;
+    min-height:70vh;
+    height: auto;
+    background:#fff;
+    font-size:18px;
+    
+    word-wrap: break-word;
+}
+
+.highlightedText {
+    background: #2eceee;
+    color:#fff;
+   
+}
+
+.popover {
+  position: absolute;
+  z-index: 100;
+}
+
+
+@media all and (max-width: 599px) and (min-width: 50px) {
+  .post-output-textarea2{
+    border: 2px solid #3b54ec;
+    border-style: none none none none;
+    padding-left: 20px;
+    width: 100%;
+    height:auto; 
+    min-height:40vh;
+
+    word-wrap: break-word;
+}
+
+.post-input-textarea2{
+    border: 2px solid  #3b54ec;
+    border-style: none none none none;
+   
+    width: 100%;
+    min-height:70vh;
+    height: auto;
+   
+    background:#fff;
+    font-size:14px;
+    
+     word-wrap: break-word;
+}
+
+}
+
+

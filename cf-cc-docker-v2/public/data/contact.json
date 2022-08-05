@@ -1,0 +1,13 @@
+{
+  "title": "Contact",
+  "description": "Have queries? Contact <a href='http://www-03.ibm.com/able/' target='_blank' style='color:#fff;' >IBM Accessibility</a> ",
+  "items": {
+    "phone": "+1 512-830-2779",
+    "address": "11501 Burnet Rd, BLDG 5, Austin, TX, 78758",
+    "mail": "scottw1@us.ibm.com",
+    "map": {
+      "lat": 30.400533,
+      "lng": -97.715655
+    }
+  }
+}

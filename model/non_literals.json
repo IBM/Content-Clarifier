@@ -1,0 +1,738 @@
+[
+  {
+    "NON_LITERAL":"out of the blue",
+    "REPLACEMENT":"unexpected"
+  },
+  {
+    "NON_LITERAL":"sort of",
+    "REPLACEMENT":"in some way"
+  }, 
+  {
+    "NON_LITERAL":"kind of",
+    "REPLACEMENT":"in some way"
+  },    
+  {
+    "NON_LITERAL":"fine tune",
+    "REPLACEMENT":"improve"
+  },    
+  {
+    "NON_LITERAL":"once in a blue moon",
+    "REPLACEMENT":"very rarely"
+  },   
+  {
+    "NON_LITERAL":"pay the piper",
+    "REPLACEMENT":"face the consequences of your actions"
+  },    
+  {
+    "NON_LITERAL":"jump the gun",
+    "REPLACEMENT":"do something early"
+  },    
+  {
+    "NON_LITERAL":"rub someone the wrong way",
+    "REPLACEMENT":"annoy"
+  },    
+  {
+    "NON_LITERAL":"high as a kite",
+    "REPLACEMENT":"drunk or on drugs"
+  },    
+  {
+    "NON_LITERAL":"a chip on your shoulder",
+    "REPLACEMENT":"you are holding a grudge"
+  },   
+  {
+    "NON_LITERAL":"have a penny for your thoughts",
+    "REPLACEMENT":"ask what you are thinking"
+  },    
+  {
+    "NON_LITERAL":"an A for effort",
+    "REPLACEMENT":"a recognition for having tried"
+  },
+  {
+    "NON_LITERAL":"act your age",
+    "REPLACEMENT":"behave more maturely"
+  },
+  {
+    "NON_LITERAL":"all is not lost",
+    "REPLACEMENT":"things are not totally lost"
+  },
+  {
+    "NON_LITERAL":"all systems are go",
+    "REPLACEMENT":"everything is ready"
+  },
+  {
+    "NON_LITERAL":"aloha",
+    "REPLACEMENT":"hello"
+  },
+  {
+    "NON_LITERAL":"am I glad to see you",
+    "REPLACEMENT":"I am very glad to see you"
+  },
+  {
+    "NON_LITERAL":"things getting you down",
+    "REPLACEMENT":"things bothering you"
+  },
+  {
+    "NON_LITERAL":"are you leveling with me",
+    "REPLACEMENT":"are you telling me the truth"
+  },
+  {
+    "NON_LITERAL":"are you on board",
+    "REPLACEMENT":"are you in agreement"
+  },
+  {
+    "NON_LITERAL":"as far as I know",
+    "REPLACEMENT":"to the best of my knowledge"
+  },
+  {
+    "NON_LITERAL":"as we speak",
+    "REPLACEMENT":"at this very moment"
+  },
+  {
+    "NON_LITERAL":"bar none",
+    "REPLACEMENT":"with no exceptions"
+  },
+  {
+    "NON_LITERAL":"be my guest",
+    "REPLACEMENT":"help yourself"
+  },
+  {
+    "NON_LITERAL":"be there or be square",
+    "REPLACEMENT":"you really must come to the event"
+  },
+  {
+    "NON_LITERAL":"bear up",
+    "REPLACEMENT":"be brave"
+  },
+  {
+    "NON_LITERAL":"been under the weather",
+    "REPLACEMENT":"been sick"
+  },
+  {
+    "NON_LITERAL":"believe you me",
+    "REPLACEMENT":"you really should believe me"
+  },
+  {
+    "NON_LITERAL":"better safe than sorry",
+    "REPLACEMENT":"better to take extra precautions than to take risks and suffer the consequences"
+  },
+  {
+    "NON_LITERAL":"bite your tongue",
+    "REPLACEMENT":"try to not say it"
+  },
+  {
+    "NON_LITERAL":"break a leg",
+    "REPLACEMENT":"good luck"
+  },
+  {
+    "NON_LITERAL":"break a sweat",
+    "REPLACEMENT":"feel exhausted"
+  },
+  {
+    "NON_LITERAL":"break it up",
+    "REPLACEMENT":"stop fighting"
+  },
+  {
+    "NON_LITERAL":"butt out",
+    "REPLACEMENT":"mind your own business"
+  },
+  {
+    "NON_LITERAL":"capeesh",
+    "REPLACEMENT":"do you understand?"
+  },
+  {
+    "NON_LITERAL":"change of scenery",
+    "REPLACEMENT":"move to a different place"
+  },
+  {
+    "NON_LITERAL":"cheer up",
+    "REPLACEMENT":"don't worry"
+  },
+  {
+    "NON_LITERAL":"close, but no cigar",
+    "REPLACEMENT":"close, but not close enough to win"
+  },
+  {
+    "NON_LITERAL":"come out of left field",
+    "REPLACEMENT":"come from a place that one would not expect"
+  },
+  {
+    "NON_LITERAL":"powder room",
+    "REPLACEMENT":"bathroom"
+  },
+  {
+    "NON_LITERAL":"cut it out",
+    "REPLACEMENT":"stop doing that"
+  },
+  {
+    "NON_LITERAL":"cut me a little slack",
+    "REPLACEMENT":"allow me some flexibility"
+  },
+  {
+    "NON_LITERAL":"cut to the chase",
+    "REPLACEMENT":"get to the important matters"
+  },
+  {
+    "NON_LITERAL":"a day late and a dollar short",
+    "REPLACEMENT":"unprepared"
+  },
+  {
+    "NON_LITERAL":"dig in",
+    "REPLACEMENT":"start eating"
+  },
+  {
+    "NON_LITERAL":"dig up",
+    "REPLACEMENT":"listen carefully"
+  },
+  {
+    "NON_LITERAL":"don't be a stranger",
+    "REPLACEMENT":"please come back to visit often"
+  },
+  {
+    "NON_LITERAL":"don't bet on it",
+    "REPLACEMENT":"don't assume anything"
+  },
+  {
+    "NON_LITERAL":"don't get your bowels in an uproar",
+    "REPLACEMENT":"do not get so excited"
+  },
+  {
+    "NON_LITERAL":"don't give up the ship",
+    "REPLACEMENT":"do not give up yet"
+  },
+  {
+    "NON_LITERAL":"don't I know it",
+    "REPLACEMENT":"I know that very well"
+  },
+  {
+    "NON_LITERAL":"dont stand on ceremony",
+    "REPLACEMENT":"do not wait for a formal invitation"
+  },
+  {
+    "NON_LITERAL":"dont sweat it",
+    "REPLACEMENT":"don't worry about it"
+  },
+  {
+    "NON_LITERAL":"don't sweat the small stuff",
+    "REPLACEMENT":"don't worry about the little problems"
+  },
+  {
+    "NON_LITERAL":"down the drain",
+    "REPLACEMENT":"wasted"
+  },
+  {
+    "NON_LITERAL":"drinking the Kool-Aid",
+    "REPLACEMENT":"accepting flawed arguments that have bad consequences"
+  },
+  {
+    "NON_LITERAL":"easy does it",
+    "REPLACEMENT":"move slowly and carefully"
+  },
+  {
+    "NON_LITERAL":"from day one",
+    "REPLACEMENT":"since the first day"
+  },
+  {
+    "NON_LITERAL":"gangway",
+    "REPLACEMENT":"Get out of the way"
+  },
+  {
+    "NON_LITERAL":"get off my back",
+    "REPLACEMENT":"stop harassing me"
+  },
+  {
+    "NON_LITERAL":"get off my tail",
+    "REPLACEMENT":"stop following me"
+  },
+  {
+    "NON_LITERAL":"get out of my face",
+    "REPLACEMENT":"go away and stop bothering me"
+  },
+  {
+    "NON_LITERAL":"give me a ring",
+    "REPLACEMENT":"call me"
+  },
+  {
+    "NON_LITERAL":"go the extra mile",
+    "REPLACEMENT":"try harder to please someone"
+  },
+  {
+    "NON_LITERAL":"grab a bite",
+    "REPLACEMENT":"get something to eat"
+  },
+  {
+    "NON_LITERAL":"hang in there",
+    "REPLACEMENT":"be patient"
+  },
+  {
+    "NON_LITERAL":"have a ball",
+    "REPLACEMENT":"enjoy yourself"
+  },
+  {
+    "NON_LITERAL":"have a heart",
+    "REPLACEMENT":"be kind and compassionate"
+  },
+  {
+    "NON_LITERAL":"horsefeathers",
+    "REPLACEMENT":"nonsense"
+  },
+  {
+    "NON_LITERAL":"could eat a cow",
+    "REPLACEMENT":"am so hungry"
+  },
+  {
+    "NON_LITERAL":"could eat a horse",
+    "REPLACEMENT":"am so hungry"
+  },
+  {
+    "NON_LITERAL":"spoke out of turn ",
+    "REPLACEMENT":"said the wrong thing"
+  },
+  {
+    "NON_LITERAL":"better get on my horse",
+    "REPLACEMENT":"better leave"
+  },
+  {
+    "NON_LITERAL":"will be damned",
+    "REPLACEMENT":"am surprised"
+  },
+  {
+    "NON_LITERAL":"I'll be damned",
+    "REPLACEMENT":"I am surprised"
+  },
+  {
+    "NON_LITERAL":"will be hanged",
+    "REPLACEMENT":"am surprised"
+  },
+  {
+    "NON_LITERAL":"I'll be hanged",
+    "REPLACEMENT":"I am surprised"
+  },
+  {
+    "NON_LITERAL":"be right with you",
+    "REPLACEMENT":"attend to you soon"
+  },
+  {
+    "NON_LITERAL":"I'll bite",
+    "REPLACEMENT":"I will answer your question"
+  },
+  {
+    "NON_LITERAL":"I'll drink to that",
+    "REPLACEMENT":"I agree with that totally"
+  },
+  {
+    "NON_LITERAL":"I am all ears",
+    "REPLACEMENT":"I am listening"
+  },
+  {
+    "NON_LITERAL":"just dying to know",
+    "REPLACEMENT":"very eager to find something out"
+  },
+  {
+    "NON_LITERAL":"all ears",
+    "REPLACEMENT":"attentive"
+  },
+  {
+    "NON_LITERAL":"I am on it",
+    "REPLACEMENT":"I am doing it now"
+  },
+  {
+    "NON_LITERAL":"time to split",
+    "REPLACEMENT":"time to run"
+  },
+  {
+    "NON_LITERAL":"keep your shirt on",
+    "REPLACEMENT":"be patient"
+  },
+  {
+    "NON_LITERAL":"kiss and make up",
+    "REPLACEMENT":"make apologies and amends"
+  },
+  {
+    "NON_LITERAL":"knock it off",
+    "REPLACEMENT":"be quiet"
+  },
+  {
+    "NON_LITERAL":"know where all the bodies are buried",
+    "REPLACEMENT":"know all the secrets"
+  },
+  {
+    "NON_LITERAL":"let it go",
+    "REPLACEMENT":"stop worrying about it"
+  },
+  {
+    "NON_LITERAL":"level the playing field",
+    "REPLACEMENT":"make things fair and balanced"
+  },
+  {
+    "NON_LITERAL":"loose lips sink ships",
+    "REPLACEMENT":"idle talk can reveal secret information"
+  },
+  {
+    "NON_LITERAL":"lovely weather for ducks",
+    "REPLACEMENT":"this unpleasant rainy weather must be good for something"
+  },
+  {
+    "NON_LITERAL":"lull before the storm",
+    "REPLACEMENT":"a quiet period before a period of great activity"
+  },
+  {
+    "NON_LITERAL":"make a lap",
+    "REPLACEMENT":"sit down"
+  },
+  {
+    "NON_LITERAL":"make it snappy",
+    "REPLACEMENT":"hurry up"
+  },
+  {
+    "NON_LITERAL":"It's my way or the highway",
+    "REPLACEMENT":"no choice"
+  },
+  {
+    "NON_LITERAL":"make a pit stop",
+    "REPLACEMENT":"go to the toilet"
+  },
+  {
+    "NON_LITERAL":"is no skin off my nost",
+    "REPLACEMENT":"does not embarass me"
+  },
+  {
+    "NON_LITERAL":"is no skin off my teeth",
+    "REPLACEMENT":"does not embarass me"
+  },
+  {
+    "NON_LITERAL":"not by a long shot",
+    "REPLACEMENT":"under no circumstances"
+  },
+  {
+    "NON_LITERAL":"not for love nor money",
+    "REPLACEMENT":"no way"
+  },
+  {
+    "NON_LITERAL":"never in a thousand years",
+    "REPLACEMENT":"never"
+  },
+  {
+    "NON_LITERAL":"not on your life",
+    "REPLACEMENT":"absolutely not"
+  },
+  {
+    "NON_LITERAL":"off to a flying start",
+    "REPLACEMENT":"started and contiuing to do well"
+  },
+  {
+    "NON_LITERAL":"open a conversation",
+    "REPLACEMENT":"start a conversation"
+  },
+  {
+    "NON_LITERAL":"pick the low-hanging fruit",
+    "REPLACEMENT":"do only the things that are easily done"
+  },
+  {
+    "NON_LITERAL":"put two and two together",
+    "REPLACEMENT":"figure something out from the information available"
+  },
+  {
+    "NON_LITERAL":"see you later, alligator",
+    "REPLACEMENT":"Good Bye"
+  },
+  {
+    "NON_LITERAL":"Later, alligator",
+    "REPLACEMENT":"Good bye"
+  },
+  {
+    "NON_LITERAL":"slip me five",
+    "REPLACEMENT":"shake my hand"
+  },
+  {
+    "NON_LITERAL":"give me five",
+    "REPLACEMENT":"shake my hand"
+  },
+  {
+    "NON_LITERAL":"like something the cat dragged in",
+    "REPLACEMENT":"rumpled or worn out"
+  },
+  {
+    "NON_LITERAL":"sound like a broken record",
+    "REPLACEMENT":"say the same thing over and over"
+  },
+  {
+    "NON_LITERAL":"spin a yarn",
+    "REPLACEMENT":"to tell a tale"
+  },
+  {
+    "NON_LITERAL":"stuff a sock in it",
+    "REPLACEMENT":"stop talking"
+  },
+  {
+    "NON_LITERAL":"take heart",
+    "REPLACEMENT":"be brave"
+  },
+  {
+    "NON_LITERAL":"thanks a million",
+    "REPLACEMENT":"thank you a lot"
+  },
+  {
+    "NON_LITERAL":"that makes two of us",
+    "REPLACEMENT":"I agree withh you"
+  },
+  {
+    "NON_LITERAL":"takes the cake",
+    "REPLACEMENT":"wins the prize"
+  },
+  {
+    "NON_LITERAL":"burns me up",
+    "REPLACEMENT":"makes me very angry"
+  },
+  {
+    "NON_LITERAL":"that's the way the ball bounces",
+    "REPLACEMENT":"that's the way it goes"
+  },
+  {
+    "NON_LITERAL":"that's the way the cookie crumbles",
+    "REPLACEMENT":"that's the way it goes"
+  },
+  {
+    "NON_LITERAL":"that's the way the mop flops",
+    "REPLACEMENT":"that's the way it goes"
+  },
+  {
+    "NON_LITERAL":"there aren't enough hours in the day",
+    "REPLACEMENT":"there are too many things to do and not enough time"
+  },
+  {
+    "NON_LITERAL":"to skin a cat",
+    "REPLACEMENT":"to do something"
+  },
+  {
+    "NON_LITERAL":"watch your mouth",
+    "REPLACEMENT":"don't talk like that"
+  },
+  {
+    "NON_LITERAL":"watch your tongue",
+    "REPLACEMENT":"don't talk like that"
+  },
+  {
+    "NON_LITERAL":"raining cats and dogs",
+    "REPLACEMENT":"raining heavily"
+  },
+  {
+    "NON_LITERAL":"time to hit the hay",
+    "REPLACEMENT":"time to go to sleep"
+  },
+  {
+    "NON_LITERAL":"a taste of your own medicine",
+    "REPLACEMENT":"a sample of the unpleasantness that one has been giving other people."
+  },
+  {
+    "NON_LITERAL":"rock the boat",
+    "REPLACEMENT":"do or say something that causes problem"
+  },
+  {
+    "NON_LITERAL":"rain or shine",
+    "REPLACEMENT":"under any circumstances"
+  },
+  {
+    "NON_LITERAL":"get cold feet",
+    "REPLACEMENT":"to have a sudden nervous feeling"
+  },
+  {
+    "NON_LITERAL":"to have a green thumb",
+    "REPLACEMENT":"to be able to grow plants well"
+  },
+  {
+    "NON_LITERAL":"a piece of cake ",
+    "REPLACEMENT":"easy"
+  },
+  {
+    "NON_LITERAL":"tongue-tied",
+    "REPLACEMENT":"speechless"
+  },
+  {
+    "NON_LITERAL":"to pull someone's leg",
+    "REPLACEMENT":"to trick or fool someone in a playful way"
+  },
+  {
+    "NON_LITERAL":"on its last legs",
+    "REPLACEMENT":"in bad condition"
+  },
+  {
+    "NON_LITERAL":"butterflies in the stomach",
+    "REPLACEMENT":"feel nervous"
+  },
+  {
+    "NON_LITERAL":"have a heart of gold",
+    "REPLACEMENT":"are sincere"
+  },
+  {
+    "NON_LITERAL":"sick as a dog",
+    "REPLACEMENT":"very sick"
+  },
+  {
+    "NON_LITERAL":"eyes are bigger than one's stomach",
+    "REPLACEMENT":"to take or want more food than you can eat"
+  },
+  {
+    "NON_LITERAL":"a lemon",
+    "REPLACEMENT":"defective"
+  },
+  {
+    "NON_LITERAL":"to have one's nose in a book",
+    "REPLACEMENT":"be reading a book"
+  },
+  {
+    "NON_LITERAL":"eat like a horse",
+    "REPLACEMENT":"eat a lot"
+  },
+  {
+    "NON_LITERAL":"sell like hotcakes",
+    "REPLACEMENT":"sell quickly"
+  },
+  {
+    "NON_LITERAL":"chill out",
+    "REPLACEMENT":"relax"
+  },
+  {
+    "NON_LITERAL":"bend over backwards",
+    "REPLACEMENT":"try very hard"
+  },
+  {
+    "NON_LITERAL":"graceful as a swan ",
+    "REPLACEMENT":"very graceful"
+  },
+  {
+    "NON_LITERAL":"break a leg",
+    "REPLACEMENT":"good luck"
+  },
+  {
+    "NON_LITERAL":"shake a leg",
+    "REPLACEMENT":"go fast"
+  },
+  {
+    "NON_LITERAL":"hit the books",
+    "REPLACEMENT":"study or prepare"
+  },
+  {
+    "NON_LITERAL":"great minds think alike",
+    "REPLACEMENT":"intelligent people come up with the same ideas at the same time"
+  },
+  {
+    "NON_LITERAL":"good Samaritan",
+    "REPLACEMENT":"someone who tries to help people in trouble or need"
+  },
+  {
+    "NON_LITERAL":"go out on a limb",
+    "REPLACEMENT":"get into a risky situation in order to help someone else"
+  },
+  {
+    "NON_LITERAL":"go for broke",
+    "REPLACEMENT":"risk everything and go for an all out effort"
+  },
+  {
+    "NON_LITERAL":"go down like a lead balloon",
+    "REPLACEMENT":"be poorly received by an audience"
+  },
+  {
+    "NON_LITERAL":"zero hour",
+    "REPLACEMENT":"the particular time when any crucial act supposed to take place"
+  },
+  {
+    "NON_LITERAL":"zonk out",
+    "REPLACEMENT":"fall asleep very quickly"
+  },
+  {
+    "NON_LITERAL":"under attack",
+    "REPLACEMENT":"being attacked"
+  },    
+  {
+    "NON_LITERAL":"year dot",
+    "REPLACEMENT":"a long time back"
+  },
+  {
+    "NON_LITERAL":"you are what you eat",
+    "REPLACEMENT":"eat well to feel well"
+  },
+  {
+    "NON_LITERAL":"your guess is as good as mine",
+    "REPLACEMENT":"I do not know the answer"
+  },
+  {
+    "NON_LITERAL":"yesterday's man",
+    "REPLACEMENT":"someone who has passed the peak of his or her career"
+  },
+  {
+    "NON_LITERAL":"your sins will find you out",
+    "REPLACEMENT":"things you do wrong will become known"
+  },
+  {
+    "NON_LITERAL":"you bet!",
+    "REPLACEMENT":"for sure, without any doubt"
+  },
+  {
+    "NON_LITERAL":"yoke around neck",
+    "REPLACEMENT":"a trouble for someone"
+  },
+  {
+    "NON_LITERAL":"X factor",
+    "REPLACEMENT":"an outstanding extraordinary ability"
+  },
+  {
+    "NON_LITERAL":"X marks the spot",
+    "REPLACEMENT":"mark something one is looking for with X on target"
+  },
+  {
+    "NON_LITERAL":"walk out on",
+    "REPLACEMENT":"abandon someone"
+  },
+  {
+    "NON_LITERAL":"wear heart on sleeve",
+    "REPLACEMENT":"display your emotions openly"
+  },
+  {
+    "NON_LITERAL":"whet one's appetite",
+    "REPLACEMENT":"a reason which increases your interest in something"
+  },
+  {
+    "NON_LITERAL":"wear off",
+    "REPLACEMENT":"out of fashion"
+  },
+  {
+    "NON_LITERAL":"wear out",
+    "REPLACEMENT":"declining"
+  },
+  {
+    "NON_LITERAL":"well read",
+    "REPLACEMENT":"well-educated"
+  },
+  {
+    "NON_LITERAL":"water under the bridge",
+    "REPLACEMENT":"past events that are not important anymore"
+  },
+  {
+    "NON_LITERAL":"wouldn't be caught dead",
+    "REPLACEMENT":"would rather die before"
+  },
+  {
+    "NON_LITERAL":"wouldn’t be seen dead",
+    "REPLACEMENT":"dislike something very much"
+  },
+  {
+    "NON_LITERAL":"water over the dam",
+    "REPLACEMENT":"past events that are not important anymore"
+  },
+  {
+    "NON_LITERAL":"whole nine yards",
+    "REPLACEMENT":"everything that is possible"
+  },
+  {
+    "NON_LITERAL":"wash your hands of",
+    "REPLACEMENT":"abandon taking responsibility"
+  },
+  {
+    "NON_LITERAL":"warn off",
+    "REPLACEMENT":"notify someone of staying away from danger ahead"
+  },
+  {
+    "NON_LITERAL":"warn someone off",
+    "REPLACEMENT":"notify someone of staying away from danger ahead"
+  }
+]

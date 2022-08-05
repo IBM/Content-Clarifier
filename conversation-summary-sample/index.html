@@ -1,0 +1,220 @@
+
+
+<html>
+<head>
+<style>
+    pre {
+     white-space: pre-wrap;       /* css-3 */
+     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4-6 */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+</style>
+<script>
+    
+function summarizeConversation(){
+
+    // show the loading image
+    var loading = document.getElementById("loading");
+    loading.style.display = "block";
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'https://contentclarifier.mybluemix.net/api/V1/condense-conversation', true);
+    xhr.setRequestHeader('Access-Control-Allow-Headers', '*')
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhr.onreadystatechange = function(){
+        
+        //console.log(xhr);
+        
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            
+                var response = JSON.parse(xhr.responseText);
+                       
+				// now hide the loading image
+				loading.style.display = "none";
+            
+                if(response['code'] !== undefined && response['code'] == 204){ // Handle code 204!
+                    
+                    document.getElementById("summarized_conversation").innerHTML = "<div style='max-width: 500px !important;'>" + response['message'] + "<\div>";
+                }
+                else{
+                    
+                    // console.log(response['condensed']);
+            
+                    // console.log(response.condensed);
+            
+                    document.getElementById("summarized_conversation").innerHTML = JSON.stringify(response['condensed'],undefined,2);
+                    
+                }
+        }
+    };
+
+    // API INVOCATION PARAMETERS
+    var value = JSON.stringify ({
+            id: "convosum@us.ibm.com",
+            apikey: "I2T5ZLQML4N3VRN",
+            data: getSampleConversationJSON(),
+            options: {"classifierThreshold":0.89,"messageFormat":"short"} // increasing this threshold compresses the size of summary..
+            });
+
+    xhr.send(value);
+
+}
+
+    
+function getSampleConversationJSON(){  
+    
+    // TimeStamp in conversation JSON can be NULL or in Unix epoc milliseconds. When TimeStamp is specified
+    // the summarization algorithm uses this information.
+    //
+    // MessageId is required, and must be a unique identifier of the utterance within the conversation.
+    //
+    // Message is required, and is the text of the utterance.
+    //
+    // ParticipantName is required, and is a label for the participant that made the utterance given in the Message.
+     
+    var conversation = [{
+        "TimeStamp": 1508007467231,
+        "MessageId": "855130439",
+        "Message": "hi there  *****  thank you for using companyX live chat how can i help you today",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467241,
+        "MessageId": "855130439",
+        "Message": "we wish to change our phones from prepaid to plan but have a 350 balnce what happens to this",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467251,
+        "MessageId": "855130439",
+        "Message": "i understand  *****  no worries let me just check on that hold on please",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467261,
+        "MessageId": "855130439",
+        "Message": "appreciate the wait  *****  i have checked here and the prepaid credit will be cancelled when it is transferred to a postpaid plan",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467271,
+        "MessageId": "855130439",
+        "Message": "so we just lose the money",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467281,
+        "MessageId": "855130439",
+        "Message": "yes  *****  as the number will be transferred to postpaid but no worries in this case we can connect you via chat with our specialised team so we can further assist you with the prepaid credit on your accountplease stay online while i connect you to them thank you",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467291,
+        "MessageId": "855130439",
+        "Message": "chat id  *****  cockram cx asked what will happen to the prepaid credit when changed to postpaid advised cx that it will be cancelled",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467321,
+        "MessageId": "855130439",
+        "Message": "hello  ***** hope you are doing well",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467331,
+        "MessageId": "855130439",
+        "Message": "yes but i have a problem",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467341,
+        "MessageId": "855130439",
+        "Message": "we wish to buy a new phone on a plan but have 350 tied up in prepaid baleance",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467341,
+        "MessageId": "855130439",
+        "Message": " ***** if you transfer your number from prepaid to postpaid then you will lost whole the balance",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467351,
+        "MessageId": "855130439",
+        "Message": "i would suggest you to buy another sim and activate it with plan",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467361,
+        "MessageId": "855130439",
+        "Message": "if i buy the phone outright as a prepaid will the balance be transferred",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467371,
+        "MessageId": "855130439",
+        "Message": "yesthen you can transfer balance",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467381,
+        "MessageId": "855130439",
+        "Message": "you can do it",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467391,
+        "MessageId": "855130439",
+        "Message": "ok thankyou seems to be the only solution  can i later transfer the perpaid to a plan",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467421,
+        "MessageId": "855130439",
+        "Message": "yesyou can transfer prepaid to plan also",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467431,
+        "MessageId": "855130439",
+        "Message": "the number will be same",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467441,
+        "MessageId": "855130439",
+        "Message": "ok this is the answer thanks for your help",
+        "ParticipantName": "visitor"
+    }, {
+        "TimeStamp": 1508007467451,
+        "MessageId": "855130439",
+        "Message": "you are most welcome",
+        "ParticipantName": "agent"
+    }, {
+        "TimeStamp": 1508007467461,
+        "MessageId": "855130439",
+        "Message": "please click on  sign at the bottom left of chat window or the end chat button to end the conversation to complete a quick feedback about your live chat experience with me once the chat ends",
+        "ParticipantName": "agent"
+    }];
+
+    return conversation;
+       
+}                       
+</script>
+
+</head>
+
+    <br />
+    <br />
+    <center>
+    Content Clarifier - Conversation Summarization Sample
+    </center>
+    <br />
+    <br />
+    
+    This is a simple demo that allows one to perform conversation summarization. View this page's JS code to see the chat conversation code, and API calling convention in the <strong>summarizeConversation()</strong> function.
+    <br />
+    <br />
+    <strong>NOTES:</strong><br /><br />
+    <strong>1.</strong> To adjust the "aggressiveness" of the summarization algorithm, adjust the <strong>classifierThreshold</strong> parameter in the JS code. We usually suggest a value between <strong>0.85</strong> (the default) and <strong>0.90</strong>, but the acceptable range is {0.80 – 0.95}. <i>Generally speaking, as the classifierThreshold increases, the size of the resulting summarization decreases.</i>
+    <br /><br />
+    <strong>2.</strong> The sample conversation in <strong>getSampleConversationJSON()</strong> is redacted data from a telco customer's chat support interaction. As the conversation is short format (e.g. text, chat, microblogging), the <strong>messageFormat</strong> parameter is "short". If you would like to summarize longtail format conversations (e.g. email threads), please change messageFormat parameter in the request to <strong>long</strong>.
+     <br /><br />   
+    <strong>PS.</strong> For long conversations it may take a few moments to process. 
+
+    <center>  
+    <input id="clickMe" type="button" value="Click To Summarize Chat Conversation" onclick="summarizeConversation();" />
+    <img src="loading.gif" id="loading" style="display:none;" />
+    </center> 
+    
+    <p>&nbsp;</p> 
+    <p>&nbsp;</p> 
+    <p>&nbsp;</p>    
+    <pre><div id="summarized_conversation"></div></pre>    
+    
+</html>

@@ -1,0 +1,131 @@
+{
+  "title": "Pricing plan",
+  "description": "Choose your plan and get more features",
+  "items": [
+    {
+      "button": {
+        "url": "#basic",
+        "text": "Basic Plan",
+        "smallText": "Click here to buy this plan"
+      },
+      "plan": {
+        "title": "Basic",
+        "subtitle": "For Freelancer",
+        "price": "$49",
+        "duration": "month",
+        "features": [
+          {
+            "property": "Total User",
+            "value": "15"
+          },
+          {
+            "property": "Unlimited Styles",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Advanced Protection",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Cloud Storage",
+            "value": "<i class=\"fa fa-close\"></i>"
+          },
+          {
+            "property": "Backup Service",
+            "value": "<i class=\"fa fa-close\"></i>"
+          },
+          {
+            "property": "24/7 Customer Service",
+            "value": "<i class=\"fa fa-close\"></i>"
+          }
+        ]
+      }
+    },
+    {
+      "button": {
+        "url": "#advanced",
+        "text": "Advanced plan",
+        "smallText": "Click here to buy this plan"
+      },
+      "plan": {
+        "title": "Advanced",
+        "subtitle": "For Company",
+        "price": "$249",
+        "duration": "month",
+        "features": [
+          {
+            "property": "Total User",
+            "value": "15"
+          },
+          {
+            "property": "Unlimited Styles",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Advanced Protection",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Cloud Storage",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Backup Service",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "24/7 Customer Service",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Backup Service",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Cloud Storage",
+            "value": "<i class=\"fa fa-check\"></i>"
+          }
+        ]
+      }
+    },
+    {
+      "button": {
+        "url": "#recommended",
+        "text": "Recommended plan",
+        "smallText": "Click here to buy this plan"
+      },
+      "plan": {
+        "title": "Recommended",
+        "subtitle": "For Professionals",
+        "price": "$149",
+        "duration": "month",
+        "features": [
+          {
+            "property": "Total User",
+            "value": "15"
+          },
+          {
+            "property": "Unlimited Styles",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Advanced Protection",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Cloud Storage",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "Backup Service",
+            "value": "<i class=\"fa fa-check\"></i>"
+          },
+          {
+            "property": "24/7 Customer Service",
+            "value": "<i class=\"fa fa-close\"></i>"
+          }
+        ]
+      }
+    }
+  ]
+}

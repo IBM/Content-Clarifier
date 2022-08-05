@@ -1,0 +1,101 @@
+[{
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nin this case it was auto-created ",
+	"MessageId": "590247d7e4b0971151128f33",
+	"TimeStamp": 1493321687972
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "yea, then it just picks up defaults. Better to create it specifically using a specific config\n(number of partitions and replicas)",
+	"MessageId": "590247dfe4b0971151128f3c",
+	"TimeStamp": 1493321695396
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "looks like it is working properly now. distribution to partitions",
+	"MessageId": "590247e7e4b0971151128f42",
+	"TimeStamp": 1493321703289
+}, {
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nyep! ",
+	"MessageId": "590247e9e4b0971151128f44",
+	"TimeStamp": 1493321705709
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "wait a sec.",
+	"MessageId": "590247ede4b0971151128f46",
+	"TimeStamp": 1493321709438
+}, {
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nand yeah, found the defaults here earlier: https://github.ibm.com/toscana/kafka-config/commit/1d2e4998eae74cb596d523a2a95ea8f07b6f6ff6 ",
+	"MessageId": "590247f1e4b0971151128f4e",
+	"TimeStamp": 1493321713181
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "are we using a key for producing messages?",
+	"MessageId": "590247f5e4b0971151128f50",
+	"TimeStamp": 1493321717028
+}, {
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nor sending to this topic? pretty sure we don't ",
+	"MessageId": "590247fde4b0971151128f52",
+	"TimeStamp": 1493321725208
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "ok.",
+	"MessageId": "590247ffe4b0971151128f53",
+	"TimeStamp": 1493321727664
+}, {
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nsomething jump out? ",
+	"MessageId": "59024803e4b0971151128f5b",
+	"TimeStamp": 1493321731787
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "watching distribution. It should be round-robin",
+	"MessageId": "59024808e4b0971151128f5c",
+	"TimeStamp": 1493321736448
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "see some topics with an offset of 3 others with 0",
+	"MessageId": "59024814e4b0971151128f5d",
+	"TimeStamp": 1493321748070
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "might be ok. should watch and see if the numbers stay close to each-other",
+	"MessageId": "5902481ae4b0971151128f65",
+	"TimeStamp": 1493321754149
+}, {
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nlooking a little better now? wonder if it just takes some time ",
+	"MessageId": "5902481de4b0971151128f6b",
+	"TimeStamp": 1493321757671
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "it's probably OK. They all seem to be increasing. Difference remains small",
+	"MessageId": "59024823e4b0971151128f6f",
+	"TimeStamp": 1493321763024
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "man I lova kafka",
+	"MessageId": "59024828e4b0971151128f76",
+	"TimeStamp": 1493321768870
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "stunning we only have 16 topics.",
+	"MessageId": "59024834e4b0971151128f7e",
+	"TimeStamp": 1493321780749
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "we hardly use the thing",
+	"MessageId": "5902483ae4b0971151128f80",
+	"TimeStamp": 1493321786221
+}, {
+	"ParticipantName": "WILLIE SCOTT",
+	"Message": "     \nyeah! its crazy powerful I think....and pretty straightforward with Spring ",
+	"MessageId": "5902483ce4b0971151128f81",
+	"TimeStamp": 1493321788965
+}, {
+	"ParticipantName": "Sushank Reddy Vadde",
+	"Message": "yea, not sure why we aren't using it more",
+	"MessageId": "59024843e4b0971151128f82",
+	"TimeStamp": 1493321795527
+}]

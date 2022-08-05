@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://contentclarifier.mybluemix.net/" />
+<title>New Test</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">New Test</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/#/index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForText</td>
+	<td>//label[2]</td>
+	<td>News content</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=input-news</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=userAnswer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//label[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=userAnswer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//body/div[4]/div</td>
+	<td>Please enter some text to simplify. OK</td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//body/div[4]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body/div[4]/div</td>
+	<td>Please enter some text to simplify. OK</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=input-technical</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=userAnswer</td>
+	<td><br /></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/div</td>
+	<td>Please enter some text to simplify. OK</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[3]/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=input-announcement</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=userAnswer</td>
+	<td><br /></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/div</td>
+	<td>Please enter some text to simplify. OK</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[3]/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=input-owntext</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/div</td>
+	<td>Please enter some text to simplify. OK</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[3]/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=input-url</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=bgchanger</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//body/div[4]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//body/div[4]/div</td>
+	<td>Please provide a valid URL to simplify. OK</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[4]/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[4]/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=input-conversation</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=userAnswer</td>
+	<td><br /><br /></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[3]/div</td>
+	<td>Please enter some text to simplify. OK</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[3]/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//div[3]/div/button[2]</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

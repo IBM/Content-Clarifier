@@ -1,0 +1,14 @@
+{
+  "source": {
+    "include": [ "./index.js", "./speech-to-text/", "./text-to-speech/" ]
+  },
+  "note": "this should be named opts, not options",
+  "opts": {
+    "package": "package.json",
+    "readme": "README.md",
+    "recurse": false,
+    "xtemplate": "jsdoc/template",
+    "destination": "./doc/"
+  },
+  "plugins": ["plugins/markdown"]
+}

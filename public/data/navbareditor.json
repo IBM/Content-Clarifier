@@ -1,0 +1,57 @@
+{
+  "title": "Navigation",
+  "description": "",
+  "items": {
+    "logoTransperant": "public/images/logo-white.png",
+    "logo": "public/images/logo.png",
+    "isSearchActive": false,
+    "mainMenu": [
+       {
+        "title": "Home",
+        "url": "../",
+        "class": "page-scroll",
+        "target": "",
+        "id": "home_btn2"
+      },
+    
+      {
+        "title": "API",
+        "url": "../#api",
+        "class": "page-scroll",
+        "target": "",
+        "id": "API_btn2"
+      },
+      {
+        "title": "Video",
+        "url": "../#video",
+        "class": "page-scroll",
+        "target": "",
+        "id" : "video_btn2"
+      },
+      {
+        "title": "News & Media",
+        "url": "../#media",
+        "class": "page-scroll",
+        "target": "",
+        "id": "MN_btn2"
+      },
+
+      {
+        "title": "Contact",
+        "url": "../#contact",
+        "class": "page-scroll",
+        "target": "",
+        "id": "contact_btn2"
+      },
+      {
+        "title": "Log out",
+        "url": "../logout",
+        "class": "page-scroll",
+        "target": "",
+        "id": "Logout_btn"
+      }
+    ]
+  }
+}
+
+

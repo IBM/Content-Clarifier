@@ -1,0 +1,24 @@
+{
+  "title": "News & Media",
+  "description": "",
+  "items": [
+    {
+      "name": "Forbes",
+      "designation": "Robert J. Szczerba, Reporter",
+      "testimonial": "...Content Clarifier, was developed on Bluemix, IBM’s cloud platform, by IBM Accessibility Research and represents a powerful combination of machine learning, cognitive technologies and natural language processing. The system takes a long and complicated body of source content and dynamically filters out unnecessary information, replacing complex and recurring words or phrases, and converting it into something more understandable for the user.",
+      "picture": "public/images/robert.jpeg"
+    },
+    {
+      "name": "MIT Technology Review",
+      "designation": "Tom Simonite, Reporter",
+      "testimonial": "Researchers at IBM are using ...Content Clarifier to help people with cognitive or intellectual disabilities such as autism or dementia. It can replace figures of speech such as “raining cats and dogs” with plainer terms, and trim or break up lengthy sentences with multiple clauses and indirect language.",
+      "picture": "public/images/tom2.png"
+    },
+    {
+      "name": "Easterseals Central Texas",
+      "designation": "Tod Marvin, CEO",
+      "testimonial": "This solution would be extremely useful for Easterseals, which has been helping individuals with disabilities and special needs for more than 90 years...We spend a lot of time helping interpret information, especially employment opportunities, for our members. By using Content Clarifier, it could help reduce the approximately 80 percent unemployment rates of people with disabilities, by simplifying content in real time to increase comprehension and confidence, and open up a new world of independence",
+      "picture": "public/images/Marvin-Tod.jpg"
+    }
+  ] 
+}

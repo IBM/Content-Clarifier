@@ -1,0 +1,72 @@
+@font-face {
+  font-family: 'Pacifico';
+  src: url("/examples/fonts/pacifico.eot");
+  src: url("/examples/fonts/pacifico.eot?#iefix") format("embedded-opentype"), url("/examples/fonts/pacifico.woff") format("woff"), url("/examples/fonts/pacifico.ttf") format("truetype"), url("/examples/fonts/pacifico.svg#Pacifico") format("svg");
+}
+/* line 20, ../../scss/_app.scss */
+.header {
+  padding: 20px 0px;
+}
+/* line 22, ../../scss/_app.scss */
+.header .title {
+  color: #3498db;
+  font-size: 48px;
+  line-height: 100px;
+  font-family: 'Pacifico';
+}
+/* line 28, ../../scss/_app.scss */
+.header .sub-title {
+  color: #555;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/* line 39, ../../scss/_app.scss */
+.blue {
+  background: #3498db;
+  color: #fff;
+}
+/* line 42, ../../scss/_app.scss */
+.blue h3 {
+  background: #fff;
+  color: #3498db;
+  font-size: 36px;
+  line-height: 100px;
+  margin: 10px;
+  padding: 2%;
+  position: relative;
+  text-align: center;
+}
+
+/* line 57, ../../scss/_app.scss */
+.content .content-title {
+  text-align: center;
+  line-height: 100px;
+  font-family: 'Pacifico';
+}
+
+/* line 65, ../../scss/_app.scss */
+.footer {
+  padding: 20px 0px;
+}
+/* line 67, ../../scss/_app.scss */
+.footer .title {
+  color: #3498db;
+  font-size: 48px;
+  line-height: 100px;
+  font-family: 'Pacifico';
+}
+/* line 73, ../../scss/_app.scss */
+.footer .sub-title {
+  color: #555;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  margin: 10px auto;
+  text-align: center;
+}
+
+/*# sourceMappingURL=app.dev.css.map */

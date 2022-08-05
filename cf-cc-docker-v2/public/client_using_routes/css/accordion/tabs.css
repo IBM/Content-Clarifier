@@ -1,0 +1,235 @@
+body {
+
+}
+
+
+input[type="radio"]{
+   width: 2vh;
+   height:1.5vh;
+   font-size: 2vh;
+   display: inline;
+}
+
+.accordion {
+  /*border-radius: 25px; 
+  border-top-left-radius: 3em;*/
+  border: 1px solid #2eceee;
+  border-style: none none none none;
+  padding: 0;
+  margin: 1em 0;
+  width: 100%;
+  overflow: visible;
+  font-size: 1em;
+  position: relative;
+  height:auto;
+
+}
+
+
+.accordion2 {
+  /*border-radius: 25px; 
+  border-top-left-radius: 3em;*/
+  border: 1px solid #2eceee;
+  border-style: none none none none;
+  padding: 0;
+  margin: 1em 0;
+  width: 100%;
+  overflow: visible;
+  font-size: 1em;
+  position: relative;
+  height:auto;
+}
+
+
+.inner_div {
+ 
+  border: 1px solid #2eceee;
+  border-style: none none none none;
+  padding: 0;
+  margin: 0;
+  width: 48vh;
+  overflow: hidden
+  font-size: 1em;
+  position: relative;
+  height:50vh;
+  float:left;
+} 
+
+.accordion__content_input {
+ float: right;
+  width: 100%;
+  margin: .75em 0 0 -100%;
+  padding: 1em;
+  /* min-height:38vh; */
+  height:100%;
+  border: 2px solid ;
+  border-style: solid none none none; 
+  position: relative; 
+  background: #ececec;
+  font-size:1em;
+
+}
+
+
+.accordion__title {
+ /*border-top-left-radius: 1em;
+ border-top-right-radius: 0em;*/
+  font-size:1.1em; 
+  font-weight:normal;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;    
+  padding: 0 2em;
+  border: 2px solid #ececec;
+  border-style: none none none none;
+  color: white;
+  background: #A9A9A9;
+  float: left;
+  line-height: 2.5;
+  height: auto;
+  cursor: pointer;
+  margin-right: .5em;
+  position: relative;
+}
+
+.no-js .accordion__title {
+  float: none;
+  height:auto;
+  cursor:auto;
+  margin:0;
+  padding:0 2em;
+}
+
+.accordion__content {
+  float: right;
+  width: 100%;
+  margin: 2.75em 0 0 -100%;
+  padding: 1em;
+  min-height:38vh;
+  height:100%;
+  border: 2px solid #ececec;
+  border-style: solid solid solid solid; 
+  position: relative; 
+  background: #fff;
+}
+
+.no-js .accordion__content {
+  float:left;
+  margin:0;
+}
+
+.no-js .accordion__content_input {
+  float:left;
+  margin:0;
+}
+
+.accordion__title:hover,
+.accordion__title.active {
+  background: #2eceee;
+  color: white;
+}
+
+.no-js .accordion__title:hover {
+  background-color:#ccc;
+  color:#222;
+}
+
+.accordion__title.active {
+  border-top-color:#2eceee
+}
+
+@media (max-width: 48em) {
+  
+  .accordion {
+    border: 1px solid grey;
+     border-style: none none none none;
+  }
+  
+  .accordion__title,
+  .accordion__content { 
+     font-size:2vw; 
+     border-style: solid solid solid solid;
+    float: none;
+    margin: 0;
+  }
+
+  .accordion__content_input { 
+     font-size:2vw; 
+     border-style: solid solid solid solid;
+    float: none;
+    margin: 0;
+  }
+  
+  .accordion__title:first-child {
+    /*border:solid;*/
+  }
+  
+ .accordion__title.active {
+  border-top-color:#eee;
+  }
+  
+  .accordion__title.active, .accordion__title:hover {
+    background: #2eceee;
+  color: white;
+  }
+  
+  .accordion__title:before {
+  content:"+";
+  text-align:center;
+  width:2em;
+  display:inline-block;
+  }
+ .accordion__title.active:before {
+  content:"-";
+  }
+  
+ .overflow-scrolling {
+  overflow-y: scroll;
+  height:auto;
+  padding:1em 1em 0 1em;
+  /* Warning: momemtum scrolling seems buggy on iOS 7  */
+  -webkit-overflow-scrolling: touch;
+  }
+
+   .accordion__content_input {
+	border: 2px solid ;
+	border-style: solid none none none; 
+      height:auto; 
+    position:relative;
+    overflow:hidden;
+    padding:1em;
+  }
+
+  .accordion__content{
+	border: 2px solid ;
+	border-style: none none none none; 
+      height:100%; 
+    position:relative;
+ 
+    padding:1em;
+  }
+  
+
+   .no-js .accordion__content {
+    padding:1em;
+    overflow:auto;
+    display:block;
+  }
+  
+  .accordion__content:after, .accordion__content_input:after {
+    position:absolute;
+    top:100%;
+    left:0;
+    height:100%;
+    width:100%;
+    border-style: solid solid solid solid; 
+   border-radius:10px 0 0 10px / 50% 0 0 50%;
+    box-shadow:-5px 0 10px rgba(0, 0, 0, 0.5);
+    content:'';
+}
+
+ label {
+    display: block;
+  }
+
+
+   
+}

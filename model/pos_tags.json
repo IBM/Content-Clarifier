@@ -1,0 +1,188 @@
+[
+    {
+        "POS": "CC",
+        "DESC": "Coordinating conjunction",
+        "CLASS": "NA"
+    }, 
+    {
+        "POS": "CD",
+        "DESC": "Cardinal number",
+        "CLASS": "NA"
+    },  
+    {
+        "POS": "DT",
+        "DESC": "Determiner",
+        "CLASS": "NA"
+    },  
+    {
+        "POS": "EX",
+        "DESC": "Existential there",
+        "CLASS": "NA"
+    },
+    {
+        "POS": "FW",
+        "DESC": "Foreign word",
+        "CLASS": "NA"
+    },
+    {
+        "POS": "IN",
+        "DESC": "Preposition or subordinating conjunction",
+        "CLASS": "NA"
+    },      
+    {
+        "POS": "JJ",
+        "DESC": "Adjective",
+        "CLASS": "ADJECTIVE"
+    },      
+    {
+        "POS": "JJR",
+        "DESC": "Adjective, comparative",
+        "CLASS": "ADJECTIVE"
+    },      
+    {
+        "POS": "JJS",
+        "DESC": "Adjective, superlative",
+        "CLASS": "ADJECTIVE"
+    },      
+    {
+        "POS": "LS",
+        "DESC": "List item marker",
+        "CLASS": "NA"
+    },   
+    {
+        "POS": "MD",
+        "DESC": "Modal",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "NN",
+        "DESC": "Noun, singular or mass",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "NNS",
+        "DESC": "Noun, plural",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "NNP",
+        "DESC": "Proper noun, singular",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "NNPS",
+        "DESC": "Proper noun, plural",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "PDT",
+        "DESC": "Predeterminer",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "POS",
+        "DESC": "Possessive ending",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "PRP",
+        "DESC": "Personal pronoun",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "PRP$",
+        "DESC": "Possessive pronoun",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "RB",
+        "DESC": "Adverb",
+        "CLASS": "ADVERB"
+    },     
+    {
+        "POS": "RBR",
+        "DESC": "Adverb, comparative",
+        "CLASS": "ADVERB"
+    },     
+    {
+        "POS": "RBS",
+        "DESC": "Adverb, superlative",
+        "CLASS": "ADVERB"
+    },     
+    {
+        "POS": "RP",
+        "DESC": "Particle",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "SYM",
+        "DESC": "Symbol",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "TO",
+        "DESC": "to",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "UH",
+        "DESC": "Interjection",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "VB",
+        "DESC": "Verb, base form",
+        "CLASS": "VERB"
+    },     
+    {
+        "POS": "VBD",
+        "DESC": "Verb, past tense",
+        "CLASS": "VERB"
+    },     
+    {
+        "POS": "VBG",
+        "DESC": "Verb, gerund or present participle",
+        "CLASS": "VERB"
+    },     
+    {
+        "POS": "VBN",
+        "DESC": "Verb, past participle",
+        "CLASS": "VERB"
+    }, 
+    {
+        "POS": "VBP",
+        "DESC": "Verb, non-3rd person singular present",
+        "CLASS": "VERB"
+    },     
+    {
+        "POS": "VBZ",
+        "DESC": "Verb, 3rd person singular present",
+        "CLASS": "VERB"
+    },     
+    {
+        "POS": "WDT",
+        "DESC": "Wh-determiner",
+        "CLASS": "NA"
+    },     
+    {
+        "POS": "WP",
+        "DESC": "Wh-pronoun",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "WP$",
+        "DESC": "Possessive wh-pronoun",
+        "CLASS": "NOUN"
+    },     
+    {
+        "POS": "WRB",
+        "DESC": "Wh-adverb",
+        "CLASS": "ADVERB"
+    },
+    {
+        "POS": "DNU",
+        "DESC": "Do not use",
+        "CLASS": "NA"
+    }        
+ ]
+

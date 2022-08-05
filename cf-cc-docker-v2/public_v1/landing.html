@@ -1,0 +1,74 @@
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="public/css/ui-switch/angular-ui-switch.min.css"/> 
+    <link rel="stylesheet" href="public/css/remodal/remodal.css">
+    <link rel="stylesheet" href="public/css/remodal/remodal-default-theme.css">
+    <link href="public/css/main.css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+	<div class="main" ng-controller="landingCtrl">    
+         	<div class="container">
+			<div class="header-row">
+          			<div class="header-container">
+              				<img class="header-left" src="public/img/logo.png" />
+              				<h1 class="post-h1">Content Clarifier</h1>
+                			<p>
+                    			This app serves as a demo for the IBM AbilityLab&trade; Content Clarifier API, a Cognitive Computing effort to perform content simplification, summarization, and 						enhancement.
+                			</p>
+              				<div style="clear: both"></div>      
+          			</div>
+  
+    			</div>          
+             
+  			<hr class="post-hr"/>  
+ 			</br>
+  
+			<div class="description-div">  
+				<p style="text-align:left;">The IBM AbilityLab&trade; Content Clarifier is a callable API that builds upon IBM Watson deep learning APIs to include a service that 					dynamically simplifies, summarizes or enhances content to increase comprehension. In the demo, there are three modes of output:  
+				<br />
+    				<br /><b>Simplified</b>: Lexical and grammatical manipulation is performed to improve comprehension. Non-literal expressions such as idioms and colloquialisms are also 				replaced with their simple English counterparts. Simplified mode also supports enabling <b>"enhanced content"</b>, which returns simple English definitions, as well as 				additional information about identified topics. 
+				<br /><br />
+				<b>Condensed</b>: Content is summarized for quick reading.
+				<br /><br /><b>Ultra-Mode</b>: A second pass of simplification is performed on summarized content.
+				</p> 
+
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>    
+    				<p>Accessing to the demo: <b>1.</b> If you don't have one already, create a Bluemix ID <a target="_blank"; ="text-decoration:none; color: #2eceee;" 
+				href="https://console.ng.bluemix.net/registration/?cm_mc_uid=38842987935314724759981&cm_mc_sid_50200000=1474646647">here</a>. 
+				<b>2.</b> Send an email to <a style="text-decoration:none; color: #2eceee;" href="mailto:scottw1@us.ibm.com?subject=IBM AbilityLab Content Clarifier 					Demo">scottw1@us.ibm.com</a> with your Bluemix ID, requesting access.
+				</p>    
+			</div>
+        
+ 
+        
+			<div class="documentation-demo-cta button-cont">
+         			<!-- <a  ng-click="getModal();" href="" class="button">View documentation</a> -->
+
+          			<a  ng-click="videoRedirect();" href="" class="button">Watch an overview</a> 
+    				<a ng-click="loginRedirect();" href="" class="button">Try demo</a>
+          
+         			<!-- <a  ng-click="getModal();" href="" class="button">Use In Bluemix</a> -->
+ 			</div>
+
+		    </div>
+	      </div>
+        </div>
+
+  	<hr class="post-hr"/> 
+    	<img src="public/img/IBMsmall.png" class="img-ibm-landing">
+	
+ 	<div class="remodal" data-remodal-id="modal6" data-remodal-options="hashTracking: false">
+             	<button data-remodal-action="close" class="remodal-close"></button>      
+             	<h3>Page under development </h3>
+             	<button data-remodal-action="confirm" class="remodal-confirm">OK</button> 
+        </div>
+
+
+
+</body>

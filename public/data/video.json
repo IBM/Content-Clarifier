@@ -1,0 +1,8 @@
+{
+  "title": "Video",
+  "description": "Watch the overview of the Content Clarifier",
+  "items":{
+    "youtubeVideoId": "MxmGuhG9c1k",
+    "poster": "public/images/blank.png"
+  }
+}

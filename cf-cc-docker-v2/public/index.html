@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="aashuApp" ng-controller="initAashuAppPage">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IBM Content Clarifier </title>
+    <link rel="shortcut icon" type="image/png" href="images/blank.png"/>
+
+    <!-- CSS Files -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Montserrat:400,700" rel="stylesheet">    
+    <link href="public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/assets/slick/slick/slick.css" rel="stylesheet">
+    <link href="public/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="public/assets/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
+    <link href="public/css/color-blue.css" ng-href="{{ page.themeColor }}" rel="stylesheet">
+    <link href="public/css/responsive.css" rel="stylesheet">
+    <link href="public/css/preview.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="home" data-spy="scroll" data-target=".navbar" data-offset="61">
+    <!-- Preloader -->
+    <div class="preloader-wrapper">
+      <div class="loader"></div>
+    </div>
+    <!-- End Preloader -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top transperant-header" data-spy="affix" data-offset-top="61">
+      <!-- Search -->
+      <div class="block-search collapse" id="block-search" ng-if="navbar.items.isSearchActive">
+        <div class="container">
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control input-lg" placeholder="Enter search keyword...">
+              <span class="input-group-btn">
+                <button class="btn btn-lg" type="button">
+                  <i class="fa fa-search">
+                    <span class="sr-only">Search</span>
+                  </i>
+                </button>
+              </span>
+            </div><!-- /input-group -->
+          </form>
+        </div>
+      </div>
+      <!-- End Search -->
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle btn collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" >
+            <i class="fa fa-bars" tabindex="1" style="outline-color:black"></i>
+          </button>
+          <a class="navbar-brand page-scroll" href="#" ng-href="" ng-click="reload()" >
+            <!--img src="images/blank.png" ng-src="{{ navbar.items.logoTransperant }}" alt="Logo"   data-logo-white="{{ navbar.items.logoTransperant }}" / --> <!-- added by Sushank -->
+	    Content Clarifier
+          </a>
+        </div>
+        <div class="navbar-right navbar-extra" ng-if="navbar.items.isSearchActive">
+          <a href="#block-search" class="btn btn-transparent navbar-btn" data-toggle="collapse" data-target="#block-search">
+            <i class="fa fa-search">
+              <span class="sr-only">Search</span>
+            </i>
+          </a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li ng-repeat="item in navbar.items.mainMenu"><a class="{{ item.class }}" href="#" ng-href="{{ item.url }}" target="{{ item.target }}">{{ item.title }}</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- Megaslider -->
+    <section id="mega-slider">
+      <slick settings="megaslider.slickConfig" class="preload darken">					
+        <div slick-slide class="slide-item" ng-repeat="item in megaslider.items" ng-style="{'background-image': 'url(' + item.background + ')'}">
+          <div class="caption">
+            <h2>{{ item.title }}</h2>
+            <p class="lead">{{ item.description }}</p>
+            <p><a class="btn btn-lg btn-white btn-round-lg depth-xl-hover" target="{{ item.target }}" href="#" ng-href="{{ item.buttonUrl }}">{{ item.buttonLabel }}</a></p>
+          </div><!-- caption -->					
+        </div>																				
+      </slick><!-- intro -->
+    </section>
+    <!-- End Megaslider -->
+    <!-- Features -->
+    <section id="features" class="block">
+      <div class="container">
+        <div class="text-center block-title">
+          <h2>{{ features.title }}</h2>
+          <p class="lead" ng-bind-html=features.description ></p>
+        </div>
+        <div class="row">
+          <div class="row-height">
+            <div class="col-md-8 col-sm-8 col-sm-height col-sm-top">
+              <div class="grid-icon-item icon-right" ng-repeat="item in features.items.left">
+                <img style="height:10%; width:10%" ng-src="{{ item.iconClass }}"></img>
+                <h4 class="h5">{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+            <div class="col-md-4 hidden-sm hidden-xs col-sm-height col-sm-middle">
+              <figure class="feature-image">
+                
+                <img src="images/blank.png" ng-src="{{ features.items.center.src }}" width="240" height="480" alt="{{ features.items.center.alt }}" class="img-responsive center-block">
+              </figure>
+            </div>
+            <div class="col-md-8 col-sm-8 col-sm-height col-sm-top">
+              <div class="grid-icon-item icon-left" ng-repeat="item in features.items.right">
+                <img style="height:10%; width:10%" ng-src="{{ item.iconClass }}"></img>
+                <h4 class="h5">{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- End Features -->
+    <!-- Video -->
+    <section class="block secondary video" id="video">
+      <div class="container">
+        <div class="block-title text-center">
+          <h2>{{ video.title }}</h2>
+          <p class="lead">{{ video.description }}</p>
+        </div>
+        <!-- 4:3 aspect ratio -->
+        <div class="row">
+          <div class="col-sm-offset-2 col-sm-8">
+            <div class="embed-responsive embed-responsive-16by9 depth-xl" ng-style="{'background-image': 'url(' + video.items.poster + ')'}">
+              <a href="javascript:void(0);" class="videoPoster"><i class="fa fa-play"></i></a>
+              <!-- iframe class="embed-responsive-item hide" data-src="{{ youtubeEmbedUrl(video.items.youtubeVideoId) }}"></iframe -->
+              <iframe width="560" height="315" src="{{ youtubeEmbedUrl(video.items.youtubeVideoId) }}" frameborder="0"></iframe> <!-- added by Sushank -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Video -->
+    <!-- Screenshots -->
+    <!--section class="block odd" id="screenshots">
+      <div class="container-fluid">
+        <div class="block-title text-center">
+          <h2>{{ screenshots.title }}</h2>
+          <p class="lead">{{ screenshots.description }}</p>
+        </div>
+        <slick settings="screenshots.slickConfig" class="app-screenshots row preload darken">
+          <img src="images/blank.png" width="308" height="547" ng-repeat="item in screenshots.items" ng-src="{{ item.src }}" alt="{{ item.alt }}" class="img-responsive" />
+        </slick>
+      </div>
+    </section>
+    <!-- End Screenshots -->
+    <!-- Testimonials -->
+    <section class="block" id="testimonials">
+      <div class="container">
+        <div class="block-title text-center">
+          <h2>{{ testimonials.title }}</h2>
+          <p class="lead">{{ testimonials.description }}</p>
+        </div>
+        <slick settings="testimonials.slickConfig"  class="testimonials">
+          <div class="testimonial" ng-repeat="item in testimonials.items">
+            <div class="content">
+              <p>{{ item.testimonial }}</p>
+            </div>
+            <img width="72" height="72" src="images/blank.png" class="img-circle center-block" ng-src="{{ item.picture }}" alt="{{ item.name }}">
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.designation }}</p>
+          </div>
+        </slick>
+      </div>
+    </section>
+    <!-- End Testimonials -->
+    <!-- Downloads -->
+    <!--section class="block odd download" id="download">
+      <div class="container">
+        <div class="block-title text-center">
+          <h2>{{ downloads.title }}</h2>
+          <p class="lead">{{ downloads.description }}</p>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-offset-2 col-md-4 col-sm-6">
+            <a href="#" ng-href="{{ downloads.items[0].url }}" class="btn btn-icon btn-solid depth-xl-hover">
+              <i class="{{ downloads.items[0].iconClass }}" aria-hidden="true"></i> 
+              {{ downloads.items[0].text }}
+              <span>{{ downloads.items[0].smallText }}</span> 
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <a href="#" ng-href="{{ downloads.items[1].url }}" class="btn btn-icon btn-solid depth-xl-hover">
+              <i class="{{ downloads.items[1].iconClass }}" aria-hidden="true"></i> 
+              {{ downloads.items[1].text }}
+              <span>{{ downloads.items[1].smallText }}</span> 
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Downloads -->
+    <!-- Pricing -->
+    <!--section class="block secondary pricing" id="pricing">
+      <div class="container">
+        <div class="block-title text-center">
+          <h2>{{ pricing.title }}</h2>
+          <p class="lead">{{ pricing.description }}</p>
+        </div>
+        <div class="row">
+          <div class="row-height">
+            <div ng-repeat="item in pricing.items" class="col-sm-8 col-sm-offset-2 col-md-4 col-md-height col-md-middle">
+              <div class="plan-single f-plan depth-xl">
+                <div class="pricing-header">
+                  <h4 class="no-margin">{{ item.plan.title }}</h4>
+                  <p class="no-margin">{{ item.plan.subtitle }}</p>
+                </div>
+                <div class="price">
+                  <div>
+                    {{ item.plan.price }}<sub class="duration">/{{ item.plan.duration }}</sub>
+                  </div>
+                </div>
+                <div class="pricing-content">
+                  <ul class="list-unstyled">
+                    <li ng-repeat="feature in item.plan.features">{{ feature.property }} <span ng-bind-html="feature.value"></span></li>
+                  </ul>
+                  <div>
+                    <a href="#" ng-href="{{ item.button.url }}" class="btn btn-icon btn-solid btn-block no-border-radius">
+                      <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                      {{ item.button.text }}
+                      <span>{{ item.button.smallText }}</span>
+                    </a>
+                  </div>
+                </div>
+              </div><!-- Plan Single Ends>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End pricing -->
+     <!-- Contact -->
+    <section class="block secondary contact" id="contact">
+      <div class="block-title text-center">
+        <h2>{{ contact.title }}</h2>
+        <!--div class="lead" ng-bind-html=contact.description ></div-->
+      </div>
+      <div class="container secondary">
+        <div class="row text-center contact-items">
+          <div class="row-height">
+            <!--div class="col-sm-3 contact-item col-sm-height col-sm-middle">
+              <p><i class="icon icon-phone"></i></p>
+              <p><a href="#" ng-href="tel:{{ contact.items.phone }}"style="color:white">{{ contact.items.phone }}</a> </p>
+            </div-->
+            <div class="col-sm-3 contact-item col-sm-height col-sm-middle">
+              <p><i class="icon icon-location-pin"></i></p>
+              <p id="address">{{ contact.items.address }}</p>
+            </div>
+            <div class="col-sm-3 contact-item col-sm-height col-sm-middle">
+              <p><i class="icon icon-envelope"></i></p>
+              <p ><a href="#" ng-href="mailto:{{ contact.items.mail }}" style="color:white">{{ contact.items.mail }}</a></p>   
+            </div>
+            <div class="col-sm-3 contact-item col-sm-height col-sm-middle">
+              <p><i class="icon icon-paper-plane"></i></p>
+              <p><a href="http://www.ibm.com/able" target="_blank" style="color:#fff; visited:#fff">IBM Accessibility Research</a></p>   
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="map row"></div>
+      </div>
+    </section>
+
+
+    <!-- End Contact -->
+    <!-- Subscribe -->
+    <!--section class="block secondary  subscribe" id="subscribe" >
+      <div class="container" >
+        <div class="block-title text-center">
+          <h2>{{ subscribe.title }}</h2>
+         
+        </div>
+
+	<div class="form-group lead" >
+             <form name="subscribeForm" novalidate ng-submit="subscribeSubmit()" style="width:50%">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" style="font-weight:bold; font-size:16px !important;" placeholder="Enter your first and last name" name="fullname"
+		 ng-model="subscribeModel.fullname" required />
+                </br>
+                <label class="lead" ng-show="subscribeForm.fullname.$invalid && !subscribeForm.fullname.$pristine"><b>Enter your full name.</b></label>
+                </br><br/>
+		<label for="email">Bluemix ID</label>
+		
+                <input type="email" class="form-control" id="email" style="font-weight:bold; font-size:16px !important;" placeholder="Enter your valid email..." name="email" 
+		ng-model="subscribeModel.email" required />
+		</br>
+                <label  class="lead" ng-show="subscribeForm.email.$invalid && !subscribeForm.email.$pristine" ><b>Enter a valid email address.</b></label>
+                
+              </div>
+              
+	    
+               <b class="lead" ng-bind-html=subscribe.description style="font-weight:bold; font-color:white !important'"> </b>
+
+	       <a class="lead" target='_blank'; style="color:#fff; visited:#fff; font-weight:bold;"
+		 href='https://console.ng.bluemix.net/registration/?cm_mc_uid=38842987935314724759981&cm_mc_sid_50200000=1474646647'>Click <u>here</u>.</a>
+
+		<br/><br/>
+			<span class="input-group-btn">
+
+		          <button class="btn btn-lg btn-default" type="submit" ng-disabled="subscribeForm.$invalid">Submit</button>
+
+		        </span>
+
+                        <div style=" font-weight:bold;"  ng-if="subscribeResponse.statusText=='OK'" class="alert alert-{{ subscribeResponse.statusText }}" role="alert" ng-bind-html=successMessage>
+		        	
+		      </div>
+			
+		</form>
+       </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Subscribe -->
+    <!-- Footer -->
+    <!--footer>
+      <div class="container">
+        <div class="row">
+          <!-- Footer Menu Area Start>
+          <div class="col-md-8">
+            <div class="block">
+              <ul class="footer-nav list-unstyled">
+                <li ng-repeat="item in footer.items.footerLinks">
+                  <a href="#" ng-href="{{ item.url }}" title="{{ item.title }}" target="{{ item.target }}">
+                    {{ item.title }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="block footer-text">
+              <p ng-bind-html="footer.items.copyText"></p>
+            </div>
+          </div>
+          <!-- Footer Social Area Start -->
+          <!--div class="col-md-4">
+            <div class="block footer_social_area">
+              <a ng-repeat="item in footer.items.socialLinks" href="#" ng-href="{{ item.url }}" title="{{ item.title }}" target="{{ item.target }}">
+                <i class="{{ item.class }}"><span class="sr-only">{{ item.title }}</span></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+    <!-- Contact form -->
+    <div class="modal fade" id="sendMessage" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-sm" role="document">
+        <form name="contactForm" class="" novalidate ng-submit="contactSubmit()">
+          <div  class="contact-form modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Send message</h4>
+            </div>
+            <div class="modal-body">
+              <div ng-if="contactResponse.message" class="alert alert-{{ contactResponse.status }}" role="alert">
+                {{ contactResponse.message }}
+              </div>
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name..." name="fullname" ng-model="contactModel.fullname" required />
+                <label class="text-danger" ng-show="contactForm.fullname.$invalid && !contactForm.fullname.$pristine">Enter your full name.</label>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email address..." name="email" ng-model="contactModel.email" required>
+                <label ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="text-danger">Enter a valid email address.</label>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message..." name="message" ng-model="contactModel.message" required></textarea>
+                <label class="text-danger" ng-show="contactForm.message.$invalid && !contactForm.message.$pristine">Enter your message.</label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-lg btn-block btn-solid depth-xl-hover" ng-disabled="contactForm.$invalid">Send message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End contact form -->
+
+    <!-- Back to top -->
+    <a href="#home" class="page-scroll scroll-top depth-xl-hover" data-spy="affix" data-offset-top="100">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+    <!-- End Back to top -->
+    
+    <!-- This is for preview only -->
+    <div class="color-schemes">
+      <ul class="content list-unstyled collapse" id="color-schemes">
+        <li class="blue">
+          <a ng-click="page.themeColor = 'css/color-blue.css'" href="javascript:void(0);">
+            <span class="primary"></span><span class="secondary"></span>
+          </a>
+        </li>
+        <li class="purple">
+          <a ng-click="page.themeColor = 'css/color-purple.css'" href="javascript:void(0);">
+            <span class="primary"></span><span class="secondary"></span>
+          </a>
+        </li>
+        <li class="green">
+          <a ng-click="page.themeColor = 'css/color-green.css'" href="javascript:void(0);">
+            <span class="primary"></span><span class="secondary"></span>
+          </a>
+        </li>
+        <li class="yellow">
+          <a ng-click="page.themeColor = 'css/color-yellow.css'" href="javascript:void(0);">
+            <span class="primary"></span><span class="secondary"></span>
+          </a>
+        </li>
+        <li class="red">
+          <a ng-click="page.themeColor = 'css/color-red.css'" href="javascript:void(0);">
+            <span class="primary"></span><span class="secondary"></span>
+          </a>
+        </li>
+      </ul>
+      <!--a href="javascript:void(0);" data-toggle="collapse" data-target="#color-schemes" class="btn-colors"><i class="fa fa-sliders" aria-hidden="true"></i></a-->
+    </div>
+
+    <!-- Javascript files -->
+    <script src="public/assets/jquery/jquery.min.js"></script>
+    <script src="public/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="public/assets/angularjs/angular.min.js"></script>
+    <script src="public/assets/angularjs/angular-sanitize.min.js"></script>
+    <script src="public/assets/angularjs/angular-route.js"></script>
+    <script src="public/assets/slick/slick/slick.min.js"></script>
+    <script src="public/assets/angular-slick/dist/angular-slick.min.js"></script>
+
+    <script src="public/js/jquery.aashu.js"></script>
+    <script src="public/js/app.js"></script>
+  </body>
+</html>

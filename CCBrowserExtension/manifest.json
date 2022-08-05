@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "CC Extention",
+    "version": "1.0",
+    "author": "Alberto Fung",
+    "browser_action":{
+      "default_popup": "popup.html"
+    },
+    "description": "IBM Ability Lab's Content Clarifier is an AI solution complemented by IBM Watson, to make reading, writing, and comprehending content easier.",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "contextMenus"
+    ],
+
+    "icons": {
+      "16" : "images/icon.png",
+      "48" : "images/icon.png",
+      "124": "images/icon.png"
+    },
+
+    "background": {
+      "persistent": true,
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content/lib/utils.js", "content.js"],
+          "css": ["css/styles.css"],
+          "run_at": "document_start"
+        }
+      ],
+      "web_accessible_resources": [
+        "images/*.png"
+      ]
+}

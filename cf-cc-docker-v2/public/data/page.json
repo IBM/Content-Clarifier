@@ -1,0 +1,7 @@
+{
+  "themeColor": "blue",
+  "gmapKey": "AIzaSyDweaZqTabMZxIiMHVTiFhNDjabhUYW1kM",
+  "contactEmail": "scottw1@us.ibm.com",
+  "contactSubject": "New message from {{ fullname }}",
+  "contactMessage": "Hi,\n\nYou have new message from {{ fullname }} as follow:\n\n{{ message }}\n\n"
+}

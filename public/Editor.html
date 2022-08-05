@@ -1,0 +1,778 @@
+<html lang="en" ng-app="myApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Content Clarifier Editor</title>
+
+    <!-- CSS Files -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i|Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/remodal/jquery-ui.css">
+    <link href="public/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/assets/bootstrap-toggle/css/bootstrap2-toggle.min.css" rel="stylesheet">
+    <link href="public/assets/slick/slick/slick.css" rel="stylesheet">
+    <link href="public/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="public/assets/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="public/css/style.css" rel="stylesheet">
+    <link href="public/css/color-blue.css" rel="stylesheet">
+    <link href="public/css/responsive.css" rel="stylesheet">
+    <link href="public/css/preview.css" rel="stylesheet">
+    <link href="public/css/main.css" rel="stylesheet">
+    <link href="public/css/editor.css" rel="stylesheet" />
+    <link href="public/css/remodal/remodal.css" rel="stylesheet">
+    <link href="public/css/remodal/remodal-default-theme.css" rel="stylesheet">
+    <link href="public/css/angular-material.css" rel="stylesheet">
+    <link href="public/css/angular-ui-switch.min.css" rel="stylesheet">
+    <link href="public/css/angular-ui-switch.css" rel="stylesheet">
+    <link rel="stylesheet" href="public/assets/angularjs/angularjs-color-picker/dist/angularjs-color-picker.min.css" />
+<!-- only include if you use bootstrap -->
+    <link rel="stylesheet" href="public/assets/angularjs/angularjs-color-picker/dist/themes/angularjs-color-picker-bootstrap.min.css" />
+    <script src="public/assets/html-docx/dist/html-docx.js"></script>
+    <script src="public/assets/speech-to-text/dist/watson-speech.js"></script>
+    <!-- window.fetch pollyfill for IE/Edge & Older Chrome/FireFox -->
+    
+    
+
+
+    <style>
+        .preloader-wrapper-currPage{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            /* background: #ffffff; */
+        }
+        .loader-currPage {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -60px;
+            border: 16px solid #f6f6f6; /* Light grey */
+            border-top: 16px solid #3b54ec; /* Blue */
+        }
+        .affix-top .navbar-collapse.in   {
+            background: #fff ;
+        }
+    </style>
+
+    <style>
+        .my-drop-zone { border: dotted 3px lightgray; }
+        .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+        .another-file-over-class { border: dotted 3px green; }
+
+        html, body { height: 100%; }
+    </style>
+
+
+</head>
+
+<body id="home" class="app" data-spy="affix" data-target=".navbar" data-offset="1000" ng-controller="editorCtrl">
+    
+<div class="main"  data-ng-init="init()" style="width:96%; margin-left:3%;  background-color:#fff;  ">
+    
+    <!--input  style="width:90%" type="range" min="{{ min }}"  ng-model="textSize" class="slider" value="{{ value }}" max="{{ max }}" tabindex="1"/><span class="small-letter" ng-style="{ fontSize: min + unit }">Aa </span> <span class="big-letter" ng-style="{ fontSize: max + unit }">Aa</span></div></div-->
+    <!-- Preloader -->
+    <div class="preloader-wrapper">
+        <div class="loader"></div>
+    </div>
+    <!-- End Preloader -->
+    
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="100" >
+
+        <div class="container">
+            <div class="navbar-header">
+                
+
+                <div class="navbar-brand page-scroll" href="#"  >Content Clarifier
+
+
+                   
+
+                    <i style="font-size: 15px"> v2.35 </i>
+
+                </div>
+                <button type="button" class="navbar-toggle btn collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar" >
+                    <i class="fa fa-bars" tabindex="1" style="outline-color:black"></i>
+                </button>
+
+            </div>
+            <!-- close navbar-header-->
+
+            <div class="navbar-right navbar-extra" ng-if="navbar.items.isSearchActive">
+                <a href="#block-search" class="btn btn-transparent navbar-btn" data-toggle="collapse" data-target="#block-search">
+                    <i class="fa fa-search">
+                        <span class="sr-only">Search</span>
+                    </i>
+                </a>
+            </div><!-- close navbar-right div-->
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--li><a tabindex="1" ng-click="reload()" target="{{ item.target }}" >Home</a></li-->
+                    <li ng-repeat="item in navbareditor.items.mainMenu">
+                        <a tabindex="1" class="{{ item.class }}" href="#" ng-href="{{ item.url }}" target="{{ item.target }}" id="{{ item.id }}" >{{ item.title }}</a>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <br><br>
+    <!------------------------------------ App Title Div ------------------------------------------------->
+    <!-- div class="container" -->
+    <!-- img src="public/img/power.png" ng-click="logout();" class="logout-img" title="Log out"-->
+    <!-- div class="container" -->
+    <!-- div class="post-input-textarea2"   ng-model=myText    ckeditor="editorOptions" contenteditable= true></div -->
+
+        <!------------------------------------ Left Div with CKEditor------------------------------------------------->
+        <br />
+    <!--div id="highlight" ng-show="highlightdivison"></div-->
+        
+        <div class="gdproverlay" id="gdproverlay" aria-hidden="true">
+               <div class="remodal" data-remodal-id="gdprmodal" data-remodal-options="hashTracking: false">
+            
+             
+            <br>
+            <div style="font-size:18px; text-align:justify;" >
+                <b>
+                    This website stores information on our servers related to how you interact with our website, which allows us to remember you and display customized content. By clicking Accept, you confirm that you understand this policy.
+
+
+
+                    <br> <br>No Personal Data is to be entered into this system as it may not have the necessary controls in place to meet the requirements of the General Data Protection Regulation (EU) 2016/679. 
+                </b>
+            </div>
+            <br>
+            <button  class="remodal-confirm" ng-click="acceptGDPR()">Accept</button>
+            <button  class="remodal-cancel" ng-click="rejectGDPR()">Decline</button>
+        </div>
+        </div>
+        <div class="overlay2" id="overlay2" aria-hidden="true">
+        <div class="wrapperoverlay" id="wrapperoverlay" aria-hidden="true">
+        <div class="overlay" id="overlay" aria-hidden="true">
+            <!-- Preloader -->
+            <div class="preloader-wrapper2" >
+              <div class="loader"></div>
+            </div>
+            
+             <!--div class="fademeOverlay"></div-->
+        <br>
+         <nav class="navbar navbar-default navbar-fixed-top" style="background:#dedede; z-index:12; margin:1%; padding:1%; border-radius:2% " data-spy="affix" data-offset-top="100" style="width:100%" >
+              
+            
+            <!--button ng-click="decrement()"  ng-disabled="qty<=0">-</button>
+            <input ng-model="qty" type='text' name='quantity'   style="max-width:5%"/>
+            <button ng-click="increment()">+</button-->
+       <div style="padding-left:2.5%">
+           <input type="image" tabindex="" title="Close Reading Mode"  ng-click="overlayOff()" class="close-overlay"  style="width:4vh;height:4vh; margin-right:2%; float:right"
+                       ng-src="public/images/close.png"/>
+         <div style="min-width:11%; width:auto; display:inline; float:left; border: 1px solid #696969; border-radius:6px; height:70px; ">
+              <div style=" width:100%; padding-left:10px "><b>Text Size: <span style="color:#3b54ec; font-weight:1000;">{{textSize}}</span></b></div>
+            
+            
+             <div class="rangecontainer" style="  width:100%; padding-top:10px; padding-right:15px;">
+                  <input class="slider" type="range" min="20" max="70" value="25" step="1" ng-model="textSize"  id="rangeInput" oninput="output.value = rangeInput.value" style="margin-top:9%; margin-bottom:9%">
+                  
+                  <!-- output id="output" for="rangeInput">50</output> <!-- Just to display selected value -->
+            </div>
+             <!--span class="small-letter" ng-style="{ fontSize: min + unit }">DISPLAY </span--> 
+             <!--span class="big-letter" ng-style="{ fontSize: max + unit }"></span-->
+            </div>
+               
+           <div ng-style="{ 'width' : width}" style="max-width:100%; min-height:70px; min-width:13%; height:5%;  display:inline;  !important; float:left; margin-left:1.25%;  border: 1px solid #696969; border-radius:6px; "> 
+               <div style=" width:100%; padding-left:10px"><b>Reading Focus: </b><span style="color:#3b54ec; font-weight:1000;">{{focusValue}}</span></div>
+            <div style="float:left; width:50%; padding:9px; display:block; margin:auto;" >
+                
+                <switch  name="enabled" ng-model="enableFocus" ng-change="focusChg()"  class="blue" style=" outline:none; margin:left:15%"></switch>
+            </div>
+                 
+                <!--input type="checkbox" id="enableFocus"   data-toggle="toggle" data-width="100" data-height="40"-->
+           
+            <!--label class="switch" >
+                      <input type="checkbox" ng-model="enableFocus" ng-change="focusChg()">
+                      <span class="slider round"></span>
+            </label-->
+               
+            <!--b>Highlight-Lines:</b><br-->
+                    <!--button  ng-show="enableFocus" ng-click="setFocus(1)" style=" margin-left:5%; " >Focus1</button-->
+               <div style="float:right; display:inline; width:50%">
+                    <input type="image" tabindex="" title=" Showing highlighted line of text"  ng-show="enableFocus && focusline==1"     style="width:4vh;height:4vh; margin-left:3%; margin-top:10%;"
+                       ng-src="public/images/one-line-on.png"/>
+                    <input type="image" tabindex="" title="Highlight line of text"  ng-show="focusline==2.1" ng-click="setFocus(1)"    style="width:4vh;height:4vh; margin-left:3%; margin-top:10%;"
+                       ng-src="public/images/one-line-off.png"/>
+                    <input type="image" tabindex="" title="Highlight block of text"  ng-show="enableFocus && focusline==1" ng-click="setFocus(2.1)"    style="width:4vh;height:4vh; margin-left:3%;"
+                       ng-src="public/images/block-off.png"/>
+             
+                    <input type="image" tabindex="" title="Showing highlighted block of text"  ng-show="focusline==2.1"     style="width:4vh;height:4vh; margin-left:3%;"
+                       ng-src="public/images/block-on.png"/>
+                </div>
+                    <!--button   ng-click="setFocus(2)" style="margin-left:1%">Focus2</button-->
+                    <!--button  ng-show="enableFocus" ng-click="setFocus(3)"style="margin-left:1%" >Focus3</button-->
+             
+             </div>
+           
+            <div  style="max-width:100%; min-height:70px; min-width:10.5%; height:5%;  display:inline;  !important; float:left; margin-left:1.25%;  border: 1px solid #696969; border-radius:6px;  "> 
+               <div style=" width:100%; padding-left:3px; "><b>Show Syllables: </b><span style="color:#3b54ec; font-weight:1000;">{{syllablesValue}}</span></div>
+            <div style="float:left; width:50%; padding:9px; display:block; margin:auto;" >
+                
+                <switch  name="enabled" ng-model="enableSyllables" ng-change="syllablesON()"  class="blue" style=" outline:none; margin:left:15%"></switch>
+                </div></div>
+            
+            <!--button id="scrollup" ng-click="scrollup()" >Up</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="scrolldown" ng-click="scrolldown()">Down</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+           <!--div style="width:20%; display:inline; float:left; margin-left:1%; " ng-show="enableFocus"> 
+            <!--b>Highlight-Lines:</b><br>
+            <button   ng-click="setFocus(1)" style="margin-top:9%" >Focus1</button>
+            <button   ng-click="setFocus(2)" style="margin-left:1%">Focus2</button>
+            <button   ng-click="setFocus(3)"style="margin-left:1%" >Focus3</button>
+             </div--> 
+           
+                <div style="min-width:11%; width:auto; display:inline; float:left; border: 1px solid #696969; border-radius:6px; height:70px; margin-left:1.25%; ">
+                    <div style=" width:100%; padding-left:10px "><b>Reading Speed:</b> <span style="color:#3b54ec; font-weight:1000;">{{speedRate}}</span></div>
+            
+            
+             <div class="rangecontainer" style="  width:100%; padding-top:10px; padding-right:15px">
+                  <input class="slider" type="range" min="0.5" max="1.5" value="0.7" step="0.1" ng-model="speedRate"  id="speedInput" oninput="output.value = speedInput.value" style="margin-top:9%; margin-bottom:9%">
+                  
+                  <!-- output id="output" for="rangeInput">50</output> <!-- Just to display selected value -->
+            </div>
+             
+            </div>
+             <div style="max-width:70%; height:70px; min-width:10px;   float:left; margin-left:1.25%; border: 1px solid #696969; border-radius:6px; ">  
+                <!--div style=" width:100%; padding-left:10px; padding-right:10px"><b>Read Text</b></div-->
+            
+            <!--switch id="enabled" name="enabled" ng-model="enableSpeech"  class="blue" style="outline:none;"></switch-->
+            <input type="image" id="playAudio" tabindex="" title="Play Audio"  ng-hide="enableSpeech" ng-click="speakText()"    style="width:65px;height:65px;  padding:10px; margin-top:2px "
+                       ng-src="public/images/playaudio.png"/>
+            <input type="image" id="stopAudio" tabindex="" title="Stop Audio"  ng-show="enableSpeech" ng-click="stopAudio()"    style="width:65px;height:65px;  padding:10px"
+                       ng-src="public/images/pauseaudio.png"/>
+                 
+             
+               
+            
+            <!-- input type="range" min="1" max="6" value="3" step="1" ng-model="speechSpeed"  ng-show="enableSpeech" list="tickmarks" id="rangeInput" oninput="output.value = rangeInput.value" style="float:right; max-width:50% !imporant;"-->
+             </div>
+             <audio  class="audioDiv" id="audio" preload="metadata" style="visibility:visible; width:32%;" controls >
+                    <source  type="audio/ogg"/>
+                    Your browser does not support the audio element.
+                </audio>
+           
+        
+            <!--button ng-click="overlayOff()" class="close-overlay" style="float:right; margin-right:6%">Close</button-->
+            
+          </div>   
+        </nav> 
+<!--color-picker
+    ng-model="color"
+    options="options"
+    api="api"
+    event-api="eventApi"
+></color-picker-->
+            <br><br><br>
+            <div class="overlay-parent-div"  style="margin: 0 0" id="overlay-parent-div" ></div>
+            <!--div class="arrows-div"  style="margin: 0 0" id="arrows-div" ><button ng-click="scrolldown()" style="position:fixed; z-index:12">Down</button></div-->
+            <!--div  class="post-input-div"  style="margin: 30vh 0" id="post-input-div"  ng-show="areainput() && !OutputModeActive"  ng-model=myText   ckeditor="editorOptions" contenteditable= true></div-->
+            <!--div class="post-output-div" style="margin: 33vh 0" id="post-output-div" ng-hide="ShowSideBySide" ng-bind-html="outputcontext"></div-->
+           
+            <!--div id="highlight"></div-->
+ 
+            <div class="overlay3" id="overlay3" aria-hidden="true"></div>
+            
+            </div>
+            
+        </div>
+            
+            
+    </div>
+        <div  class="editor_contents_input" >
+            
+            <!--div class="fadeMe1" id="fademe1">        </div>
+  <div class="fadeMe2"></div>
+  <div class="fadeMe3" id="fademe3"><form id='myform' style="margin-left:500px;margin-top:270px; z-index:11;">
+                <button ng-click="decrement()" class='qtyminus' ng-disabled="qty<=0">-</button>
+                <input ng-model="qty" type='text' name='quantity' class='qty'  style="max-width:10%"/>
+                <button ng-click="increment()">+</button>
+                <button ng-click="addSpacing()">Add spacing</button>
+                <button ng-click="scrolldown()">Scroll</button>
+                <a style="float:right"  href=""  ng-show="ShowSideBySide" ng-click="HideOriginal()" > Hide Original</a>
+            <a style="float:right"  href=""  ng-show="ShowDefault" ng-click="ShowOriginal()"> Show Original</a>
+            </form> </div-->
+            <div style="display:inline-block; width:100%;" >
+                <input type="image" tabindex="1" title="Text Editor" ng-click="displayTextArea()" ng-hide="OutputModeActive" style="width:6vh;height:6vh; margin:10px"
+                       src="public/images/actions/write_on.png" ng-src="{{TextInputImg}}" alt="Text" id="text_btn"/>
+                
+                <input type="image" tabindex="2" title="Speech to Text" ng-click="displaySpeechToTextArea()" ng-hide="OutputModeActive" style="width:6vh;height:6vh; margin:10px;"
+                       ng-src="{{microphoneImage}}" alt="Speech to Text" id="mic_btn"/>
+                <input type="image" tabindex="3" title="File Upload" ng-click="displayUploadArea()" ng-hide="OutputModeActive" style="width:6vh;height:6vh; margin:10px"
+                       src="public/images/actions/open_file_disabled.png" ng-src="{{DocInputImg}}" alt="Upload File" id="file_btn"/>
+                <input type="image" tabindex="4" title="Url Entry" ng-click="displayURLArea()" ng-hide="OutputModeActive" style="width:6vh;height:6vh; margin:10px"
+                       src="public/images/actions/url_entry_disabled.png" ng-src="{{UrlInputImg}}" alt="URL" id="url_btn"/>
+
+
+                <input type="image" tabindex="8" title="Print Text" ng-show="areainput() || OutputModeActive"  ng-click="printElem()" ng-hide="" style="width:6vh;height:6vh; margin:10px; float:right"
+                       ng-src="public/images/print.png" id="print_btn"/>
+                <input type="image" tabindex="7" title="Download Text" ng-show="areainput() || OutputModeActive"  ng-click="download()" ng-hide="" style="width:6vh;height:6vh; margin:10px; float:right"
+                       ng-src="public/images/download.png" id="download_btn"/>
+                <!--input type="image" tabindex="6" title="Text to Speech" ng-show="areainput() || OutputModeActive"  ng-click="speakText()" ng-hide="" style="width:6vh;height:6vh; margin:10px; float:right"
+                       ng-src="public/images/speak.png"/-->
+                <input type="image" tabindex="5" title="Statistics" ng-show="areainput() || OutputModeActive"  ng-click="showStatistics()" ng-hide="" style="width:6vh;height:6vh; margin:10px; float:right"
+                       ng-src="public/images/stats.png" id="stats_btn"/> 
+                <input type="image" tabindex="5" title="Reading Mode" ng-show="(readingMode && !isSafari)" ng-click="overlayOn()" class="open-overlay"   style="width:6vh;height:6vh; margin:10px; float:right"
+                       ng-src="public/images/reading_mode.png" id="readingmode_enabled"/>
+                <input type="image" tabindex="5" title="Reading Mode" ng-hide="readingMode && !isSafari" ng-click="showReadingModeMessage()" class="open-overlay"   style="width:6vh;height:6vh; margin:10px; float:right"
+                       ng-src="public/images/reading_disabled.png" id="readingmode_disabled"/>
+
+            </div>
+            <br>
+
+            <!---------------------------CKEditor Toolbar Div---------------------------->      
+            
+            <div ng-show="speechToTextDivVisible" class=""  > 
+                <button id="" ng-class="miccss"  ng-click="startOrStopRecording ()" ><img ng-src={{micImg}} class="micimgcss" title="Toggle to start and stop recording your speech">{{micText}} </button>   
+            </div>
+            <br ng-show="speechToTextDivVisible" />
+            <div id="toolbarLocation" ng-show="areainput() && !OutputModeActive" >
+                
+            </div>
+            <div   class="show-mode"  ng-show="OutputModeActive" ng-bind-html=analyzeMode >
+            </div>
+            <br  ng-show="closeActive()"/>
+            <br>
+            
+            <!--form id='myform' style="z-index:100;"> </form-->
+                <!--button ng-click="decrement()" class='qtyminus' ng-disabled="qty<=0">-</button>
+    
+                <input ng-model="qty" type='text' name='quantity' class='qty'  style="max-width:10%"/>
+                <button ng-click="increment()">+</button>
+                <button ng-click="addSpacing()">Add Spacing</button>
+                <button ng-click="removeSpacing()">Remove Spacing</button-->
+                 <!--button ng-click="overlayOn()" class="open-overlay">Reading Mode</button-->
+            <a style="float:right"  href=""  ng-show="ShowSideBySide" ng-click="HideOriginal()" > Hide Original</a>
+            <a style="float:right"  href=""  ng-show="ShowDefault" ng-click="ShowOriginal()"> Show Original</a>
+           
+            <!--div  ><input  style="width:90%" type="range" min="{{ min }}"  ng-model="textSize" class="slider" value="{{ value }}" max="{{ max }}" tabindex="1"/><span class="small-letter" ng-style="{ fontSize: min + unit }">Aa </span> <span class="big-letter" ng-style="{ fontSize: max + unit }">Aa</span></div-->
+
+            <!---------------------------Input Text or URL Div----------------------------->
+            <div  class="post-input-div on-focus-mode" id="post-input-div"  ng-show="areainput() && !OutputModeActive"  ng-model=myText tabindex="9"  ckeditor="editorOptions" contenteditable= true></div>
+            <div ng-show="urlInput()&& !OutputModeActive">
+                <md-input-container class="md-block"  active focus >
+                    <label style="font-size:22px;">Enter the URL of the text to be Analyzed</label>
+                    <input ng-model="urlTextBoxValue">
+
+                </md-input-container>
+                <p><b>Note: Longer web content usually take longer duration to Analyze</b></p>
+            </div>
+
+            <!---------------------------File Upload---------------------------->
+            <div  nv-file-drop="" uploader="uploader" filters="queueLimit, fileFilter, enforceMaxFileSize, customFilter"  ng-show="fileUpload()&& !OutputModeActive">
+                <div>
+                    <div>
+                        <h3>Choose a file or drag and drop  </h3>(Max size is 5MB, supported formats are pdf, doc, docx.)<br><br>
+                        <input type="file" nv-file-select="" style="font-size: 18px; width:auto"  uploader="uploader" /><br>
+                        <p> --or --</p>
+                        <div ng-show="uploader.isHTML5">
+                            <!-- 3. nv-file-over uploader="link" over-class="className" -->
+                            <div class="well my-drop-zone" style="height:100px" nv-file-over=""  uploader="uploader">
+                                 <h3>Drag and Drop here</h3>
+                            </div>
+                            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+                            <!--div nv-file-drop="" uploader="uploader" options="{ url: '/foo' }">
+                                    <div nv-file-over="" uploader="uploader" over-class="another-file-over-class" class="well my-drop-zone">
+                                            Another drop zone with its own settings
+                                    </div>
+                            </div-->
+                        </div>
+                    </div>
+
+                    <div ng-show="showTable()" style="margin-bottom: 40px">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th width="15%">Name</th>
+                                <th width="10%" ng-show="uploader.isHTML5">Size</th>
+
+                                <th width="15%" ng-show="uploader.isHTML5">Progress</th>
+                                <th width="10%">Status</th>
+                                <th width="25%">Actions</th>
+                                <th width="25%">Comments</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td><strong>{{ item.file.name }}</strong></td>
+                                <td ng-show="uploader.isHTML5" nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
+
+                                <td ng-show="uploader.isHTML5">
+                                    <div class="progress" style="margin-top: 0;">
+                                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': item.progress + '%' }"></div>
+                                    </div>
+                                </td>
+                                <td class="text-center">
+                                    <div ng-show="item.isProcessing" class="upload-wrapper">
+                                                    <div class="progress-loader"></div>
+                                        </div>
+                                    <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                                    <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                                    <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                                </td>
+
+                                <td >
+                                    <button ng-hide="fileUploadSuccess()||removeUploadButton" type="button"  ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || 								item.isSuccess">
+                                        <span class="glyphicon glyphicon-upload"></span> Upload
+                                    </button>
+                                    <!--button type="button"  ng-click="item.cancel()" ng-disabled="!item.isUploading">
+                                           <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                   </button -->
+                                    <button type="button"  ng-click="removePanel(item)">
+                                        <span class="glyphicon glyphicon-trash"></span>&nbsp;Remove
+                                    </button>
+                                </td>
+                                <td>
+                                    <div ng-show="fileUploadSuccess()" ng-bind-html="statusMessage" style='color:green'> </div>
+                                    <!--div ng-show="fileUploadFailed()" ng-bind-html="statusMessage" style='color:red'> </div-->
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+                        <!--div>
+                        <div>
+                        </br></br>
+                        <!--div class="progress" style="">
+                                   <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
+                        </div>
+                        </div>
+                        </div-->
+
+                    </div>
+
+                    <div ng-show="fileUploadFailed()" ng-bind-html="statusMessage" style='color:red'> </div>
+                    <p><b>Note: Large files usually take more time to analyze.</b></p>
+                    <!--div ng-show="fileUploadSuccess()" ng-bind-html="statusMessage" style='color:green'> </div-->
+
+                </div>
+
+     </div>
+
+
+            <!---------------------------Output Text Div---------------------------->
+
+            <canvas  ng-show="labels" id="doughnut" chart-click="onClick" class="chart chart-doughnut"  chart-data="data" chart-labels="labels" chart-colours="colours"  height="70"></canvas><br><br>
+
+            <center>
+                <div ng-show="labels" class="button-label"   >
+                    <div class="btn-label" id="fearbox" style="background-color:#fceba5;" ></div><span style="margin-right:20px"> Joy</span>
+                    <div class="btn-label" id="joybox" style="background-color:#68aad4;"></div><span style="margin-right:20px"> Sad</span>
+                    <div class="btn-label" id="sadbox" style="background-color:#a6bba8;"></div><span style="margin-right:20px"> Fear</span>
+                    <div class="btn-label" id="angerbox" style="background-color:#f395a5;"></div><span style="margin-right:20px"> Anger</span>
+                    <div class="btn-label" id="disgustbox" style="background-color:#b6a6c1;"></div><span style="margin-right:20px"> Disgust</span>
+                </div>
+            </center>
+            <br>
+            <div class="post-input-div-half" style="text-align: center" ng-show="ShowSideBySide"><b>Original Text</b></div>
+            <div class="post-output-div-half" style="text-align: center"  ng-show="ShowSideBySide"><b>Analyzed Text</b></div>
+
+            <div class="post-input-div-half" id="post-input-div" ng-show="ShowSideBySide" ng-bind-html="myText"></div>
+
+            <div class="post-output-div-half" id="post-output-div-half" ng-show="ShowSideBySide" ng-bind-html="outputcontext"></div>
+
+            <div class="post-output-div" id="post-output-div" ng-hide="ShowSideBySide" ng-bind-html="outputcontext"></div>
+
+
+            <!--div>
+                    <div style="float: right; ">
+              <canvas id="doughnut" chart-click="onClick" class="chart chart-doughnut"  chart-data="data" chart-labels="labels" chart-colours="colours"  height="300px" >
+              </canvas>
+                 </div>
+              <div style="float: left; width:60%; ">
+                     <div id="post-emotions-div" class="post-output-div" ng-bind-html="outputcontextEmotions" style="float:left"  >
+
+                    </div>
+                </div>
+            </div-->
+            <!--div class="col-lg-12 col-md-12 col-sm-12">
+                <audio  class="audio" id="audio" preload="metadata">
+                    <source src="{{audiourl}}" type="audio/ogg"/>
+                    Your browser does not support the audio element.
+                </audio>
+            </div-->
+
+
+            <!---------------------------Show Animation for proress----------------->
+            <div class="preloader-wrapper-currPage" ng-show="showLoadingAnimation();" >
+                <div class="loader-currPage"></div>
+            </div>
+            <!-- input and output in single div-->
+            <!--div id="post-input-textarea2" class="post-input-textarea2" ng-bind-html="outputcontext"  ng-model=myText tabindex="3"  ckeditor="editorOptions" 						contenteditable= true > </div-->
+
+
+            <!--div style ="text-align: center; " >
+                <button style="width:25%; color:#3b54ec; background:#fff; border: solid #3b54ec 2px;  " type="submit" ng-click="condense();"><b>Analyze</b></button> <!-- 							Analyse BUTTON -->
+            <!--/div-->
+
+    </div> <!-- close editor contents div-->
+   
+
+        <!------------------------------------ Right Div with Editor Options ------------------------------------------------->
+        <div class="analyze_options_div">
+            <br>
+            <div ng-hide="OutputModeActive && !showTwirly" class="analyze_header">
+                <p href="" style ="color: #3b54ec;  " >Pick Analyze Option</p>
+            </div>
+            <div style="display:inline-block; " ng-show="OutputModeActive && !showTwirly" >
+                <a href=""  style ="color: #3b54ec;  " ng-click="undoAction();" tabindex="8" id="back_btn">
+                    <img type="image" style="width:35px; height:35px " title=""    src="public//images/actions/back.png"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Back to Edit Mode
+                </a>
+            </div>
+            <br  ng-show="OutputModeActive"><br>
+            <hr class="hrcss" style="color:F8F8F8; ">
+            <br>
+            <!---------------------------Analyze Options Left Row----------------->
+            <div class="analyzePart1">
+                <input type="image" ng-click="contextualSimplifyText(0, 0)" tabindex="9" title="Shows a easier to read version of the text"
+                       ng-hide="closeActive()"   src="public/images/actions/simplify.png" class="btn2" itemid="simplify_btn" alt="Submit"/>
+                <img  title="Shows a easier to read version of the text"   ng-show="closeActive()" src="public/images/actions/simplify_disabled.png" ng-src="{{simplifyBack}}" class="btn2"/>
+                <p style="color: #3b54ec; text-align:justify; ">Simplify</p>
+                <input type="image" tabindex="11" title="Creates a shorter version of the text that also has easier to read words" ng-click="condensesimplify();"
+                       ng-hide="closeActive()" src="public/images/actions/summarizeAndSimplify.png" class="btn2" itemid="ss_btn" alt="Submit"/>
+                <img  title="Creates a shorter version of the text that also has easier to read words"   ng-show="closeActive()" src="public/images/actions/summarizeAndSimplify_disabled.png"
+                      ng-src="{{simplifySummarizeBack}}" class="btn2"/>
+                <p style=" color: #3b54ec; text-align:Justify">Summarize-Simplify</p>
+                <input type="image"  tabindex="15" title="Shows emotion found in text" ng-click="emotionText()"  ng-hide="closeActive()" src="public/images/actions/show_emotions.png" 								class="btn2"  alt="Submit"/>
+                    <img  title="Shows emotion found in text"  ng-show="closeActive()"  src="public/images/actions/show_emotions_disabled.png" ng-src="{{emotionsBack}}" class="btn2" itemid="emotion_btn"/>
+                    <p style="color: #3b54ec; text-align:justify">Show Emotions</p>
+                
+                <div ng-show="showmore()";>
+                  <input type="image" tabindex="14" title=" Adds augmentative and altenative communication symbols to the text" ng-click="contextualSimplifyText(0, 3)"
+                       ng-hide="closeActive()" src="public/images/actions/show_symbols.png" class="btn2" alt="Submit"/>
+                <img  title="Adds augmentative and altenative communication symbols to the text"  ng-show="closeActive()" src="public/images/actions/show_symbols_disabled.png"
+                      ng-src="{{symbolsBack}}"  itemid="aac_btn" class="btn2"/>
+                <p style="color: #3b54ec; text-align:justify">AAC Symbols</p>
+                    <input type="image" tabindex="17" title="" ng-click="showMessage()" ng-show="opengrey()" src="public/images/actions/complex_phrases.png" 								class="btn2" alt="Submit"/>
+                    <img  title=""   ng-hide="opengrey()" ng-click="showMessage()" src="public/images/actions/complex_phrases_disabled.png" class="btn2" itemid="showM_btn"/>
+                    <p style="color: #3b54ec; text-align:justify">Complex Phrases</p>
+                    <!--input type="image" tabindex="19" title="" ng-click="showMessage()" ng-show="opengrey()" src="public/images/actions/syllables.png" id="btn" 								alt="Submit"/>
+                    <img  title=""   ng-hide="opengrey()" ng-click="showMessage()" src="public/images/actions/syllables_disabled.png"  id="btn"/>
+                    <p style="color: #3b54ec; text-align:justify">Show Syllables</p-->
+                </div>
+            </div>
+            <!---------------------------Analyze Options Right Row----------------->
+            <div class="analyzePart2">
+                <input type="image" tabindex="10" title=" Creates a shorter version of the text with key info" ng-click="condenceText();"
+                       ng-hide="closeActive()" src="public/images/actions/summarize.png" class="btn2"  itemid="summarize" alt="Submit"/>
+                <img  title="Creates a shorter version of the text with key info"  ng-show="closeActive()" src="public/images/actions/summarize_disabled.png" ng-src="{{summarizeBack}}" class="btn2"/>
+                <p style="color: #3b54ec; text-align:justify">Summarize</p>
+                <input type="image" tabindex="12" title="Adds Info about topics found in the text" ng-click="contextualSimplifyText(0, 1)"
+                       ng-hide="closeActive()" src="public/images/actions/show_topics.png" class="btn2" itemid="showT_btn" alt="Submit"/>
+                <img  title="Adds Info about topics found in the text"  ng-show="closeActive()" src="public/images/actions/show_topics_disabled.png" ng-src="{{topicsBack}}"  class="btn2"/>
+                <p style="color: #3b54ec; text-align:justify">Show Topics</p>
+                <input type="image" tabindex="13" title="Adds definitions for complex words in the text" ng-click="contextualSimplifyText(0, 2)"
+                       ng-hide="closeActive()" src="public/images/actions/show_definitions.png" class="btn2" itemid="showD_btn" alt="Submit"/>
+                <img  title="Adds definitions for complex words in the text"   ng-show="closeActive()" src="public/images/actions/show_definitions_disabled.png" ng-src="{{defintionsBack}}" class="btn2"/>
+                <p style="color: #3b54ec; text-align:justify">Show Definitions</p>
+                
+                <div  ng-show="showmore()";>
+                    <!--input type="image" tabindex="16" title="" ng-click="showMessage()" ng-show="opengrey()" src="public/images/actions/add_spaces.png" id="btn" ng-src="{{spacingBack}}"							alt="Submit"/>
+                    <img  title=""  ng-hide="opengrey()" ng-click="showMessage()" src="public/images/actions/add_spaces_disabled.png"  id="btn"/>
+                    <p style="color: #3b54ec; text-align:justify">Add Spacing</p-->
+                    
+                    <input type="image" tabindex="18" title="" ng-click="showMessage()" ng-show="opengrey()" src="public/images/actions/complex_words.png" class="btn2" 								alt="Submit"/>
+                    <img  title=""  ng-hide="opengrey()" ng-click="showMessage()" src="public/images/actions/complex_words_disabled.png" class="btn2"/>
+                    <p style="color: #3b54ec; text-align:justify">Complex Words</p>
+                    <input type="image" tabindex="20"  title="" ng-click="showMessage()" ng-show="opengrey()" src="public/images/actions/pos.png" class="btn2" 								alt="Submit"/>
+                    <img  title=""  ng-hide="opengrey()" ng-click="showMessage()" src="public/images/actions/pos_disabled.png" class="btn2"/>
+                    <p style="color: #3b54ec; text-align:justify">Parts of Speech</p>
+                    
+                </div>
+            </div>
+            <br>
+            <div  class="analyze_footer">
+                <a href=""  ng-hide="showmore()" ng-click="enableShowMore()" > Show More
+                <img style="width:10px; height:10px;" title=""   src="public/images/moreArrow.png"/>
+                </a>
+                <a href=""  ng-show="showmore()" ng-click="enableShowless()" > Show Less
+                    <img style="width:10px; height:10px; " title=""    src="public/images/lessArrow.png"/>
+                </a>
+            </div>
+        </div> <!-- end of Right Div with Editor options -->
+    </div>
+
+    <!--div class="wordcount" style ="color: #3b54ec; float:left;" >
+        <p>Word count</p>
+        <span ng-bind="countOf(myText)"></span>
+    </div>
+    <div class="paracount" style ="color: #3b54ec; float:right; padding-right:10px;">
+        <p  class="post-h4">Para count</p>
+        <span  ng-bind="paraOf(myText)"></span>
+    </div-->
+
+    <!--h3 class="highlightedText" ng-click="applyHtml('iphone')"><b>Highlight Iphone</b></h3-->
+    <!--h3 class="highlightedText" ng-click="applyHtml( 'the')"><b>Highlight THE</b></h3 -->
+    <!-- piece of code for Auto Highlight --->
+    <!-- span ng-bind="highlight(myText, 'iphone')"></span -->
+
+    <!-- div ng-mouseover="showPopover()" ng-mouseleave="hidePopover()">
+        more info
+    </div -->
+
+    <!--/br></br></br>
+           <div class="popover" ng-show="popoverIsVisible">Popover Content</div>
+        </br></br></br>
+        <span  tooltips tooltip-template="{{htmltooltip}}" tooltip-close-button="true" tooltip-hide-trigger="focus">{{text2}}</span>
+        <div dynamic="html"></div -->
+
+    <!------------------------------------ Sample Modal Popup ----------------------------------------------- -->
+    <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <!-- <h3 class="post-h3">Watson Identified Concept</h3> -->
+        <h2 class="displayname" > </h2>
+        <!-- WS <figure style="float:left"> -->
+        <figure>
+            <img style="display: block; margin-left: auto;  margin-right: auto; height:auto; max-height:40vh; width:auto; padding:200px ng-model="thumbnail" 							class="thumbnail" >
+        </figure>
+        <div align="justify">
+            <span ng-model="abstractDB"  class="abstract"></span>
+        </div>
+        <br>
+        <div  align="justify">
+            <span   class="relevance"></span>
+        </div>
+        <br>
+        <div align="justify">
+            <span   class="website"></span>
+        </div>
+        <div ng-show="response_data"></div>
+        <br>
+        <!--     <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button> -->
+        <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+    </div>
+            
+        </div><!---- End of right div analyze Div -->
+    
+        <div class="remodal" data-remodal-id="modal2" data-remodal-options="hashTracking: false">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <br>
+            <div style="font-size:18px; text-align:center;" align="justify">
+                <b>{{ modalMessage }}    </b>
+            </div>
+            <br>
+        </div>
+    
+      
+        <div class="remodal" data-remodal-id="statsModal" data-remodal-options="hashTracking: false">
+                <button data-remodal-action="close" class="remodal-close"></button>
+                <div style="font-size:24px;color: #3b54ec;" > <b>Text Statistics</b></div><br>
+                <div style="font-size:18px; text-align:justify; width:50%; margin-left:200px;" >
+
+                    <b style ="color: #3b54ec;  ">Est. Read Time:  </b>
+                    <span ng-bind-html="readTimeEst" style ="float: right; margin-right:100px;  "></span>
+                    <br>
+                    <b style ="color: #3b54ec;  ">Character count:  </b>
+                    <div ng-bind-html=charCount style ="float: right; margin-right:100px;  "></div>
+
+                    <br>
+                    <b style ="color: #3b54ec;  ">Syllables count:</b>
+                    <div ng-bind-html=syllableCount style ="float: right; margin-right:100px;  "></div>
+
+                    <br>
+
+                    <b style ="color: #3b54ec;  ">Words count: </b>
+                    <div ng-bind-html=wordCount style ="float: right; margin-right:100px;  "></div>
+
+                    <br>
+                    <b style ="color: #3b54ec;  ">Unique Words count: </b>
+                    <div ng-bind-html=uniqWordCount style ="float: right; margin-right:100px;  "></div>
+
+                    <br>
+                    <b style ="color: #3b54ec;  ">Sentence count: </b>
+                    <div ng-bind-html=sentCount style ="float: right; margin-right:100px;  "></div>
+
+                    <br>
+                    <b style ="color: #3b54ec;  ">Paragraph count: </b>
+                    <div ng-bind-html=paragCount style ="float: right; margin-right:100px;  "></div>
+
+                    <br>
+                </div>
+            </div>
+    
+        <!--nav class="navbar navbar-default navbar-fixed-bottom" data-spy="affix" data-offset-top="100" style="width:71%" >
+            
+            
+
+        
+    </nav-->
+    <!-- End Navbar -->
+    </div>
+
+
+ 
+
+    
+<!-- Javascript files -->
+<script src="public/assets/jquery/jquery.min.js"></script>
+<!-- script src="public/js/jquery/jquery.elastic.source.js" type="text/javascript" charset="utf-8"></script -->
+<script src="public/js/remodal/remodal.min.js"></script>
+<!--script src="public/js/remodal/remodal.js"></script -->
+<script src="public/js/remodal/modernizr.js" type="text/javascript"></script>
+<script src="public/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="public/assets/bootstrap-toggle/js/bootstrap2-toggle.min.js"></script>
+<script src="public/assets/angularjs/angular.min.js"></script>
+<script src="public/assets/angularjs/angular-animate.min.js"></script>
+<script src="public/assets/angularjs/angular-aria.min.js"></script>
+<script src="public/assets/angularjs/angular-material.js"></script>
+<script src="public/assets/angularjs/angular-messages.min.js"></script>
+<script src="public/assets/angularjs/svg-assets-cache.js"></script>
+<script src="public/assets/angularjs/angular-sanitize.min.js"></script>
+<script src="public/assets/slick/slick/slick.min.js"></script>
+<script src="public/assets/angular-slick/dist/angular-slick.min.js"></script>
+<script src="public/assets/angularjs/angular-tooltips/dist/angular-tooltips.min.js"></script>
+<script src="../../ckeditor/ckeditor.js"></script>
+<script src="public/assets/angularjs/angular-ckeditor.js"></script>
+<script type="javascript" src="public/assets/angularjs/angular-text-slider.min.js"></script>
+
+<script src="public/assets/angularjs/angular-chart/node_modules/chart.js/dist/Chart.min.js"></script>
+<script src="public/assets/angularjs/angular-chart/dist/angular-chart.js"></script>
+
+<script src="public/js/editorController.js"></script>
+<script src="public/js/jquery.aashu.js"></script>
+<script src="public/js/utils.js"></script>
+<script src="public/js/constants.js"></script>
+
+<!-- Fix for old browsers -->
+<!--script src="http://nervgh.github.io/js/es5-shim.min.js"></script>
+<script src="http://nervgh.github.io/js/es5-sham.min.js"></script -->
+<!--script src="http://code.jquery.com/jquery-1.8.3.min.js"></script-->
+<!--script src="public/assets/angularjs/angular-file-upload/examples/console-sham.js"></script -->
+<!--script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script-->
+<!--script src="http://code.angularjs.org/1.2.0/angular.min.js"></script-->
+<script src="public/assets/angularjs/angular-file-upload/dist/angular-file-upload.min.js"></script>
+<!--script src="public/assets/angularjs/angular-file-upload/examples/simple/controllers.js"></script-->
+<script src="public/assets/angularjs/tinycolor2/dist/tinycolor-min.js"></script>
+<script src="public/assets/angularjs/angularjs-color-picker/dist/angularjs-color-picker.min.js"></script>
+<script src="public/assets/angularjs/angular-ui-switch.min.js"></script>
+<script src="public/assets/angularjs/angular-ui-switch.js"></script>
+<script>
+    window.REMODAL_GLOBALS = {
+        NAMESPACE: 'modal',
+        DEFAULTS: {
+            hashTracking: false
+        }
+    };
+</script>
+<script async src="https://nps.mybluemix.net/survey/nps-survey.js"></script>
+</body>
+</html>

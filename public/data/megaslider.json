@@ -1,0 +1,19 @@
+{
+  "title": "App Screenshots",
+  "description": "A beautiful way to present your design.",
+  "items": [
+    {
+      "title": "IBM AbilityLab Content Clarifier",
+      "description": "Content Clarifier is an artificial intelligence solution, complemented by IBM Watson, that uses machine learning and natural language processing to make reading, writing, and comprehending content easier.",
+      "buttonLabel": "View User Guide",
+      "buttonUrl": "public/data/userguide.pdf",
+      "background": "public/images/tablet_reading.jpg",
+      "target": "_blank"
+    }
+  ]
+}
+
+
+
+
+

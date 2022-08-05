@@ -1,0 +1,57 @@
+{
+  "name": "ContentClarifierApp",
+  "version": "2.4.0",
+  "author": "IBM Corp.",
+  "contributors": [
+    {
+      "name": "Will Scott",
+      "email": "scottw1@us.ibm.com"
+    },
+    {
+      "name": "Sushank Reddy",
+      "email": "srvadde@us.ibm.com"
+    },
+    {
+      "name": "Shlomit Becker",
+      "email": "SHLOMITB@il.ibm.com"
+    }         
+  ],
+  "description": "This app serves as a demo for the Content Clarifier API, a Cognitive Computing effort to perform content summarization, simplification and enhancement.",
+  "dependencies": {
+    "angular-route": "~1.4.1",
+    "body-parser": "^1.5.2",
+    "express": "3.x",
+    "request": "2.70.0",
+    "express-session": "1.14.0",
+    "uuid": "2.0.2",
+    "cfenv": "1.0.3",
+    "watson-developer-cloud": "~2.31.0",
+    "errorhandler": "~1.4.1", 
+    "natural": "0.4.0",
+    "sentence-tokenizer": "0.0.7",
+    "syllable": "2.0.0",
+    "sparql-client": "0.2.0",
+    "flesch-kincaid": "0.1.0",
+    "coleman-liau": "0.1.0",
+    "automated-readability": "0.1.0",
+    "java": "0.7.2",
+    "node-gyp": "3.4.0",
+    "mysql": "2.11.1",
+    "node-schedule": "1.1.1",
+    "bluemix-objectstorage": "0.1.2",
+    "full-text-search-light": "0.0.16",
+    "cors": "2.8.1",
+    "word-count": "0.2.2",
+    "striptags": "3.0.1"
+  },
+  "engines" : {"node":"4.7.3"},
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha test/cases/ --timeout 10000"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.4.1",
+    "request-promise": "^4.2.1"
+  }
+}

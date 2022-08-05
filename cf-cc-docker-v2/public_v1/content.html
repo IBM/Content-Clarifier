@@ -1,0 +1,331 @@
+<head>
+  <meta name="viewport" content="width=device-width">
+</head>  
+
+<body >
+   <script src="public/js/accordion/tabs.js"></script>
+  
+    <!-- Uncomment below to show the routes "frames" mapped from app.config('$routeProvider') -->
+    <!-- <div ng-view></div> -->
+
+	<div class="main" ng-controller="myCtrl" data-ng-init="init()">    
+		<div class="container">
+          		<img src="public/img/power.png" ng-click="logout();" class="logout-img" title="Log out"> 
+                        <div class="container">        
+             		<div class="header-row">
+               			<div class="header-container">
+             	 			<img class="header-left" src="public/img/logo.png" />
+                 			<h1 class="post-h1">Content Clarifier</h1>
+                 			<p>
+                	 		 This app serves as a demo for the IBM AbilityLab&trade; Content Clarifier API, a Cognitive Computing effort to perform content simplification, summarization, and 						 enhancement. (Release v2.3.0, 6/3/2017)
+                 			</p>
+                 			<div style="clear: both"></div>      
+              			</div>
+              		</div> 
+
+       			<hr class="post-hr"/>  
+
+
+        		<!------------------------------------- Input form ------------------------------------------------------->   
+      
+        		<h3 class="post-h2">Try the service</h2>
+                	 You can select from the samples below, or enter your own text or a URL to simplify, condense or enhance/expand. For more interesting simplification results, you need text with 				 relatively complex words (think lengthy   words, with many syllables).  Enable <b>Enhanced content</b> to return word definitions and information regarding topics identified in 				 the text (displayed in <b><font color="blue">blue</font></b>). In the <b>Analyzed content</b>, mouseover the word replacements (displayed in <b><font color="green">green</font>
+			 </b>) to view algorithm confidence levels.       	           
+      			<br><br>
+                        <!------------------------------------ Radio button for variable text inputs and url input --------------------------------------------->
+      			<div  ng-init="inputTextRadio = firstRadio">
+      				<label  for="input-conversation">
+      				<input 	type="radio"
+           				name="option1"
+           				id="input-conversation"
+		   			ng-model="inputTextRadio"
+		   			ng-change='newValue(value)'
+		   			ng-value='firstRadio'>
+	      			Conversational content  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+	      			<label  for="input-news">
+	      			<input  type="radio"
+		  			name="option2"
+		   			id="input-news"
+		   			ng-model="inputTextRadio"
+		   			ng-change='newValue(value)'
+		   			ng-value="secondRadio">
+	     			News content </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+	     			<label  for="input-technical">
+	     			<input type="radio"
+		   			name="option3"
+		   			id="input-technical"
+		   			ng-model="inputTextRadio"
+		   			ng-change='newValue(value)'
+		   			ng-value="thirdRadio">          
+	     			Technical content </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+	    			<label  for="input-announcement">
+	     			<input type="radio"
+		   			name="option4"
+		   			id="input-announcement"
+		   			ng-model="inputTextRadio"
+		   			ng-change='newValue(value)'
+		   			ng-value="fourthRadio">
+	    			Corporate announcement</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+	    			<label  for="input-owntext">
+	    			<input type="radio"
+		   			name="option6"
+		   			id="input-owntext"
+		   			ng-model="inputTextRadio"
+		   			ng-change='newValue("option6")'
+		   			ng-value="{{inputTextRadio}}"> 
+	    			Your own text</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		  
+	     			<label  for="input-url">
+				<input type="radio"
+		   			name="option7"
+		   			id="input-url"
+		   			ng-model="inputTextRadio"
+		   			ng-change='newValueurl(value)' 
+		    			value=""> 
+	     			URL</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+	       		</div>
+
+
+  	  		<div class="post-curved-container"> 
+  	     			<!--     <form class="post-form"> -->
+
+  	    			<dd class="accordion__content_input" >
+
+                                        <!------------------------------------ Input text area------------------------------------------------------------------------------>
+ 					<textarea id="userAnswer" ng-model=inputText  ng-show=areainput() placeholder="Please enter the text to be simplified"></textarea>
+
+                                         <!------------------------------------ URL text input------------------------------------------------------------------------------>
+   		  			<input  ng-model=inputText type="url"  ng-show=urlinput() id="bgchanger" placeholder="Please enter the URL of the text to be simplified" />  
+
+                                        <!------------------------------------ UI Switch to enable Enhanced content mode----------------------------------------------------->
+					<div style="overflow:hidden;"><br>
+                      				<form  style="float:left" >
+                      					<switch id="enabled" name="enabled" ng-model="enabled" ng-change="changeCallback" class="green"></switch>
+                         				<br><p class="bold-responsive"><font style="font-weight:bold;">Enhanced content</font></p>
+                      				</form>
+                      				<!-- <img style ="float:right" src="img/reload.png"; ng-click="reload();" height=40; width=60; title="Reset"> -->
+                 			</div>
+
+                                        <!------------------------------------ Radio button for Enhanced content mode ------------------------------------------------------->
+
+         				<div  ng-show="showEnhanceModeRadios()" style="float:left">
+      						<label  for="identify-topics">
+     						<input type="radio"
+           						id="identify-topics"
+           						ng-model="enhanceContentMode"
+           						ng-value=1>
+      						Identify topics  </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+      						<label  for="definitions">
+      						<input type="radio"
+           						id="definitions"
+           						ng-model="enhanceContentMode"
+           						ng-value=2>
+     						Definitions </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+     						<label  for="symbols">
+     						<input type="radio"
+							id="symbols"
+							ng-model="enhanceContentMode"
+							ng-value=3>          
+     						Symbols </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  					</div>
+          			</dd>
+        		</div>
+          		<div style ="text-align: center; " >
+        			<button style="width:50%" type="submit" ng-click="clearInputText(''); contextualSimplifyText(' ');"><b>Analyze</b></button> <!-- Analyse BUTTON -->
+         		</div>
+
+                        <!------------------------------------ Show Animation for proress ------------------------------------------------->
+                     
+          		<!--p ng-show="showMessageDiv()" ><i>** Augments output with semantic web data for identified concepts in your input (may increase processing time). Applies only to simplified 			mode</i> </p -->
+          		<div id="showAnimation"   ng-show="showLoadingAnimation();"  style="position: absolute; z-index: 100;">
+            			<img   style="display: inline; margin-left: auto;  margin-right: auto; opacity: 0.9; padding:200px" ; src="public/img/loading.gif";" /> 
+         		</div>
+        		</br></br>
+
+                         <!------------------------------------ View Switch Buttons ------------------------------------------------------->
+
+         		<div ng-show="showButton2();">         
+              			<button type="submit2" style="float:right;" title="Output only Mode">
+                    			<img src="public/img/DefaultOutputgray.png" height=30; width=40;/>
+              			</button>
+              			<button type="submit2" style="  float:right;color: #2eceee; background : #ffffff;" title="Side-by-Side Mode" ng-click="sideBySideView();" 
+				ng-disabled="inputSimplifyButtonClicked">
+                    			<img src="public/img/SideBySideOutput.png" height=30; width=40;/>
+              			</button>     
+         		</div>
+                       
+          		<div ng-show="showButton();">
+                   		<!--button type=button style="  float:right; color: #2eceee; background : #ffffff;" type="submit" ng-click=" speakText(' ');"  </button -->
+          			<button type="submit2" style=" float:right; color: #2eceee; background : #ffffff;" title="Output only Mode" ng-click="defaultView();" ng-disabled="simplifyButtonClicked">
+          				<img src="public/img/DefaultOutput.png" height=30; width=40;/>
+				</button> <!-- MAIN BUTTON (SIDE BY SIDE) -->
+          			<button type="submit2" style=" float:right;" title="Side-by-Side Mode">
+					<img src="public/img/SideBySideOutputgray.png" height=30; width=40;/>
+				</button>
+         		</div>
+
+
+        		<!---------------------------------------- START OF DEFAULT VIEW --------------------------------------------------->  
+        		<!---------------------------------------- START OF DEFAULT VIEW --------------------------------------------------->              
+        		<!-- --------------------------------------START OF DEFAULT VIEW --------------------------------------------------->   
+    
+         		<div   ng-show="showOutput();" style=" z-index: 100;">  
+              			<h3 class="post-h2">Output 
+		 			<img src="public/img/sound.png"  type="submit" style="margin: 10px 5px 10px 10px " height=55; width=75; ng-click="play();" title="Have Watson read the output"/>
+             			</h3> 
+              			</br>
+
+               			<dl id = "abc" class="accordion" >
+
+                   			<dt class="accordion__title" ng-click="setSpeechText()" >Simplified</dt>
+                   			<dd class="accordion__content" >
+                    				<!--     <textarea id="outputTextbox" class="post-output-textarea-full" resize readonly ng-model="outputTextcontextual" 
+						ng-style="{'height':outputTextHeight}"> </textarea>  -->
+                             			<div id="myDiv" class="post-output-textarea-full" ng-model="outputTextcontextual" ng-style="{'height':outputTextHeight}"> </div>                    
+                   			</dd>
+
+	           			<dt class="accordion__title" ng-click="condenceButtonClicked ||condenceText();" ng-disabled="condenceButtonClicked">Condensed</dt><!-- SECOND TAB -->
+	           			<dd  class="accordion__content">
+                      				<div id="textbox" class="post-output-textarea-full"  readonly ng-bind-html="outputTextCondensedDefault" ng-style="{'height':outputTextHeight}"> </div> 
+                       
+                   			</dd>
+					<!-- THIRD TAB -->
+	           			<dt class="accordion__title" ng-click="condenseSimplifyButtonClicked || condenceAndSimplifyText();" ng-disabled="condenseSimplifyButtonClicked">Ultra Mode</dt>
+		   			<dd class="accordion__content">
+                      				<div class="post-output-textarea-full" ng-bind-html="outputTextCondenseSimplifiedDefault" ng-style="{'height':outputTextHeight}"> </div>
+		   			</dd>      
+	       			</dl>	
+         		</div>
+          
+			<!------------------------------------- START OF SIDE BY SIDE VIEW ----------------------------------------------->  
+			<!------------------------------------- START OF SIDE BY SIDE VIEW ----------------------------------------------->            
+			<!------------------------------------- START OF SIDE BY SIDE VIEW -----------------------------------------------> 
+
+           		<div  ng-show="showInputOutput();" style=" z-index: 0;">  
+             			<h3 class="post-h2">Output
+               				<img src="public/img/sound.png"   style="margin: 10px 5px 10px 10px " height=55; width=75; ng-click="play();" title="Have Watson read the output"/>
+             			</h3> </br>
+
+               			<dl id ="xyz" class="accordion2" >
+
+                   			<dt class="accordion__title" ng-click="setSpeechText()">Simplified</dt>
+                   			<dd class="accordion__content" >
+                   
+                        			<!--textarea id="inputDiv" class="post-input-textarea"  readonly ng-model="inputText" ng-style="{'height':inputOutputTextHeight}"> </textarea -->
+                        			<div id="inputDiv" class="post-input-textarea" readonly ng-bind-html="simplifiedInputText" ng-style="{'height':inputOutputTextHeight}" >  </div>
+                        			<!-- WS <textarea class="post-output-textarea" readonly ng-model="outputTextcontextual" ng-style="{'height':inputOutputTextHeight}"> </textarea> --> 
+                          			<div id="myDiv2" class="post-output-textarea" ng-model="outputTextcontextual" ng-style="{'height':inputOutputTextHeight}"> </div> 
+                        			<!--   <textarea class="post-output-textarea" ng-model="outputTextcontextual" ng-style="{'height':inputOutputTextHeight}"> </textarea> -->                      
+                       				 <!--  <p><b><a href="#modal">Call the modal to popup</a></b> -->
+                   			</dd>
+					<!-- SECOND TAB (SIDE BY SIDE) -->
+	           			<dt class="accordion__title" ng-click="inputCondenceButtonClicked ||condenceTextInput();" ng-disabled="inputContextButtonClicked">Condensed</dt>
+	             			<dd class="accordion__content" >
+                         			<div class="post-input-textarea" readonly ng-bind-html="condensedInputText" ng-style="{'height':inputOutputTextHeight}"  >  </div>
+                         			<!-- WS <textarea class="post-output-textarea" readonly ng-model="outputTextCondensed" ng-style="{'height':inputOutputTextHeight}"> </textarea>  -->
+                     
+                         			<div class="post-output-textarea" ng-bind-html="outputTextCondensed" ng-style="{'height':inputOutputTextHeight}"> </div>                    
+                         			<!--  <p><b><a href="#modal">Call the modal to popup</a></b> -->
+                   			</dd>
+					<!-- THIRD TAB (SIDE BY SIDE) -->
+	           	<dt class="accordion__title" ng-click="inputCondenseSimplifyButtonClicked ||condenceAndSimplifyTextInput();" ng-disabled="inputCondenseSimplifyButtonClicked">Ultra Mode</dt>
+		   			<dd class="accordion__content">
+						<div class="post-input-textarea" readonly ng-bind-html="simplifiedCondensedInputText" ng-style="{'height':inputOutputTextHeight}" > </div>
+                    				<div class="post-output-textarea" ng-bind-html="outputTextCondenseSimplified" ng-style="{'height':inputOutputTextHeight}"> </div>             
+		   			</dd>  
+    
+	       			</dl>	
+         		</div>
+
+       			</div> <!--- end of inner container -->
+
+                         <!------------------------------------ Audio player  -------------------------------------------------------------------------------> 
+
+		 	 <div class="row">
+	     		 	<div class="col-lg-12 col-md-12 col-sm-12">
+	     			  <audio  class="audio" id="audio">
+	 				  <source src="{{audiourl}}" type="audio/ogg"/>
+					  Your browser does not support the audio element.
+				  </audio> 
+	     	 		</div>
+	      		</div>
+                       
+		     	<!------------------------------------ Mobile Logout --------------------------------------------------------------------------------->        
+
+		 	<div class="logout-mobile" >
+		 		<button style="width:47%; color:#2eceee; background:#FFFFFF;" type="submit" ng-click="logout();"><b>Log out</b></button> 
+		 	</div>     
+
+
+                        <!------------------------------------ Remodal Popups --------------------------------------------------------------------------------->                 
+                                                                                     
+		 	<div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
+		      		<button data-remodal-action="close" class="remodal-close"></button>
+		     		<!-- <h3 class="post-h3">Watson Identified Concept</h3> -->
+		      		<h3 class="post-h3"> <span   class="displayname"></span></h3>
+		     		<!-- WS <figure style="float:left"> -->
+		      		<figure>
+		          		<img style="display: block; margin-left: auto;  margin-right: auto; height:auto; max-height:40vh; width:auto; padding:200px ng-model="thumbnail" class="thumbnail" >
+	 			</figure>
+		      		<div align="justify">
+		      			<span ng-model="abstractDB"  class="abstract"></span>
+		      		</div>
+		       		<br>
+		      		<div  align="justify">
+		      			<span   class="relevance"></span>
+		      		</div>
+		       		<br>
+		      		<div align="justify">
+		      			<span   class="website"></span>
+		      		</div>
+		      		<div ng-show="response_data"></div>
+		      		<br>
+		  		<!--     <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button> -->
+		     		<button data-remodal-action="confirm" class="remodal-confirm">OK</button> 
+		 	</div> 
+
+
+			<div class="remodal" data-remodal-id="modal2" data-remodal-options="hashTracking: false">
+		      		<button data-remodal-action="close" class="remodal-close"></button>
+            
+           			 <br /><br />
+            			 Steps: Toggle on Enhanced content, select the enhancement type, then click the Analyze.
+            			 <br /> <br />
+                		 <b>Indentify topics: </b> If topics were identified, click the <font color="blue">blue</font> hyperlinks in the output to view the information.
+                		 <b>Definitions: </b>  If word definitions are suggested, the definitions will follow the word (in parenthesis).
+                		 <b>Symbols: </b> If symbols were identified, they will appear above the corresponding text.
+            			 <br /> 			
+            			 <br /><span style="background-color:#ffffe6;"><b>Note:</b> Enhanced content is only available for <b>Simplified</b> mode in the output.</span> 
+              			 <br />
+		     		<button data-remodal-action="confirm" class="remodal-confirm">OK</button> 
+		 	</div> 
+
+
+		  	<div class="remodal" data-remodal-id="modal3" data-remodal-options="hashTracking: false">
+				<div id="showAnimation"   ng-show="showLoadingAnimation2();"  style="position: relative; z-index: 100;">
+					<img   style="display: inline; margin-left: auto;  margin-right: auto; opacity: 0.9; padding:10px" ; src="public/img/loading.gif";" /> 
+		     			<h3>Analyzing ...<h3>
+				</div> 
+		 	</div>  
+
+		  	<div class="remodal" data-remodal-id="modal4" data-remodal-options="hashTracking: false">
+		      		<button data-remodal-action="close" class="remodal-close"></button>      
+		    		 <h3>Please enter some text to simplify. </h3>
+		     		<button data-remodal-action="confirm" class="remodal-confirm">OK</button> 
+		 	</div> 
+
+		   	<div class="remodal" data-remodal-id="modal5" data-remodal-options="hashTracking: false">
+		      		<button data-remodal-action="close" class="remodal-close"></button>      
+		     		<h3>Please provide a valid URL to simplify. </h3>
+		     		<button data-remodal-action="confirm" class="remodal-confirm">OK</button> 
+		 	</div>
+         
+       		</div> <!-- end of outer container div -->  
+	</div><!-- end main div -->
+</body>

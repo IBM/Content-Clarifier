@@ -1,0 +1,50 @@
+{
+  "title": "Navigation",
+  "description": "",
+  "items": {
+    "logoTransperant": "public/images/logo-white.png",
+    "logo": "public/images/logo.png",
+    "isSearchActive": false,
+    "mainMenu": [
+      {
+        "title": "Home",
+        "url": "#!/index",
+        "class": "page-scroll",
+        "target": ""
+      },
+      {
+        "title": "API",
+        "url": "#features",
+        "class": "page-scroll",
+        "target": ""
+      },
+      {
+        "title": "Video",
+        "url": "#video",
+        "class": "page-scroll",
+        "target": ""
+      },
+      {
+        "title": "News & Media",
+        "url": "#testimonials",
+        "class": "page-scroll",
+        "target": ""
+      },
+
+      {
+        "title": "Contact",
+        "url": "#contact",
+        "class": "page-scroll",
+        "target": ""
+      },
+      {
+        "title": "Launch App",
+        "url": "/#!/editor",
+        "class": "page-scroll",
+        "target": ""
+      }
+    ]
+  }
+}
+
+

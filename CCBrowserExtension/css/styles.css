@@ -1,0 +1,206 @@
+
+#plugindiv {
+    position: fixed;
+    width: 18%;
+    height: 10%;
+    z-index: 100;
+    display: inline-block;
+}
+
+#setupdiv{
+    display: block;
+    margin: auto;
+    width: 10%;
+    height: 100%;
+    position: absolute;
+}
+
+#ccdiv{
+    display: block;
+    position: absolute;
+    width: 20%;
+    height:100%;
+    left: 10%;
+    margin: auto;
+}
+
+#transformdiv{
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 30%;
+    margin: auto;
+
+}
+
+#waitdiv{
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 30%;
+    margin: auto;
+}
+
+#ccicon{
+    /* display: inline; */
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    opacity: 1
+}
+
+#waiticon{
+    width: 100%;
+    padding: 1%;
+    opacity: 1
+}
+
+.transformicon{
+    width: 100%;
+    padding: 1%;
+    cursor: pointer;
+    opacity: 1
+}
+
+#closeicon{
+    width: 100%;
+    padding: 1%;
+    /* top: 35%; */
+    /* position: absolute; */
+    cursor: pointer;
+    opacity: 1
+}
+
+#moveicon{
+    width: 100%;
+    padding: 1%;
+    /* position: absolute; */
+    cursor: move;
+}
+
+.closeimg{
+    position: relative;
+    width: 3%;
+    top: 0%;
+    padding-bottom: 2%;
+    cursor: pointer;
+    opacity: 1
+}
+
+.thumbnailimg{
+    position: relative;
+    display: block;
+    margin: auto;
+    max-height:500px;
+    max-width:500px;
+
+}
+
+.overlayDiv{
+    background-color: #fff;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 40px;
+    z-index: 100;
+    overflow-y: scroll;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+}
+
+.modediv{
+    border: 1px solid #3b54ec;
+    min-height: 10vh;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.tooltips {
+    /*  visibility: visible;*/
+      position: relative;
+      display: inline;
+    /*  border-bottom: 1px dotted black; */
+      -webkit-transform: translateZ(0); /* webkit flicker fix */
+      -webkit-font-smoothing: antialiased; /* webkit text rendering fix */
+  }
+  
+   .tooltiptexts {
+      z-index:101;
+      font-size: .95em;
+      font-weight: bold;
+      visibility: hidden;
+      opacity:1;
+      bottom:20px;
+      left: -40px; 
+      
+      min-width:20vh;
+      width:auto;
+      background: #696969;
+      color: #fff;
+      display: block; 
+      text-align: justify; 
+      border-radius: 6px;
+      padding:10px;
+      overflow:visible;
+      line-height:1;
+      word-spacing:1px;
+  
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 101;
+        -webkit-transform: translateY(10px);
+       -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+         -o-transform: translateY(10px);
+            transform: translateY(10px);
+    -webkit-transition: all .25s ease-out;
+       -moz-transition: all .25s ease-out;
+        -ms-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+       -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+        -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+         -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  }
+  
+   .tooltips:before {
+    bottom: -5px;
+    content: " ";
+    display: block;
+    z-index: 101;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }  
+  
+  .tooltips:hover .tooltiptexts {
+      visibility: visible;
+      z-index: 101;
+      background:#696969;
+      position: absolute;
+      overflow:visible;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  
+  .tooltips:hover{
+      visibility: visible;
+      overflow:visible;
+      opacity: 1;
+      z-index: 101;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+       -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+         -o-transform: translateY(0px);
+            transform: translateY(0px);
+  }

@@ -1,0 +1,23 @@
+[
+    {
+        "UTTERANCE": "who "
+    },   
+    {
+        "UTTERANCE": "what "
+    },   
+    {
+        "UTTERANCE": "when "
+    },   
+    {
+        "UTTERANCE": "where "
+    }, 
+    {
+        "UTTERANCE": "how "
+    },
+    {
+        "UTTERANCE": "do i "
+    },
+    {
+        "UTTERANCE": "will i "
+    }
+]

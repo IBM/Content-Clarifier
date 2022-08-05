@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="https://contentclarifier.mybluemix.net/" />
+<title>Test Output section's UI elements</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Test Output section's UI elements</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/#/index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//div[@id='showAnimation']/img)[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#showAnimation &gt; h3</td>
+	<td>Analyzing ...</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>id=inputDiv</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//div[9]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//div[9]/h3</td>
+	<td>Output</td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//img[@title='Have Watson read the output'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//button[@type='submit2'])[4]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>xpath=(//button[@type='submit2'])[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>xpath=(//img[@title='Have Watson read the output'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#xyz &gt; dt.accordion__title.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>css=#xyz &gt; dt.accordion__title.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//dl[@id='xyz']/dt[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//dl[@id='xyz']/dt[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=#xyz &gt; dt.accordion__title.active</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#xyz &gt; dt.accordion__title.active</td>
+	<td>Simplified</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//dl[@id='xyz']/dt[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#xyz &gt; dt.accordion__title.active</td>
+	<td>Condensed</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//dl[@id='xyz']/dt[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#xyz &gt; dt.accordion__title.active</td>
+	<td>Ultra Mode</td>
+</tr>
+</tbody></table>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "title": "Footer",
+  "description": "",
+  "items": {
+    "footerLinks": [
+      {
+        "title": "About Us",
+        "url": "#about",
+        "target": ""
+      },
+      {
+        "title": "Corporate Sale",
+        "url": "#sale",
+        "target": ""
+      },
+      {
+        "title": "Privacy Policy",
+        "url": "#privacy",
+        "target": ""
+      },
+      {
+        "title": "Term & Conditions",
+        "url": "#terms",
+        "target": ""
+      },
+      {
+        "title": "Help Center",
+        "url": "#help",
+        "target": ""
+      }
+    ],
+    "socialLinks": [
+      {
+        "title": "Facebook",
+        "url": "#facebook",
+        "target": "_blank",
+        "class": "fa fa-facebook"
+      },
+      {
+        "title": "Google plus",
+        "url": "#google-plus",
+        "target": "_blank",
+        "class": "fa fa-google-plus"
+      },
+      {
+        "title": "Pinterest",
+        "url": "#pinterest",
+        "target": "_blank",
+        "class": "fa fa-pinterest"
+      },
+      {
+        "title": "Skype",
+        "url": "#skype",
+        "target": "_blank",
+        "class": "fa fa-skype"
+      },
+      {
+        "title": "Twitter",
+        "url": "#twitter",
+        "target": "_blank",
+        "class": "fa fa-twitter"
+      }
+    ],
+    "copyText": "Made with <i class=\"fa fa-heart\"></i> by <a href=\"http://www.drupalthemez.com\" target=\"_blank\">www.drupalthemez.com</a>"
+  }
+}

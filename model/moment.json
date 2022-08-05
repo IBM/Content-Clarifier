@@ -1,0 +1,16 @@
+[{
+	"ParticipantName": "Scott Chapman",
+	"Message": "it is interesting to go through the NLP info too. For example it found basically 4 \"sentences\"",
+	"MessageId": "58dd0fb0e4b0c5168c40aafd",
+	"TimeStamp": 1490882480581
+},{
+	"ParticipantName": "Scott Chapman",
+	"Message": "like \"we change the admin doc\", \"we add some more words\", \"remind the end user to wait...\" etc",
+	"MessageId": "58dd0fede4b0c5168c40ab34",
+	"TimeStamp": 1490882541488
+}, {
+	"ParticipantName": "Jon Brunn",
+	"Message": "yeah, so to me there is an action embedded in there - and the decision on whether to carry out the action or not is just part of the fulfillment process in that action",
+	"MessageId": "58dd100de4b0c5168c40ab5a",
+	"TimeStamp": 1490882573736
+}]

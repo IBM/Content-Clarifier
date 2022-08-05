@@ -1,0 +1,632 @@
+
+
+<html>
+<head>
+<style>
+    pre {
+     white-space: pre-wrap;       /* css-3 */
+     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap;      /* Opera 4-6 */
+     white-space: -o-pre-wrap;    /* Opera 7 */
+     word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    }
+</style>
+<script>
+    
+function summarizeConversation(){
+
+    // show the loading image
+    var loading = document.getElementById("loading");
+    loading.style.display = "block";
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'http://169.44.12.151:3000/api/V1/condense-conversation', true);
+    xhr.setRequestHeader('Access-Control-Allow-Headers', '*')
+    xhr.setRequestHeader("Content-type", "application/json");
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    xhr.onreadystatechange = function(){
+        
+        console.log(xhr);
+        
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            
+                var response = JSON.parse(xhr.responseText);
+                       
+				// now hide the loading image
+				loading.style.display = "none";
+            
+                if(response['code'] !== undefined && response['code'] == 204){ // Handle code 204!
+                    
+                    document.getElementById("summarized_conversation").innerHTML = "<div style='max-width: 500px !important;'>" + response['message'] + "<\div>";
+                }
+                else{
+                    
+                    console.log(response['condensed']);
+            
+                    console.log(response.condensed);
+            
+                    document.getElementById("summarized_conversation").innerHTML = JSON.stringify(response['condensed'],undefined,2);
+                    
+                }
+        }
+    };
+
+    // API INVOCATION PARAMETERS
+    var value = JSON.stringify ({
+            id: "", // Put your API ID here
+            apikey: "", // Put your API Key here
+            data: getSampleConversationJSON(),
+            options: {"classifierThreshold":0.90,"messageFormat":"short"} // increasing this threshold compresses the size of summary..
+            });
+
+    xhr.send(value);
+
+}
+
+    
+function getSampleConversationJSON(){  
+     
+    var conversation = [
+        {
+        "ParticipantName": "May Lambert",
+        "Message": "more NR!",
+        "MessageId": "58de53d0e4b0c5168c413f98",
+        "TimeStamp": 1490965456568
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "so now we have your app and bhumits logic as a template for \"internal apps\" :-) ",
+        "MessageId": "58de5ef4e4b0c5168c4146b6",
+        "TimeStamp": 1490968308167
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "Haha oops! ",
+        "MessageId": "58de5fe3e4b0c5168c41476a",
+        "TimeStamp": 1490968547815
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "luckily you had us build it out in java then ;)",
+        "MessageId": "58de5ff5e4b0c5168c41477c",
+        "TimeStamp": 1490968565231
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "What was the argument against nodejs apps?",
+        "MessageId": "58de6193e4b0c5168c41489f",
+        "TimeStamp": 1490968979858
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "mainly around the required investment to ensure the apps are built securely with stability and scalability in mind.... we'd also need to investigate the best practices and most secure methods for data transport, data management, external communication, etc.... The thought is that most nodejs apps now aren't necessarily built with that in mind which is why the overhead is minimal ;-) ",
+        "MessageId": "58de6239e4b0c5168c414922",
+        "TimeStamp": 1490969145872
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "it was more of a 'not yet' rather than a straight up no at least.... Brendan/Olgierd are going to draft up a documentation around it ",
+        "MessageId": "58de6256e4b0c5168c414935",
+        "TimeStamp": 1490969174887
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "OK, I guess it is just a matter of them getting more comfortable with it by establishing best practices and such. ",
+        "MessageId": "58de62fee4b0c5168c41498e",
+        "TimeStamp": 1490969342534
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "Personally I don't think it is and more or less secure/stable/scalable than any other language.",
+        "MessageId": "58de6324e4b0c5168c4149a5",
+        "TimeStamp": 1490969380188
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "one someone developers with Node, are they using hystrix for instance? Probably not?",
+        "MessageId": "58de6337e4b0c5168c4149b5",
+        "TimeStamp": 1490969399717
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "the language of course itself isn't any more or less secure or scalable",
+        "MessageId": "58de6362e4b0c5168c4149df",
+        "TimeStamp": 1490969442436
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "there is hystrixjs",
+        "MessageId": "58de63c5e4b0c5168c414a31",
+        "TimeStamp": 1490969541330
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "there is, but do we use it?",
+        "MessageId": "58de63cfe4b0c5168c414a3b",
+        "TimeStamp": 1490969551138
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "Not saying we CAN'T - but just that one of the reasons people might perceive Node to be easier is they aren't doing all this stuff we do in Java?",
+        "MessageId": "58de63e7e4b0c5168c414a57",
+        "TimeStamp": 1490969575801
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "right",
+        "MessageId": "58de63f7e4b0c5168c414a68",
+        "TimeStamp": 1490969591940
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "I would actually think we might find it easier to bring in Scala",
+        "MessageId": "58de640be4b0c5168c414a7b",
+        "TimeStamp": 1490969611897
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "given it runs on a JVM and interoperates with Java more easily",
+        "MessageId": "58de6417e4b0c5168c414a89",
+        "TimeStamp": 1490969623795
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "haven't played around with it much outside of our testing tools though",
+        "MessageId": "58de6462e4b0c5168c414ab9",
+        "TimeStamp": 1490969698789
+     }, {
+        "ParticipantName": "Jon Brunn",
+        "Message": "yeah - I didn't have any practical experience with it but took some time over my time off to do some tutorials, and it's really easy to call Java from Scala - so we could reuse common libraries for instance",
+        "MessageId": "58de6467e4b0c5168c414abd",
+        "TimeStamp": 1490969703031
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "yea, scala runs in the JVM so there's that",
+        "MessageId": "58de65d0e4b0c5168c414baf",
+        "TimeStamp": 1490970064488
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "so many languages, so little time. :-) ",
+        "MessageId": "58de65fde4b0c5168c414bba",
+        "TimeStamp": 1490970109622
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "I still need to learn Swift! ",
+        "MessageId": "58de6620e4b0c5168c414bd8",
+        "TimeStamp": 1490970144915
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "yes. yes you do.",
+        "MessageId": "58de66c5e4b0c5168c414c47",
+        "TimeStamp": 1490970309922
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "i am not good at scala (I have used scala in gatling) maybe I don't understad scala enough,. it reminds me ant. there are many restriction like ant... feel like, difficult to move my arms and legs freely.. 😅",
+        "MessageId": "58de674ee4b0c5168c414ca2",
+        "TimeStamp": 1490970446649
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "oh man...ant. That's a harsh statement 😂",
+        "MessageId": "58de6807e4b0c5168c414d08",
+        "TimeStamp": 1490970631122
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "I'm having flashbacks to my days in Connections... our build and original installer were ant based ",
+        "MessageId": "58de6825e4b0c5168c414d20",
+        "TimeStamp": 1490970661773
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "ooph.",
+        "MessageId": "58de6831e4b0c5168c414d2e",
+        "TimeStamp": 1490970673284
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "i think i'm too young for the conversatsion...",
+        "MessageId": "58de6b1de4b0c5168c414ed8",
+        "TimeStamp": 1490971421779
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "Did you add the environment variables that hiro mentioned in the email? If you don't the oauth dance will fail ",
+        "MessageId": "58de6b7ae4b0c5168c414f17",
+        "TimeStamp": 1490971514396
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "`oath dance` so cute",
+        "MessageId": "58de6b89e4b0c5168c414f1b",
+        "TimeStamp": 1490971529284
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "WHATTTTT",
+        "MessageId": "58de6b8ee4b0c5168c414f1e",
+        "TimeStamp": 1490971534052
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": ":-)",
+        "MessageId": "58de6b92e4b0c5168c414f24",
+        "TimeStamp": 1490971538029
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "😎",
+        "MessageId": "58de6b98e4b0c5168c414f2c",
+        "TimeStamp": 1490971544379
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "haha",
+        "MessageId": "58de6bb3e4b0c5168c414f3e",
+        "TimeStamp": 1490971571568
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "wait, yep to the oauth or the old?",
+        "MessageId": "58de6bb5e4b0c5168c414f41",
+        "TimeStamp": 1490971573022
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "oauth, haha to old",
+        "MessageId": "58de6bbee4b0c5168c414f4d",
+        "TimeStamp": 1490971582490
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "actually nvm, I'll try again to see if I made a mistake",
+        "MessageId": "58de6be2e4b0c5168c414f5a",
+        "TimeStamp": 1490971618948
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": ";-)... so for the oauth response, check in the Network tab of your dev console to see if you can look at the response",
+        "MessageId": "58de6bf0e4b0c5168c414f72",
+        "TimeStamp": 1490971632685
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "just to make sure its passing the properties properly ",
+        "MessageId": "58de6bf6e4b0c5168c414f80",
+        "TimeStamp": 1490971638125
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "screenshot and paste that if you can",
+        "MessageId": "58de6c00e4b0c5168c414f8d",
+        "TimeStamp": 1490971648525
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "okay",
+        "MessageId": "58de6c3fe4b0c5168c414fc8",
+        "TimeStamp": 1490971711887
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "ohh thats a good idea too Hiro",
+        "MessageId": "58de6cc0e4b0c5168c415027",
+        "TimeStamp": 1490971840050
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "<$image|ibm0@default@5717e0d09932fed8d0ed575d@file-42cc41c1-ea48-422b-867d-d56e80670b0c|2008x284>\n",
+        "MessageId": "58de6d5ae4b0c5168c41508a",
+        "TimeStamp": 1490971994981
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "Anyone know what charset i'm supposed to use :x",
+        "MessageId": "58de6d61e4b0c5168c41508d",
+        "TimeStamp": 1490972001677
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "also, check if _getAuthorizeRedirect has this line:\n `&${Constants.SCOPE}=${this.scopes.join('%20')}` +\n",
+        "MessageId": "58de6dd8e4b0c5168c415109",
+        "TimeStamp": 1490972120448
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "hmmm. Thank you. :) ",
+        "MessageId": "58de6dfce4b0c5168c415120",
+        "TimeStamp": 1490972156025
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "i mean.... %20",
+        "MessageId": "58de6e00e4b0c5168c415127",
+        "TimeStamp": 1490972160692
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "previously it was used , for scope separator. and that caused /oauth/authorize failure.",
+        "MessageId": "58de6e27e4b0c5168c41513c",
+        "TimeStamp": 1490972199512
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "sorry previously , was used , for scope separator. and that caused /oauth/authorize failure. ",
+        "MessageId": "58de6e38e4b0c5168c41514b",
+        "TimeStamp": 1490972216944
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "Earlier I was trying to sign in before going through all the steps. At `npm run proxy` now I am getting an error \n<$image|ibm0@default@5717e0d09932fed8d0ed575d@file-07db1124-19af-465f-aa97-cdab7dbed528|884x417>\n",
+        "MessageId": "58de6ecce4b0c5168c4151c5",
+        "TimeStamp": 1490972364563
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "I think you need to do 'sudo npm run proxy'",
+        "MessageId": "58de6f02e4b0c5168c4151fb",
+        "TimeStamp": 1490972418887
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "praise, let me try",
+        "MessageId": "58de6f3ee4b0c5168c415223",
+        "TimeStamp": 1490972478472
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "oh",
+        "MessageId": "58de6f51e4b0c5168c41522f",
+        "TimeStamp": 1490972497227
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "wait if I get rid of getBytes then the encodeToString has an error",
+        "MessageId": "58de6f60e4b0c5168c415232",
+        "TimeStamp": 1490972512639
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "works. thanks :) ",
+        "MessageId": "58de6f7be4b0c5168c415242",
+        "TimeStamp": 1490972539569
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "I'm going to guess UTF-8",
+        "MessageId": "58de71b8e4b0c5168c415428",
+        "TimeStamp": 1490973112774
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "thansk! Yeah trying that",
+        "MessageId": "58de71c8e4b0c5168c415439",
+        "TimeStamp": 1490973128611
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "...getBytes(\"UTF-8\")",
+        "MessageId": "58de71d5e4b0c5168c415443",
+        "TimeStamp": 1490973141676
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "(I think)",
+        "MessageId": "58de71d8e4b0c5168c415448",
+        "TimeStamp": 1490973144702
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "yep",
+        "MessageId": "58de71e6e4b0c5168c41544e",
+        "TimeStamp": 1490973158620
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "utf-8! utf-8! i like utf-8 !",
+        "MessageId": "58de71efe4b0c5168c415452",
+        "TimeStamp": 1490973167174
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "anything in the network tab?",
+        "MessageId": "58de7251e4b0c5168c4154a2",
+        "TimeStamp": 1490973265509
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "<$image|ibm0@default@5717e0d09932fed8d0ed575d@file-d760b211-0342-43c8-97f9-4b2b8fde2c02|1262x631>\n",
+        "MessageId": "58de725ae4b0c5168c4154b5",
+        "TimeStamp": 1490973274349
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "can you click on the response and show that?",
+        "MessageId": "58de7272e4b0c5168c4154cd",
+        "TimeStamp": 1490973298921
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "ohh",
+        "MessageId": "58de728de4b0c5168c4154d9",
+        "TimeStamp": 1490973325009
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "ohhh, can you copy the encoded part of the Authorization header and decode here: https://www.base64decode.org/ make sure no part of it is undefined",
+        "MessageId": "58de7296e4b0c5168c4154e2",
+        "TimeStamp": 1490973334519
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "api.watsonwork.ibm.com",
+        "MessageId": "58de7298e4b0c5168c4154e3",
+        "TimeStamp": 1490973336416
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "it should be integration server specified in the env variable.",
+        "MessageId": "58de72ace4b0c5168c4154f1",
+        "TimeStamp": 1490973356630
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "response ",
+        "MessageId": "58de72bae4b0c5168c4154fb",
+        "TimeStamp": 1490973370939
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "Whitelabel Error Page\nThis application has no explicit mapping for /error, so you are seeing this as a fallback.\nFri Mar 31 15:07:51 UTC 2017There was an unexpected error (type=Unauthorized, status=401).Bad credentials",
+        "MessageId": "58de72bce4b0c5168c4154fc",
+        "TimeStamp": 1490973372363
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "ah",
+        "MessageId": "58de72c0e4b0c5168c415505",
+        "TimeStamp": 1490973376570
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "yeah its due to the oauth keys",
+        "MessageId": "58de72cce4b0c5168c415515",
+        "TimeStamp": 1490973388163
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "sorry? ",
+        "MessageId": "58de72d3e4b0c5168c41551e",
+        "TimeStamp": 1490973395532
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "so try integration like hiro mentions....are we deployed in integration Hiro?",
+        "MessageId": "58de72d7e4b0c5168c41551f",
+        "TimeStamp": 1490973399414
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "so this does not have to do with permissions regarding the feedback database?",
+        "MessageId": "58de72fbe4b0c5168c41553a",
+        "TimeStamp": 1490973435058
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": " \nAPIDOMAIN=https://integration.toscanatest.com",
+        "MessageId": "58de7302e4b0c5168c415544",
+        "TimeStamp": 1490973442546
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "that's what you need to set for the env variable.",
+        "MessageId": "58de730be4b0c5168c41554c",
+        "TimeStamp": 1490973451327
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "also",
+        "MessageId": "58de7318e4b0c5168c41554f",
+        "TimeStamp": 1490973464458
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": " \nCONTEXT_ROOT=/cognitive-training\n\nEXPOSE_OAUTH_HEADER=true\n\nFEEDBACK_SERVICE_UI_CLIENT_ID=toscana-feedback-service-ui-client-id\n\nFEEDBACK_SERVICE_UI_CLIENT_SECRET= ...",
+        "MessageId": "58de7319e4b0c5168c415551",
+        "TimeStamp": 1490973465404
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "nope its not about your permissions... `403` would be returned if it was related to you not having access",
+        "MessageId": "58de731be4b0c5168c415557",
+        "TimeStamp": 1490973467723
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "ah okay. btw, I set the env variables in the command line. That is how it's done right? ",
+        "MessageId": "58de7351e4b0c5168c41557c",
+        "TimeStamp": 1490973521671
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "if it is mac, export APIDOMAIN=https://integration.toscanatest.com ",
+        "MessageId": "58de735ae4b0c5168c415588",
+        "TimeStamp": 1490973530603
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "am I correct ?",
+        "MessageId": "58de735ee4b0c5168c41558d",
+        "TimeStamp": 1490973534830
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "yep!",
+        "MessageId": "58de7364e4b0c5168c415591",
+        "TimeStamp": 1490973540883
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "that works, from command line",
+        "MessageId": "58de7368e4b0c5168c415597",
+        "TimeStamp": 1490973544084
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "there is a way to also create a JSON file that you can put in your repo and it'll set the variables for you without using environment variables",
+        "MessageId": "58de738ee4b0c5168c4155af",
+        "TimeStamp": 1490973582003
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "ohh yeah... config",
+        "MessageId": "58de73ade4b0c5168c4155e6",
+        "TimeStamp": 1490973613659
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "yep!",
+        "MessageId": "58de73b1e4b0c5168c4155e9",
+        "TimeStamp": 1490973617207
+     }, {
+        "ParticipantName": "Suniyya Waraich",
+        "Message": "okay, decoding authorization field in the header gives `undefined:undefined`. I'll try it again. Maybe it was just the way I set env variables. Thanks",
+        "MessageId": "58de73ffe4b0c5168c41562d",
+        "TimeStamp": 1490973695824
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "although I have not tried that out, as Vijay said, you can also create your own config file and specify the variables. by default feedback-service-ui/config/development.json",
+        "MessageId": "58de766ae4b0c5168c415828",
+        "TimeStamp": 1490974314547
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "see feedback-service-ui/global.config.js for details.",
+        "MessageId": "58de7688e4b0c5168c41583f",
+        "TimeStamp": 1490974344157
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "yeah here's the example one for the dx: \n <$file|ibm0@default@5717e0d09932fed8d0ed575d@file-f18de823-895b-47d2-bcc2-154a06911097|development.json>",
+        "MessageId": "58de76a7e4b0c5168c415874",
+        "TimeStamp": 1490974375133
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "oh gosh, look at that OSSC\nhttps://github.ibm.com/toscana/feedback-app/pull/3",
+        "MessageId": "58de76bce4b0c5168c415887",
+        "TimeStamp": 1490974396103
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "oh boy",
+        "MessageId": "58de76d6e4b0c5168c4158a8",
+        "TimeStamp": 1490974422744
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "uhh... LOL",
+        "MessageId": "58de76ebe4b0c5168c4158cd",
+        "TimeStamp": 1490974443370
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "seems bad",
+        "MessageId": "58de76efe4b0c5168c4158d6",
+        "TimeStamp": 1490974447722
+     }, {
+        "ParticipantName": "Vijay Francis",
+        "Message": "i wonder if we just have higher versions?",
+        "MessageId": "58de7707e4b0c5168c4158f0",
+        "TimeStamp": 1490974471444
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "probably tbh",
+        "MessageId": "58de7710e4b0c5168c4158f2",
+        "TimeStamp": 1490974480238
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "quick question. is there any test user I can use for workspace.ibm.com ? just want to test notifications with chat using 2 users.",
+        "MessageId": "58de7858e4b0c5168c415a38",
+        "TimeStamp": 1490974808428
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "maybe I should move to test server ?",
+        "MessageId": "58de78b1e4b0c5168c415a88",
+        "TimeStamp": 1490974897419
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "I can keep sending you stuff if you want haha",
+        "MessageId": "58de78e4e4b0c5168c415ab8",
+        "TimeStamp": 1490974948758
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "Also, how do i specify docker build? \n<$image|ibm0@default@5717e0d09932fed8d0ed575d@file-1e2c2ec7-f3c4-42d2-9f71-f450640fb708|698x144>\n",
+        "MessageId": "58de78f5e4b0c5168c415ac4",
+        "TimeStamp": 1490974965551
+     }, {
+        "ParticipantName": "DENNIS CHEN",
+        "Message": "*image",
+        "MessageId": "58de78f7e4b0c5168c415aca",
+        "TimeStamp": 1490974967814
+     }, {
+        "ParticipantName": "Hiroyuki OKAMOTO",
+        "Message": "haha yeah definitely that would work. maybe i can do that.",
+        "MessageId": "58de7946e4b0c5168c415aef",
+        "TimeStamp": 1490975046791
+     }, {
+        "ParticipantName": "Scott Chapman",
+        "Message": "https://github.com/watson-developer-cloud/java-sdk/issues/603#issuecomment-287669638",
+        "MessageId": "58de7afae4b0c5168c415c5d",
+        "TimeStamp": 1490975482688
+     }];
+    
+    return conversation;
+       
+}                       
+</script>
+
+</head>
+
+    <br />
+    <br />
+    <center>
+    Content Clarifier - Conversation Summarization Sample
+    </center>
+    <br />
+    <br />
+    
+    This is a simple demo that allows one to perform conversation summarization. View this page's JS code to see the chat conversation code in the <strong>getSampleConversationJSON()</strong> function.
+    <br />
+    <br />
+    <strong>NOTES:</strong><br /><br />
+    <strong>1.</strong> To adjust the "aggressiveness" of the summarization algorithm, adjust the <strong>classifierThreshold</strong> parameter in the JS code. We usually suggest a value between <strong>0.85</strong> (the default) and <strong>0.90</strong>, but the acceptable range is {0.80 – 0.95}. <i>Generally speaking, as the classifierThreshold increases, the size of the resulting summarization decreases.</i>
+    <br /><br />
+    <strong>2.</strong> The sample conversation is real data from a multi-participant chat conversation. As such, the <strong>messageFormat</strong> parameter is "short". In modifying this code, if you supply email threads, please change messageFormat to <strong>long</strong>.
+     <br /><br />   
+    <strong>PS.</strong> It may take 30 seconds or so to process...please be patient..it's worth the wait! :) 
+
+    <center>  
+    <input id="clickMe" type="button" value="Click To Summarize Chat Conversation" onclick="summarizeConversation();" />
+    <img src="loading.gif" id="loading" style="display:none;" />
+    </center> 
+    
+    <p>&nbsp;</p> 
+    <p>&nbsp;</p> 
+    <p>&nbsp;</p>    
+    <pre><div id="summarized_conversation"></div></pre>    
+    
+</html>

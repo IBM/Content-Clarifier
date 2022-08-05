@@ -1,0 +1,442 @@
+[
+  {
+    "TRANSITION":"adversely",
+    "REPLACEMENT":"badly"
+  }, 
+  {
+    "TRANSITION":"apparently",
+    "REPLACEMENT":"it seems"
+  },     
+  {
+    "TRANSITION":"absolutely",
+    "REPLACEMENT":"really"
+  },   
+  {
+    "TRANSITION":"throughout",
+    "REPLACEMENT":"all over"
+  },        
+  {
+    "TRANSITION":"in the first place",
+    "REPLACEMENT":"before anything else"
+  },
+  {
+    "TRANSITION":"About it there was",
+    "REPLACEMENT":"there was"
+  },    
+  {
+    "TRANSITION":"according to",
+    "REPLACEMENT":"by"
+  },    
+  {
+    "TRANSITION":"as a matter of fact",
+    "REPLACEMENT":"actually"
+  },
+  {
+    "TRANSITION":"Destitute of",
+    "REPLACEMENT":"without"
+  },   
+  {
+    "TRANSITION":"especially",
+    "REPLACEMENT":"mainly"
+  },       
+  {
+    "TRANSITION":"in like manner",
+    "REPLACEMENT":"in the same way"
+  },
+  {
+    "TRANSITION":"in addition",
+    "REPLACEMENT":"also"
+  },
+  {
+    "TRANSITION":"including",
+    "REPLACEMENT":"along with"
+  },   
+  {
+    "TRANSITION":"coupled with",
+    "REPLACEMENT":"also with"
+  },
+  {
+    "TRANSITION":"in the same fashion",
+    "REPLACEMENT":"in the same way"
+  },
+  {
+    "TRANSITION":"in the light of",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"not to mention",
+    "REPLACEMENT":"don't forget"
+  },
+  {
+    "TRANSITION":"to say nothing of",
+    "REPLACEMENT":"also consider"
+  },
+  {
+    "TRANSITION":"by the same token",
+    "REPLACEMENT":"similarly"
+  },
+  {
+    "TRANSITION":"moreover",
+    "REPLACEMENT":"also"
+  },
+  {
+    "TRANSITION":"as well as",
+    "REPLACEMENT":"and"
+  },
+  {
+    "TRANSITION":"together with",
+    "REPLACEMENT":"and"
+  },
+  {
+    "TRANSITION":"of course",
+    "REPLACEMENT":"sure"
+  },
+  {
+    "TRANSITION":"likewise",
+    "REPLACEMENT":"also"
+  },
+  {
+    "TRANSITION":"comparatively",
+    "REPLACEMENT":"similar"
+  },
+  {
+    "TRANSITION":"correspondingly",
+    "REPLACEMENT":"just as"
+  },
+  {
+    "TRANSITION":"furthermore",
+    "REPLACEMENT":"also"
+  },
+  {
+    "TRANSITION":"additionally",
+    "REPLACEMENT":"also"
+  },
+  {
+    "TRANSITION":"although this may be true",
+    "REPLACEMENT":"even though"
+  },
+  {
+    "TRANSITION":"in contrast to",
+    "REPLACEMENT":"not the same as"
+  },
+  {
+    "TRANSITION":"different from",
+    "REPLACEMENT":"not the same as"
+  },
+  {
+    "TRANSITION":"on the other hand",
+    "REPLACEMENT":"but"
+  },
+  {
+    "TRANSITION":"on the contrary",
+    "REPLACEMENT":"not true"
+  },
+  {
+    "TRANSITION":"in spite of",
+    "REPLACEMENT":"even though"
+  },
+  {
+    "TRANSITION":"be that as it may",
+    "REPLACEMENT":"even though"
+  },
+  {
+    "TRANSITION":"then again",
+    "REPLACEMENT":"actually"
+  },
+  {
+    "TRANSITION":"above all",
+    "REPLACEMENT":"most importantly"
+  },
+  {
+    "TRANSITION":"in reality",
+    "REPLACEMENT":"honestly"
+  },
+  {
+    "TRANSITION":"after all",
+    "REPLACEMENT":"at the end"
+  },
+  {
+    "TRANSITION":"albeit",
+    "REPLACEMENT":"although"
+  },
+  {
+    "TRANSITION":"besides",
+    "REPLACEMENT":"also"
+  },
+  {
+    "TRANSITION":"even though",
+    "REPLACEMENT":"although"
+  },
+  {
+    "TRANSITION":"whereas",
+    "REPLACEMENT":"it is true that"
+  },
+  {
+    "TRANSITION":"despite",
+    "REPLACEMENT":"even though"
+  },
+  {
+    "TRANSITION":"nonetheless",
+    "REPLACEMENT":"anyway"
+  },
+  {
+    "TRANSITION":"nevertheless",
+    "REPLACEMENT":"though"
+  },
+  {
+    "TRANSITION":"notwithstanding",
+    "REPLACEMENT":"still"
+  },
+  {
+    "TRANSITION":"in the event that",
+    "REPLACEMENT":"if"
+  },
+  {
+    "TRANSITION":"granted that",
+    "REPLACEMENT":"if"
+  },
+  {
+    "TRANSITION":"on the condition that",
+    "REPLACEMENT":"if"
+  },
+  {
+    "TRANSITION":"for the purpose of",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"with this intention",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"with this in mind",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"in the hope that",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"to the end that",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"for fear that",
+    "REPLACEMENT":"because"
+  },
+  {
+    "TRANSITION":"in view of",
+    "REPLACEMENT":"because of"
+  },
+  {
+    "TRANSITION":"provided that",
+    "REPLACEMENT":"since"
+  },
+  {
+    "TRANSITION":"given that",
+    "REPLACEMENT":"since"
+  },
+  {
+    "TRANSITION":"inasmuch as",
+    "REPLACEMENT":"since"
+  },
+  {
+    "TRANSITION":"lest",
+    "REPLACEMENT":"in case"
+  },
+  {
+    "TRANSITION":"due to",
+    "REPLACEMENT":"because of"
+  },
+  {
+    "TRANSITION":"in other words",
+    "REPLACEMENT":"to say it another way"
+  },
+  {
+    "TRANSITION":"to put it differently",
+    "REPLACEMENT":"to say it another way"
+  },
+  {
+    "TRANSITION":"as an illustration",
+    "REPLACEMENT":"for example"
+  },
+  {
+    "TRANSITION":"for this reason",
+    "REPLACEMENT":"because of this"
+  },
+  {
+    "TRANSITION":"to put it another way",
+    "REPLACEMENT":"to say it another way"
+  },
+  {
+    "TRANSITION":"that is to say",
+    "REPLACEMENT":"to say it another way"
+  },
+  {
+    "TRANSITION":"by all means",
+    "REPLACEMENT":"definitely"
+  },
+  {
+    "TRANSITION":"important to realize",
+    "REPLACEMENT":"important to know"
+  },
+  {
+    "TRANSITION":"another key point",
+    "REPLACEMENT":"another important thing to know"
+  },
+  {
+    "TRANSITION":"most compelling evidence",
+    "REPLACEMENT":"most important bit of information"
+  },
+  {
+    "TRANSITION":"must be remembered",
+    "REPLACEMENT":"must not forget"
+  },
+  {
+    "TRANSITION":"point often overlooked",
+    "REPLACEMENT":"an important thing that most people don't know"
+  },
+  {
+    "TRANSITION":"to point out",
+    "REPLACEMENT":"to show"
+  },
+  {
+    "TRANSITION":"on the positive side",
+    "REPLACEMENT":"the good thing is"
+  },
+  {
+    "TRANSITION":"on the negative side",
+    "REPLACEMENT":"the bad thing is"
+  },
+  {
+    "TRANSITION":"with this in mind",
+    "REPLACEMENT":"because of this"
+  },
+  {
+    "TRANSITION":"chiefly",
+    "REPLACEMENT":"most importantly"
+  },
+  {
+    "TRANSITION":"certainly",
+    "REPLACEMENT":"truly"
+  },
+  {
+    "TRANSITION":"markedly",
+    "REPLACEMENT":"most importantly"
+  },
+  {
+    "TRANSITION":"in fact",
+    "REPLACEMENT":"actually"
+  },
+  {
+    "TRANSITION":"in general",
+    "REPLACEMENT":"mostly"
+  },
+  {
+    "TRANSITION":"in detail",
+    "REPLACEMENT":"in a lot of information"
+  },
+  {
+    "TRANSITION":"for example",
+    "REPLACEMENT":"like"
+  },
+  {
+    "TRANSITION":"for instance",
+    "REPLACEMENT":"like"
+  },
+  {
+    "TRANSITION": "not infrequently",
+    "REPLACEMENT": "often"
+  },    
+  {
+    "TRANSITION":"to demonstrate",
+    "REPLACEMENT":"to show an example"
+  },
+  {
+    "TRANSITION":"to emphasize",
+    "REPLACEMENT":"to show how important"
+  },
+  {
+    "TRANSITION":"to repeat",
+    "REPLACEMENT":"to do again"
+  },
+  {
+    "TRANSITION":"to clarify",
+    "REPLACEMENT":"to make it easy"
+  },
+  {
+    "TRANSITION":"to explain",
+    "REPLACEMENT":"to make it easy"
+  },
+  {
+    "TRANSITION":"to enumerate",
+    "REPLACEMENT":"to make a list of"
+  },
+  {
+    "TRANSITION":"important to realize",
+    "REPLACEMENT":"important to know"
+  },
+  {
+    "TRANSITION":"another key point",
+    "REPLACEMENT":"also important to know"
+  },
+  {
+    "TRANSITION":"first thing to remember",
+    "REPLACEMENT":"the most important thing"
+  },
+  {
+    "TRANSITION":"most compelling evidence",
+    "REPLACEMENT":"the most important thing"
+  },
+  {
+    "TRANSITION":"must be remembered",
+    "REPLACEMENT":"can not forget"
+  },
+  {
+    "TRANSITION":"as a result of",
+    "REPLACEMENT":"because of"
+  },
+  {
+    "TRANSITION":"at the present time",
+    "REPLACEMENT":"now"
+  },
+  {
+    "TRANSITION":"from time to time",
+    "REPLACEMENT":"sometimes"
+  },
+  {
+    "TRANSITION":"sooner or later",
+    "REPLACEMENT":"soon"
+  },
+  {
+    "TRANSITION":"up to the present time",
+    "REPLACEMENT":"until now"
+  },
+  {
+    "TRANSITION":"in a moment",
+    "REPLACEMENT":"soon"
+  },
+  {
+    "TRANSITION":"without delay",
+    "REPLACEMENT":"very soon"
+  },
+  {
+    "TRANSITION":"in general",
+    "REPLACEMENT":"mostly"
+  },
+  {
+    "TRANSITION":"for the most part",
+    "REPLACEMENT":"mostly"
+  },
+  {
+    "TRANSITION":"as a general rule",
+    "REPLACEMENT":"usually"
+  },
+  {
+    "TRANSITION":"on the whole",
+    "REPLACEMENT":"usually"
+  },  
+  {
+    "TRANSITION":"the probabilities are",
+    "REPLACEMENT":"it is likely"
+  }      
+]

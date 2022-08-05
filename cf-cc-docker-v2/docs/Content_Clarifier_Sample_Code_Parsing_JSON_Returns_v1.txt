@@ -1,0 +1,249 @@
+
+##############################################################################
+
+MIT License
+
+Copyright 2017, IBM
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+##############################################################################
+
+
+
+
+I. JSON RETURN AND DELIMITERS
+
+
+This document is to provide examples for parsing the different response types of 
+different APIs of the Content Clarifier. In our examples, we parse the returns
+and generate formatted HTML from the JSON returns, but that's just what we opted
+to do -- this need not be the case.
+
+
+We have three major APIs
+
+	1. Contextual Simplify
+	2. Condense (Doesn't require any parsing)
+	3. Simplify and Condense ( Same parsing methods uses for Contextual-Simplify)
+
+In this doc, we'll focus on parsing the Contextual Simplify API response (with different response 
+types) as a representative example. 
+
+Contextual Simplify API, by default, returns the data with Simplified words. It also provides the 
+Confidence levels of each identified simplified word. Apart from that it returns optional enhanced
+content  in the response based on the selected output-Type which is sent as the input parameter to the API. 
+The output-types are:
+
+	1. Concepts
+	2. Definitions
+	3. Symbols
+
+
+
+
+All the response data can be catagorized based on delimiter types. Following are Delimiter types used 
+
+	a. This is the Delimiter for Original word
+		|_word_| 
+
+	b. This is the Delimiter for simplified(replacment) word
+		|^replacement^|
+
+	c. This is the Delimiter for JSON containing Confidence levels of each replacement
+		 %#[ confidences ]#%
+
+	d. This is the Delimiter for Definition
+		|^ word(Definition) ^|
+
+	e. This is the Delimiter for JSON containing Idenfied Concepts & symbols.
+		%~[Identified Concepts and Symbols]~%
+
+	Note: Refer to the API Documentation for more information on the response types
+
+
+
+
+
+
+II. SAMPLE 1
+
+
+The following example code snippet can be used to for parsing Simplified words, Definitions and Confidence levels:
+
+1.	This can be used for identifying replaced words as well as definitions as both the data uses the 
+
+2. 	This code snippet is used parsing the API response that has delimiters with the data about confidence levels of each identified/replaced (Simplified) word. It creates the HTML content with 		tooltips just hover above the word and has Confidence level content in it. It also highlights the replaced(simplified) word with green font color.
+3.	It takes the response from the API as input and returns the HTML content as response.
+
+
+
+ /* Shows the confidence levels of each suggested word in an HTML tool tips */
+	function identifyReplaceConfidence(simpleText){
+   		 var confidencejson;
+   		 var obj;
+		 var matchesjson = simpleText.match(/\%#[^]*?#\%/g); // confidence levels(JSON format) are identified and are stored in this map
+    		 var replacedWords2  =  simpleText.match(/\|\^[^_]*?\^\|/g); //Simplified words are identified using the regex
+    		 var html;
+		 if(matchesjson !=null && matchesjson != undefined){ 
+
+			//Cleans the Inputtext by removing all the delimiters and the content inside that
+			for (var i = 0; i <matchesjson.length; i++) {
+                    		simpleText = simpleText.split(matchesjson[i]).join("");
+             		 }
+
+			// Now it parses the data from the  each identified Confidence (JSON) and inserts the data into HTML tooltip
+            		 for (var i = 0; i <matchesjson.length; i++) {
+				confidencejson =  matchesjson[i].replace(/[\%\#\%\#]/g, "");
+				obj = JSON.parse(confidencejson);
+				var targetoutput="";
+
+                   		for(var k = obj.length -1 ; k >=0; k--){
+					lexicon  = obj[k].lexicon != undefined ? obj[k].lexicon : "";    
+                         		confidence   = obj[k].confidence != undefined ? obj[k].confidence : "";
+                         		confidence = confidence.substring(0, 6); 
+                         		targetoutput = targetoutput + lexicon+ " | conf = "+ confidence + "<br/>";
+                    		} 
+			        /* generating the html that needs to be replaced in the simpleTex */ 
+				html =  '<div class="tooltips">'+replacedWords2[i] +'<span class="tooltiptexts">'+targetoutput+' </span></div>';
+				simpleText = simpleText.split(replacedWords2[i]).join(html);
+             		  }
+              
+       		 }
+
+		//Highlights the replaced(simplified word) with green font color
+            	simpleText = simpleText.split("|^").join("<font color='green'>");
+            	simpleText = simpleText.split("^|").join("</font>"); 
+            	simpleText = simpleText.split("\\").join("");
+       	   return simpleText;
+  	 }
+
+
+
+
+III. SAMPLE 2 
+
+
+The following sample code snippet will parse data for the follwing output types.
+
+		a. Concepts
+		b. Symbols 
+
+(Note: Both the these output types uses the same delimiters. So, the same parsing method is used for either of them)
+
+
+	function parseToHtml(simpleText){
+
+		try{
+           		var concept;
+           		var relevance;
+           		var web;
+           		var thumbnail;
+           		var comment;
+           		var json;
+           		var obj;
+           		var html;
+           		var id;
+           		var wordname;
+           		var symbol;
+           		var image_url;
+           		var words;
+           		var divtext;
+           		var author;
+           		var license;
+           		var license_url;
+			var matchMap = {};
+                     
+           		// match and get all %~<>~% delimited reference data
+           		var matches = simpleText.match(/\%~[^]*?~\%/g); 
+
+                        //If there are no such matches, ignore parsing and returns the data as it is
+           		if(matches !=null && matches != undefined){ 
+
+
+				//Removes all the delimiters and the data inside it and get the plain text
+               			for (var i = 0; i <matches.length; i++) {
+                    			simpleText = simpleText.split(matches[i]).join("");
+              			}
+
+             			// Now replaces the matched content with HTML content(based on the returned response)
+               			for(var i = 0; i < matches.length; i++){
+
+					// Gets all the reference data from the matched Content and stores them in variables
+					json         =  matches[i].replace(/[\%\~\%\~]/g, ""); // remove %~ ~% delimiiters
+					obj          = JSON.parse(json);
+					concept      = obj.concept != undefined ? obj.concept : "";                         
+                         		comment      = obj.comment != undefined ? obj.comment : "";
+                         		symbol       = obj.symbol != undefined ? obj.symbol : "";
+                         		image_url    = obj.image_url != undefined ? obj.image_url : "";
+                         		author       = obj.primary_author != undefined ? obj.primary_author : "";	
+			 		license_url  = obj.license_url != undefined ? obj.license_url : "";
+			 		license      = obj.license != undefined ? obj.license : "";
+
+					//inserts the HTML content by for the Idenified Symbols (var symbol in this case)
+                        		if(!matchMap.hasOwnProperty(symbol)){ // if this match isn't already in the map
+						if(symbol != "" && image_url != ""){ // If we have sufficient data, add the modal code 
+							symbol   = symbol.split("'").join('^');
+							html = "<div id='container' style='display:inline-block; line-height:0.8; '><div  id='num1' style='display:block;' > <img src="
+							+image_url+" title='Author: "+author+" &#13;License: "+license+"&#13;License-URL:"
+							+license_url+"' height=50; width=50;/></div> <div id='num2' style='display:block; text-align:center'>"
+							+symbol+"</div></div>";
+                           				//html = '<a ng-click="getSymbol(\''+symbol.split("'").join('')+'\', \''+image_url+'\')" href="">'+symbol+'</a>';
+							id = makeid();
+							// (A) replaces [symbol %~<ref data>~%] tuple with a UID
+							simpleText = simpleText.replace( new RegExp("\\b("+symbol+")\\b", "ig"), id+ "   ");
+							var matchTuple = {
+                                       			 	"id": id,
+                                        			"modalHTML" : html
+                                    			}; 
+                                			matchMap[symbol] = matchTuple;
+                             
+                        	 		} // end if aymbol
+                    			} // end if !matchMap
+
+
+                   			//inserts the HTML content by for the Idenified Concepts (var symbol in this case)
+                        		if(!matchMap.hasOwnProperty(concept)){ // if this match isn't already in the map
+ 						if(concept != "" && comment != ""){ // If we have sufficient data, add the modal code
+							// replace the ' and " in the comment temporarily
+                                			comment   = comment.split('"').join('^');
+                                			comment   = comment.split("'").join('^');  
+							relevance = obj.relevance != undefined ? obj.relevance : "";
+                                			web       = obj.website != undefined ? obj.website : "";
+                                			thumbnail = obj.thumbnail != undefined ? obj.thumbnail : "";  
+							thumbnail=thumbnail.split("'").join('^')
+							html = '<a ng-click="getThumbnail(\''+relevance+'\',\''+web+'\',\''+concept.split("'").join('')+'\', \''+comment+'\', \''+thumbnail+'\')" 								href="">'+concept+'</a>';
+							id = makeid();
+							// (A) replaces [concept %~<ref data>~%] tuple with a UID
+                               				simpleText = simpleText.replace( new RegExp("\\b("+concept+")\\b", "ig"), id+ " ");
+							var matchTuple = {
+                                        			"id": id,
+                                        			"modalHTML" : html
+                                    			}; 
+							matchMap[concept] = matchTuple;
+                             
+                         			} // end if concept
+                    			} // end if !matchMap
+               			} // end for
+               
+               			//
+               			// Replace the matches in the text
+               			//  
+				for(key in matchMap){ 
+					// Replaces UID set in (A) with the associated modalHTML the pop up                  
+                    			simpleText = simpleText.split(matchMap[key].id).join(matchMap[key].modalHTML);
+				}
+			} // end if matches !=null
+            		// removes the delimiters for the replacement and turns the font text to green
+       		}
+       		catch(exception){
+          	 console.log("parseToHtml threw an exception!");
+           	 console.log(exception);
+      	 	}
+      	 	return simpleText;
+  	 }
+

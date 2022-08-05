@@ -1,0 +1,35 @@
+{
+  "title": "Solution Features",
+  "description": "The Content Clarifier is a callable API that builds upon IBM Watson deep learning APIs to include a service that dynamically simplifies, summarizes or enhances content to increase comprehension. ",
+  "items": {
+    "left": [
+      {
+        "title": "Simplified",
+        "description": " Lexical and grammatical manipulation is performed to improve comprehension. Non-literal expressions such as idioms and colloquialisms are also replaced with their simple English counterparts. Simplified mode also supports enabling 'enhanced content', which returns simple English definitions, as well as additional information about identified topics.",
+        "iconClass": "icon icon-equalizer"
+      },
+     {
+        "title": "Condensed",
+        "description": "Content is summarized for quick reading.",
+        "iconClass": "icon icon-support"
+      }
+    ],
+    "right": [
+      
+      {
+        "title": "Condense-Simplify",
+        "description": " A second pass of simplification is performed on summarized content.",
+        "iconClass": "icon icon-target"
+      },
+      {
+        "title": "Chat Summarization",
+        "description": "Summarizes the content of the chat",
+        "iconClass": "icon icon-credit-card"
+      }
+    ],
+    "center": {
+      "src": "public/images/logoHiResBlue.png",
+      "alt": "Center image"
+    }
+  }
+}

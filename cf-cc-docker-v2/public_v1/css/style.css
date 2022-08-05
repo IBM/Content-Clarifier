@@ -1,0 +1,650 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Aashu
+Version:	1.0
+Last change:	01/31/2017
+Assigned to:	drupalthemez
+Primary use:	Application landing page 
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Typography
+2. Customizations
+3. Search / .block-search
+4. Navbar / .navbar
+5. Megaslider / #mega-slider
+6. Grid items / .grid-icon-item
+7. Video / .video
+8. App screenshots / .app-screenshots
+9. Testimonials / .testimonial
+10. Download/Pricing plan / .download, .plan-single
+11. Contact / .contact
+12. Subscribe / .subscribe
+13. Footer / footer
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[1. Typography]
+*/
+html, .root {
+  font-size: 14px;
+  line-height: 24px;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold
+}
+h1, .h1 {
+  font-size: 31px;
+  line-height: 48px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+h2, .h2 {
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+h3, .h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 0px;
+}
+h4, .h4 {
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 0px;
+}
+h5, .h5 {
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 24px;
+  margin-bottom: 0px;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+hr, .hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+a, b, i, strong, em, small, code {
+  line-height: 0;
+}
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+.lead{
+  line-height: 24px;
+}
+a, 
+.btn, 
+.slick-arrow, 
+.slick-slide, 
+.navbar,
+.navbar-nav>li>a::after,
+.feature-image i{
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.form-group {
+  margin-bottom: 24px;
+}
+.form-control{
+  box-shadow: none !important;
+}
+
+/*------------------------------------------------------------------
+[2. Customizations]
+*/
+.preloader-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background: #ffffff;
+}
+.loader {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -60px;
+    border: 16px solid #f6f6f6; /* Light grey */
+    border-top: 16px solid #777777; /* Blue */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.no-border-radius{
+  border-radius: 0 !important
+}
+.btn {
+  background: transparent
+}
+.btn-lg{
+  font-size: 14px;
+}
+.btn-white, 
+.btn-solid{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+.btn-round-lg{
+  border-radius: 30px;
+  padding: 12px 24px
+}
+.btn-round{
+  border-radius: 17px;
+}
+.btn-round-sm{
+  border-radius: 15px;
+}
+.btn-round-xs{
+  border-radius: 11px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.btn-icon {
+  padding: 15px 15px 15px 60px;
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  text-align: left;
+}
+.btn-icon .fa {
+  position: absolute;
+  font-size: 36px;
+  width: 60px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.btn-icon span {
+  display: block;
+  font-size: 10px;
+  font-weight: normal;
+}
+.scroll-top.affix {
+  padding: 15px;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 100%;
+  z-index: 100
+}
+.row-height {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+}
+.col-height {
+  display: table-cell;
+  float: none;
+  height: 100%;
+}
+.col-top {
+  vertical-align: top;
+}
+.col-middle {
+  vertical-align: middle;
+}
+.col-bottom {
+  vertical-align: bottom;
+}
+.no-margin{
+  margin: 0 !important;
+}
+.block{
+  padding: 84px 0px; 
+  position: relative;
+}
+.block-title{
+  margin: 0 auto 60px;
+  max-width: 500px;
+  position: relative
+}
+.block-title h2{
+  text-transform: uppercase;
+  margin-top: 0px
+}
+.block-title p:last-child{
+  margin-bottom: 0
+}
+
+
+/*------------------------------------------------------------------
+[3. Search / .block-search]
+*/
+.block-search .form-control {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/*------------------------------------------------------------------
+[4. Navbar / .navbar]
+*/
+.transperant-header.affix-top {
+  background: none;
+}
+.navbar .container{
+  position: relative
+}
+.navbar-default .navbar-toggle, 
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:active {
+  background: none;
+  border: none;
+}
+.navbar-brand{
+  font-size: 21px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 60px;
+  padding: 0px;
+  height: 60px;
+}
+.navbar-nav>li>a, 
+.navbar-nav>li>a:focus, 
+.navbar-nav>li>a:hover {
+  background: none !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.navbar-nav>li>a::after {
+  content: "";
+  width: 100%;
+  height: 0;
+  display: block;
+  border-bottom: 3px solid;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  opacity: 0;
+}
+.navbar-nav>li.active>a::after,
+.navbar-nav>li:active>a::after,
+.navbar-nav>li:focus>a::after,
+.navbar-nav>li:hover>a::after{
+  opacity: 1;
+}
+
+/*------------------------------------------------------------------
+[5. Megaslider / #mega-slider]
+*/
+.slick-slider {
+  position: relative;
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+.slick-slide,
+.slick-arrow{
+  outline: none !important
+}
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  border: none;
+  background: none;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 21px;
+  line-height: 1;
+  padding: 15px 18px;
+  border-radius: 100%;  
+}
+.slick-arrow.slick-prev {
+  left: 5px;
+}
+.slick-arrow.slick-next {
+  right: 5px;
+}
+.slide-item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.slide-item::before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  filter:alpha(opacity=90);
+  -moz-opacity:0.9;
+  -khtml-opacity: 0.9;
+  opacity: 0.9;
+}
+.slide-item .caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  max-width: 500px
+}
+.slide-item .caption h2 {
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+.slide-item .caption p {
+  margin-bottom: 36px;
+}
+
+/*------------------------------------------------------------------
+[6. Grid items / .grid-icon-item]
+*/
+.grid-icon-item {
+  padding-left: 48px;
+  margin: 72px 0;
+  position: relative
+}
+.grid-icon-item h4{
+  text-transform: uppercase;
+  letter-spacing: 1px
+}
+.grid-icon-item .icon {
+  position: absolute;
+  top: 12px;
+  font-size: 30px;
+  line-height: 24px;
+  left: 0px;
+}
+.feature-image i {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 72px;
+    z-index: 1
+}
+
+/*------------------------------------------------------------------
+[7. Video / .video]
+*/
+.video::before{
+  content:"";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../images/demo-bg.png) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  filter:alpha(opacity=10);
+  -moz-opacity:0.1;
+  -khtml-opacity: 0.1;
+  opacity: 0.1;
+  z-index: 0
+}
+.video .embed-responsive{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.videoPoster {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    font-size: 84px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+
+/*------------------------------------------------------------------
+[8. App screenshots / .app-screenshots]
+*/
+.app-screenshots {
+  padding: 72px 0;
+}
+.app-screenshots::before {
+  content: "";
+  display: block;
+  width: 360px;
+  height: 100.3%;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url(../images/gallary-frame.png) no-repeat center top;
+  background-size: contain;
+  top: 50%;
+}
+.app-screenshots .slick-slide {
+  margin: 0 15px;
+  opacity: 0.5;
+  width: 280px;
+}
+.app-screenshots .slick-center{
+  opacity: 1;
+}
+
+/*------------------------------------------------------------------
+[9. Testimonials / .testimonial]
+*/
+.testimonial{
+  text-align: center
+}
+.testimonial .content {
+  max-width: 500px;
+  margin: 0 auto;
+  font-style: italic;
+  position: relative;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+  font-size: 16px
+}
+.testimonial .content::after, .testimonial .content::before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.testimonial .content::after {
+  border-width: 12px;
+  margin-left: -12px;
+}
+.testimonial .content::before {
+  border-width: 16px;
+  margin-left: -16px;
+}
+.testimonial .content p{
+  margin: 0
+}
+.app-screenshots .slick-arrow,
+.testimonials .slick-arrow {
+  bottom: 13px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-110px);
+}
+.testimonials .slick-arrow{
+  bottom: -50px
+}
+.app-screenshots .slick-arrow.slick-next,
+.testimonials .slick-arrow.slick-next {
+  left: 50%;
+  transform: translateX(55px);
+  right:auto
+}
+
+/*------------------------------------------------------------------
+[10. Download/Pricing plan / .download, .plan-single]
+*/
+.download .btn{
+  margin-bottom: 24px
+}
+.plan-single {
+    border-radius: 4px;
+    margin-bottom: 24px
+}
+.pricing-header {
+    text-transform: uppercase;
+    padding: 5px 30px;
+}
+.pricing-header p {
+    font-size: 75%;
+}
+.plan-single .price {
+    padding: 15px 30px;
+    font-size: 200%;
+    font-weight: bold;
+}
+.pricing-content ul{
+  margin-bottom: 0
+}
+.pricing-content ul li {
+    line-height: 48px;
+    padding: 0 30px;
+}
+.pricing-content ul li:last-child{
+  border-bottom: none;
+}
+.pricing-content ul li span {
+    float: right;
+    font-weight: 900;
+}
+
+/*------------------------------------------------------------------
+[11. Contact / .contact]
+*/
+.contact{
+  padding-bottom: 0
+}
+.contact-item {
+  padding: 24px 15px;
+}
+.contact-item:last-child {
+  border: none;
+}
+.contact-item .icon{
+  font-size: 36px
+}
+.map{
+  height: 360px
+}
+.contact-items{
+  position: relative;
+  z-index: 1
+}
+
+/*------------------------------------------------------------------
+[12. Subscribe / .subscribe]
+*/
+.subscribe .form-control {
+    background: none;
+    border-width: 2px;
+    border-radius: 24px;
+}
+.subscribe .input-group-btn .btn {
+    font-size: 17px;
+    border-width: 2px;
+    font-weight: bold;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    text-transform: uppercase;
+    outline: none !important;
+}
+
+/*------------------------------------------------------------------
+[13. Footer / footer]
+*/
+footer {
+    padding: 48px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+footer .block {
+    padding: 12px 0;
+}
+footer .block:last-child {
+    border: none;
+}
+footer .block ul, footer .block ol, footer .block p:last-child {
+    margin: 0;
+}
+footer .block ul li a, 
+footer .block ol li a {
+    margin-right: 30px;
+}
+.footer-nav>li{
+  display: inline-block
+}
+.footer-nav>li {
+    padding: 0;
+}
+.footer_social_area a {
+    width: 48px;
+    display: inline-block;
+    margin: 12px 3px;
+    border-radius: 100%;
+    border: 2px solid;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 21px;
+}
+.footer_social_area {
+    text-align: center;
+}

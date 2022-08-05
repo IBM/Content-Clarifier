@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Voice - Watson Text to Speech</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<div class="container">
+<a href="/">&laquo; Examples</a>
+
+<section>
+    <h2>Text to Speech with Custom Voice Example</h2>
+    <textarea id="text" rows="6" cols="80">Hello from IBM Watson</textarea>
+    <p>Voice: <select id="voice"></select> <small><i>For best results, the language of the voice should match the language of the text..</i></small></p>
+    <p><button id="button">Synthesize Text</button></p>
+</section>
+
+<script src="bower_components/watson-speech/dist/watson-speech.js"></script>
+<!-- window.fetch pollyfill for IE/Edge & Older Chrome/FireFox -->
+<script src="bower_components/fetch/fetch.js"></script>
+
+<h2>Code for this demo:</h2>
+<pre><code><script style="display: block;">
+function getTtsToken() {
+  return fetch('/api/text-to-speech/token')
+    .then(function(response) {
+      return response.text();
+    });
+}
+
+// fetch the voices and populate the dropdown
+getTtsToken()
+  .then(function (token) {
+    return WatsonSpeech.TextToSpeech.getVoices({token: token});
+  }).then(function (voices) {
+
+    var dropdown = document.querySelector('#voice');
+    voices.forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = v.name;
+      o.textContent = v.name;
+      if (v.name == 'en-GB_KateVoice') {
+        o.selected = true;
+      }
+      dropdown.appendChild(o);
+    });
+
+  }).catch(console.error.bind(console));
+
+// synthesize and play the text using the chosen voice
+document.querySelector('#button').onclick = function () {
+  getTtsToken().then(function (token) {
+
+    WatsonSpeech.TextToSpeech.synthesize({
+      text: document.querySelector('#text').value,
+      voice: document.querySelector('#voice').value,
+      token: token
+    }).on('error', function(err) {
+      console.log('audio error: ', err);
+    });
+
+  });
+};
+</script></code></pre>
+</div>
+</body>
+</html>

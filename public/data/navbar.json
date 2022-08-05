@@ -1,0 +1,55 @@
+{
+  "title": "Navigation",
+  "description": "",
+  "items": {
+    "logoTransperant": "public/images/logo-white.png",
+    "logo": "public/images/logo.png",
+    "isSearchActive": false,
+    "mainMenu": [
+      {
+        "title": "Home",
+        "url": "#home",
+        "class": "page-scroll",
+        "target": "",
+        "id": "Home_btn"
+      },
+      {
+        "title": "API",
+        "url": "#api",
+        "class": "page-scroll",
+        "target": "",
+        "id": "API_btn"
+      },
+      {
+        "title": "Video",
+        "url": "#video",
+        "class": "page-scroll",
+        "target": "",
+        "id": "video_btn"
+      },
+      {
+        "title": "News & Media",
+        "url": "#media",
+        "class": "page-scroll",
+        "target": "",
+        "id": "NM_btn"
+      },
+      {
+        "title": "Contact",
+        "url": "#contact",
+        "class": "page-scroll",
+        "target": "",
+        "id": "Contact_btn"
+      },
+      {
+        "title": "Launch App",
+        "url": "/sso",
+        "class": "page-scroll",
+        "target": "",
+        "id": "App_btn"
+      }
+      
+      
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-tooltips",
+        "scope": null,
+        "escapedName": "angular-tooltips",
+        "name": "angular-tooltips",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/sushank/Text-Simplication-trials/Text-Simplification-CKeditor"
+    ]
+  ],
+  "_from": "angular-tooltips@latest",
+  "_id": "angular-tooltips@1.2.1",
+  "_inCache": true,
+  "_location": "/angular-tooltips",
+  "_nodeVersion": "7.10.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/angular-tooltips-1.2.1.tgz_1495553203593_0.3951734574511647"
+  },
+  "_npmUser": {
+    "name": "drive",
+    "email": "tech@720kb.net"
+  },
+  "_npmVersion": "4.2.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-tooltips",
+    "scope": null,
+    "escapedName": "angular-tooltips",
+    "name": "angular-tooltips",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-tooltips/-/angular-tooltips-1.2.1.tgz",
+  "_shasum": "2f5d396ddcb43909563c80470b55dd114e06413c",
+  "_shrinkwrap": null,
+  "_spec": "angular-tooltips",
+  "_where": "/home/sushank/Text-Simplication-trials/Text-Simplification-CKeditor",
+  "author": {
+    "name": "Filippo Oretti",
+    "email": "filippo.oretti@gmail.com",
+    "url": "https://github.com/45kb"
+  },
+  "bugs": {
+    "url": "https://github.com/720kb/angular-tooltips/issues"
+  },
+  "contributors": [
+    {
+      "name": "Dario Andrei",
+      "email": "wouldgo84@gmail.com",
+      "url": "https://github.com/wouldgo"
+    }
+  ],
+  "dependencies": {},
+  "description": "Angular.js tooltips module.",
+  "devDependencies": {
+    "browser-sync": "^2.9.11",
+    "connect-history-api-fallback": "^1.1.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-eslint": "^1.0.0",
+    "gulp-header": "^1.7.1",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^1.12.0",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-sass-lint": "^1.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.4.2",
+    "husky": "^0.10.2",
+    "jshint-stylish": "^2.0.1",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.4",
+    "vinyl-paths": "^2.0.0"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "2f5d396ddcb43909563c80470b55dd114e06413c",
+    "tarball": "https://registry.npmjs.org/angular-tooltips/-/angular-tooltips-1.2.1.tgz"
+  },
+  "gitHead": "d29be43a197c16fc2dbddf0c802d050bead4a01a",
+  "homepage": "http://720kb.github.io/angular-tooltips",
+  "keywords": [
+    "tiptip",
+    "tooltip",
+    "tooltips",
+    "popover",
+    "angularjs",
+    "angular"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "drive",
+      "email": "tech@720kb.net"
+    }
+  ],
+  "name": "angular-tooltips",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/720kb/angular-tooltips.git"
+  },
+  "scripts": {
+    "lint": "gulp lint",
+    "postversion": "git push && git push --tags",
+    "precommit": "gulp lint",
+    "preversion": "gulp lint",
+    "prod": "gulp minify",
+    "version": "gulp minify && ./tasks/bower-version-bump && git add -A ."
+  },
+  "version": "1.2.1"
+}

@@ -1,0 +1,17 @@
+node_modules/
+*.log
+npm-debug.log.*
+.DS_store
+Thumbs.db
+test/resources/stt-auth.json
+test/resources/tts-auth.json
+doc/
+*-auth.json
+.env
+examples/static/webpack-bundle.js
+examples/node_modules/
+dist/*.js
+dist/*.map
+examples/static/bower_components/
+gh-pages/
+.idea

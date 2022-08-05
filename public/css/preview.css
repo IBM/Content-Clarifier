@@ -1,0 +1,61 @@
+.color-schemes {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    z-index: 100
+}
+.color-schemes .content {
+    margin: 0;
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    height: 100% !important;
+    width: 90px;
+    padding-top: 7px;
+}
+.color-schemes li{
+  padding: 0 15px
+}
+.color-schemes li span {
+    height: 32px;
+    width: 48%;
+    display: inline-block;
+}
+.btn-colors {
+    position: absolute;
+    top: 30px;
+    left: -43px;
+    background: #fff;
+    padding: 8px 10px;
+    font-size: 24px;
+    border: 1px solid #e7e7e7;
+}
+.color-schemes .blue .primary {
+    background: #3b54ec;
+}
+.color-schemes .blue .secondary {
+    background: #00aeef;
+}
+.color-schemes .purple .primary {
+    background: #4a148c;
+}
+.color-schemes .purple .secondary {
+    background: #d500f9;
+}
+.color-schemes .yellow .primary {
+    background: #f57f17;
+}
+.color-schemes .yellow .secondary {
+    background: #ffab00;
+}
+.color-schemes .green .primary {
+    background: #388e3c;
+}
+.color-schemes .green .secondary {
+    background: #00c853;
+}
+.color-schemes .red .primary {
+    background: #d32f2f;
+}
+.color-schemes .red .secondary {
+    background: #ff1744;
+}

@@ -1,0 +1,175 @@
+[
+    {
+        "WORD": "annual",
+        "REPLACEMENT": "every year"
+    },    
+    {
+        "WORD": "attitude",
+        "REPLACEMENT": "mood"
+    },
+    {
+        "WORD": "agency",
+        "REPLACEMENT": "business group"
+    },  
+    {
+        "WORD": "attractive",
+        "REPLACEMENT": "nice"
+    }, 
+    {
+        "WORD": "application",
+        "REPLACEMENT": "program"
+    },
+    {
+        "WORD": "applications",
+        "REPLACEMENT": "programs"
+    },     
+    {
+        "WORD": "characteristics",
+        "REPLACEMENT": "types"
+    },
+    {
+        "WORD": "classifier",
+        "REPLACEMENT": "sorter"
+    },    
+    {
+        "WORD": "classifiers",
+        "REPLACEMENT": "sorters"
+    },
+    {
+        "WORD": "classify",
+        "REPLACEMENT": "group"
+    },
+    {
+        "WORD": "classification",
+        "REPLACEMENT": "grouping"
+    }, 
+    {
+        "WORD": "cognitive",
+        "REPLACEMENT": "mind"
+    },   
+    {
+        "WORD": "determine",
+        "REPLACEMENT": "figure out"
+    },     
+    {
+        "WORD": "determining",
+        "REPLACEMENT": "figuring out"
+    },    
+    {
+        "WORD": "divided",
+        "REPLACEMENT": "split"
+    },
+    {
+        "WORD": "employers",
+        "REPLACEMENT": "jobs"
+    }, 
+    {
+        "WORD": "expanded",
+        "REPLACEMENT": "bigger"
+    }, 
+    {
+        "WORD": "expert",
+        "REPLACEMENT": "pro"
+    },     
+    {
+        "WORD": "helm",
+        "REPLACEMENT": "direction"
+    },  
+    {
+        "WORD": "highlighted",
+        "REPLACEMENT": "displayed"
+    },   
+    {
+        "WORD": "i'm",
+        "REPLACEMENT": "i am"
+    }, 
+    {
+        "WORD": "we're",
+        "REPLACEMENT": "we are"
+    }, 
+    {
+        "WORD": "they're",
+        "REPLACEMENT": "they are"
+    }, 
+    {
+        "WORD": "we'll",
+        "REPLACEMENT": "we will"
+    }, 
+    {
+        "WORD": "they'll",
+        "REPLACEMENT": "they will"
+    },     
+    {
+        "WORD": "individualized",
+        "REPLACEMENT": "personal"
+    }, 
+    {
+        "WORD": "infusing",
+        "REPLACEMENT": "including"
+    }, 
+    {
+        "WORD": "intellectual",
+        "REPLACEMENT": "mental"
+    },    
+    {
+        "WORD": "leverage",
+        "REPLACEMENT": "use"
+    },   
+    {
+        "WORD": "merchandising",
+        "REPLACEMENT": "products"
+    },     
+    {
+        "WORD": "personalized",
+        "REPLACEMENT": "personal"
+    },     
+    {
+        "WORD": "observation",
+        "REPLACEMENT": "review"
+    },
+    {
+        "WORD": "observations",
+        "REPLACEMENT": "reviews"
+    },
+    {
+        "WORD": "real-time",
+        "REPLACEMENT": "fast"
+    }, 
+    {
+        "WORD": "receive",
+        "REPLACEMENT": "get"
+    },    
+    {
+        "WORD": "regarding",
+        "REPLACEMENT": "about"
+    },     
+    {
+        "WORD": "recommendation",
+        "REPLACEMENT": "tip"
+    }, 
+    {
+        "WORD": "recommendations",
+        "REPLACEMENT": "tips"
+    },
+    {
+        "WORD": "routinely",
+        "REPLACEMENT": "usually"
+    },   
+    {
+        "WORD": "salaries",
+        "REPLACEMENT": "pay"
+    },
+    {
+        "WORD": "salary",
+        "REPLACEMENT": "pay"
+    }, 
+    {
+        "WORD": "shall",
+        "REPLACEMENT": "must"
+    },   
+    {
+        "WORD": "therefore",
+        "REPLACEMENT": "so"
+    }    
+]
+

@@ -1,0 +1,402 @@
+[
+    {
+        "UTTERANCE": "account"
+    },   
+    {
+        "UTTERANCE": "active"
+    },   
+    {
+        "UTTERANCE": "activate"
+    },   
+    {
+        "UTTERANCE": "activating"
+    },
+    {
+        "UTTERANCE": " apr "
+    },  
+    {
+        "UTTERANCE": "april"
+    },  
+    {
+        "UTTERANCE": " aug "
+    },    
+    {
+        "UTTERANCE": "august"
+    },
+    {
+        "UTTERANCE": "balance"
+    },    
+    {
+        "UTTERANCE": "bill"
+    },  
+    {
+        "UTTERANCE": "boost"
+    }, 
+    {
+        "UTTERANCE": "business"
+    },   
+    {
+        "UTTERANCE": "cancel"
+    }, 
+    {
+        "UTTERANCE": "canceling"
+    },
+    {
+        "UTTERANCE": "change"
+    },     
+    {
+        "UTTERANCE": "charge"
+    },   
+    {
+        "UTTERANCE": "charges"
+    },
+    {
+        "UTTERANCE": "contract"
+    }, 
+    {
+        "UTTERANCE": "convert"
+    },    
+    {
+        "UTTERANCE": "credit"
+    },   
+    {
+        "UTTERANCE": "credited"
+    },     
+    {
+        "UTTERANCE": "crediting"
+    },
+    {
+        "UTTERANCE": "data"
+    },    
+    {
+        "UTTERANCE": "debit"
+    }, 
+    {
+        "UTTERANCE": "debited"
+    },     
+    {
+        "UTTERANCE": "debiting"
+    },  
+    {
+        "UTTERANCE": " dec "
+    },
+    {
+        "UTTERANCE": "december"
+    },    
+    {
+        "UTTERANCE": "deliver"
+    },
+    {
+        "UTTERANCE": "dialing"
+    },    
+    {
+        "UTTERANCE": "delivering"
+    },   
+    {
+        "UTTERANCE": "emailed"
+    }, 
+    {
+        "UTTERANCE": "employee"
+    },     
+    {
+        "UTTERANCE": "expire"
+    }, 
+    {
+        "UTTERANCE": "expiring"
+    },
+    {
+        "UTTERANCE": "expiry"
+    },  
+    {
+        "UTTERANCE": " feb "
+    },    
+    {
+        "UTTERANCE": "february"
+    },    
+    {
+        "UTTERANCE": "fix"
+    }, 
+    {
+        "UTTERANCE": "fixing"
+    }, 
+    {
+        "UTTERANCE": "freedom"
+    },    
+    {
+        "UTTERANCE": " fri "
+    },
+    {
+        "UTTERANCE": "friday"
+    },    
+    {
+        "UTTERANCE": "gb"
+    },    
+    {
+        "UTTERANCE": "hours"
+    }, 
+    {
+        "UTTERANCE": "hrs"
+    }, 
+    {
+        "UTTERANCE": "kb "
+    },    
+    {
+        "UTTERANCE": "i need"
+    },
+    {
+        "UTTERANCE": "i want"
+    },    
+    {
+        "UTTERANCE": "inactive"
+    },
+    {
+        "UTTERANCE": "internet"
+    },    
+    {
+        "UTTERANCE": " jan "
+    },    
+    {
+        "UTTERANCE": "january"
+    }, 
+    {
+        "UTTERANCE": " mar "
+    },    
+    {
+        "UTTERANCE": "march"
+    },  
+    {
+        "UTTERANCE": "may"
+    },
+    {
+        "UTTERANCE": "mb "
+    },    
+    {
+        "UTTERANCE": "medicare"
+    }, 
+    {
+        "UTTERANCE": "min"
+    }, 
+    {
+        "UTTERANCE": "mins"
+    }, 
+    {
+        "UTTERANCE": "minutes"
+    },
+    {
+        "UTTERANCE": "mobile"
+    }, 
+    {
+        "UTTERANCE": " mon "
+    },   
+    {
+        "UTTERANCE": "monday"
+    },
+    {
+        "UTTERANCE": "no response"
+    },       
+    {
+        "UTTERANCE": " nov "
+    },    
+    {
+        "UTTERANCE": "november"
+    },    
+    {
+        "UTTERANCE": "june"
+    },  
+    {
+        "UTTERANCE": "july"
+    }, 
+    {
+        "UTTERANCE": " oct "
+    },    
+    {
+        "UTTERANCE": "october"
+    }, 
+    {
+        "UTTERANCE": "order number"
+    }, 
+    {
+        "UTTERANCE": "pack"
+    },     
+    {
+        "UTTERANCE": "paid"
+    }, 
+    {
+        "UTTERANCE": "pay"
+    }, 
+    {
+        "UTTERANCE": "paying"
+    }, 
+    {
+        "UTTERANCE": "payment"
+    },    
+    {
+        "UTTERANCE": "paypal"
+    }, 
+    {
+        "UTTERANCE": "personal"
+    },   
+    {
+        "UTTERANCE": "plan"
+    }, 
+    {
+        "UTTERANCE": "postpaid"
+    },
+    {
+        "UTTERANCE": "port "
+    },  
+    {
+        "UTTERANCE": "prepaid"
+    }, 
+    {
+        "UTTERANCE": "pre paid"
+    },
+    {
+        "UTTERANCE": "prepay"
+    },
+    {
+        "UTTERANCE": "product"
+    },     
+    {
+        "UTTERANCE": "promise"
+    }, 
+    {
+        "UTTERANCE": "provider"
+    },
+    {
+        "UTTERANCE": "purchase"
+    },  
+    {
+        "UTTERANCE": "reboot"
+    },    
+    {
+        "UTTERANCE": "recharge"
+    },
+    {
+        "UTTERANCE": "recharging"
+    },    
+    {
+        "UTTERANCE": "reference"
+    },
+    {
+        "UTTERANCE": "refund"
+    },    
+    {
+        "UTTERANCE": "referencing"
+    }, 
+    {
+        "UTTERANCE": "replacement"
+    }, 
+    {
+        "UTTERANCE": "replacing"
+    },     
+    {
+        "UTTERANCE": "restart"
+    }, 
+    {
+        "UTTERANCE": "roaming"
+    },      
+    {
+        "UTTERANCE": " sat "
+    },   
+    {
+        "UTTERANCE": "saturday"
+    },    
+    {
+        "UTTERANCE": " sept "
+    },   
+    {
+        "UTTERANCE": "september"
+    },
+    {
+        "UTTERANCE": "serial"
+    },     
+    {
+        "UTTERANCE": "service"
+    }, 
+    {
+        "UTTERANCE": "servicing"
+    }, 
+    {
+        "UTTERANCE": "ship"
+    }, 
+    {
+        "UTTERANCE": "shipping"
+    }, 
+    {
+        "UTTERANCE": "shipment"
+    }, 
+    {
+        "UTTERANCE": "sign"
+    }, 
+    {
+        "UTTERANCE": "signing"
+    },    
+    {
+        "UTTERANCE": " sim"
+    },
+    {
+        "UTTERANCE": "sim card"
+    }, 
+    {
+        "UTTERANCE": "simplicity"
+    },   
+    {
+        "UTTERANCE": "specialist"
+    },    
+    {
+        "UTTERANCE": " sun "
+    },
+    {
+        "UTTERANCE": "successfully"
+    }, 
+    {
+        "UTTERANCE": "successful"
+    },    
+    {
+        "UTTERANCE": "sunday"
+    },  
+    {
+        "UTTERANCE": "technical team"
+    },    
+    {
+        "UTTERANCE": "telstra"
+    },
+    {
+        "UTTERANCE": "text"
+    },  
+    {
+        "UTTERANCE": " thurs "
+    }, 
+    {
+        "UTTERANCE": "thursday"
+    },  
+    {
+        "UTTERANCE": "top up"
+    }, 
+    {
+        "UTTERANCE": "transfer"
+    },   
+    {
+        "UTTERANCE": " tues "
+    }, 
+    {
+        "UTTERANCE": "tuesday"
+    },
+    {
+        "UTTERANCE": "unlocked"
+    }, 
+    {
+        "UTTERANCE": "voucher"
+    },    
+    {
+        "UTTERANCE": " wed "
+    },
+    {
+        "UTTERANCE": "wifi"
+    },   
+     {
+        "UTTERANCE": "wednesday"
+    }    
+]
+

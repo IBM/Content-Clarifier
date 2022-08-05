@@ -1,0 +1,272 @@
+/*------------------------------------------------------------------
+[Color Stylesheet]
+
+Project:	Aashu
+Version:	1.0
+Last change:	01/31/2017
+Assigned to:	drupalthemez
+Primary use:	Application landing page 
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Typography
+2. Customizations
+3. Search / .block-search
+4. Navbar / .navbar
+5. Megaslider / #mega-slider
+6. Grid items / .grid-icon-item
+7. Video / .video
+8. App screenshots / .app-screenshots
+9. Download/Pricing plan / .download, .plan-single
+10. Contact / .contact
+11. Subscribe / .subscribe
+12. Footer / footer
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+# [Color codes]
+
+# Dark grey (text): #777777
+# Primary: #388e3c
+# Secondary: #00c853
+# Light grey (block background): #f6f6f6
+# Mid grey: #b7b7b7
+# */
+
+/*------------------------------------------------------------------
+[1. Typography]
+*/
+body {
+  color: #777777;
+}
+a{
+  color: #388e3c; 
+}
+a:active,
+a:focus,
+a:hover{
+  color: #00c853;
+  text-decoration: none;
+}
+.form-control{
+  border-color: #388e3c
+}
+.form-control:focus{
+  border-color: #00c853
+}
+
+/*------------------------------------------------------------------
+[2. Customizations]
+*/
+.preloader-wrapper{
+  background: #ffffff;
+}
+.loader {
+    border: 16px solid #f6f6f6; /* Light grey */
+    border-top: 16px solid #388e3c; /* Blue */
+}
+.btn-white{
+  background: #ffffff;
+  color: #388e3c;
+}
+.btn-solid{
+  background: #388e3c;
+  color: #ffffff !important
+}
+.btn-solid:active,
+.btn-solid:focus,
+.btn-solid:hover,
+.btn-white:active,
+.btn-white:focus,
+.btn-white:hover{
+  color: #00c853;
+}
+.affix-top .btn-transparent {
+  background:  none !important;
+}
+.transperant-header.affix-top .btn-transparent {
+  color: #ffffff;
+}
+.scroll-top.affix {
+  background: #fff;
+}
+.depth-xl, .depth-xl-hover:hover{
+  box-shadow: 0 20px 30px 0 rgba(0,0,0,.2);
+}
+.secondary {
+    background: #00c853;
+    color: #ffffff;
+}
+.block.odd{
+  background-color: #f6f6f6;
+}
+
+/*------------------------------------------------------------------
+[3. Search / .block-search]
+*/
+.block-search {
+  background: #f6f6f6;
+  color: #777777;
+}
+
+/*------------------------------------------------------------------
+[4. Navbar / .navbar]
+*/
+.transperant-header.affix-top{
+  border-color: rgba(255,255,255,0.3); 
+}
+.navbar-default {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 4px 10px -8px rgba(0, 0, 0, 0.45);
+}
+.transperant-header.affix-top .navbar-toggle, 
+.transperant-header.affix-top .navbar-toggle:focus, 
+.transperant-header.affix-top .navbar-toggle:active {
+  color: #ffffff;
+}
+.navbar-default .navbar-toggle, 
+.navbar-default .navbar-toggle:focus, 
+.navbar-default .navbar-toggle:active {
+  color: #388e3c;
+}
+.navbar-default .navbar-brand{
+  color: #777777
+}
+.transperant-header.affix-top .navbar-brand, 
+.transperant-header.affix-top .navbar-brand,
+.transperant-header.affix-top .navbar-nav>li>a {
+  color: #ffffff !important;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #388e3c !important;
+}
+.affix-top .navbar-collapse.in {
+  background: #388e3c;
+}
+
+/*------------------------------------------------------------------
+[5. Megaslider / #mega-slider]
+*/
+.slick-arrow{
+  color: #ffffff;
+}
+.slide-item{
+  color: #ffffff;
+}
+.slide-item:before{
+  background: #388e3c;
+  background-image: -ms-linear-gradient(top, #388e3c 0%, #00c853 100%);
+  background-image: -moz-linear-gradient(top, #388e3c 0%, #00c853 100%);
+  background-image: -o-linear-gradient(top, #388e3c 0%, #00c853 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #388e3c), color-stop(100, #00c853));
+  background-image: linear-gradient(to bottom, #388e3c 0%, #00c853 100%);
+}
+
+/*------------------------------------------------------------------
+[6. Grid items / .grid-icon-item]
+*/
+.feature-image i{
+    color: #388e3c;
+}
+
+/*------------------------------------------------------------------
+[7. Video / .video]
+*/
+.video .embed-responsive {
+    background-color: #fff;
+}
+
+/*------------------------------------------------------------------
+[8. App screenshots / .app-screenshots]
+*/
+.app-screenshots .slick-arrow,
+.testimonials .slick-arrow{
+  color: #388e3c;
+  background: #fff;
+}
+.testimonial .content {
+  border: 3px solid #f6f6f6;
+}
+.testimonial .content:after {
+  border-color: transparent;
+  border-top-color: #ffffff;
+}
+.testimonial .content:before {
+  border-color: transparent;
+  border-top-color: #f6f6f6;
+}
+
+/*------------------------------------------------------------------
+[9. Download/Pricing plan / .download, .plan-single]
+*/
+.plan-single {
+    background: #ffffff;
+    border: 2px solid #388e3c;
+    color: #777777;
+}
+.pricing-header {
+    padding: 5px 30px;
+}
+.plan-single .price {
+    background: #f6f6f6;
+}
+.pricing-content ul li {
+    border-bottom: 2px solid #f6f6f6;
+}
+
+/*------------------------------------------------------------------
+[10. Contact / .contact]
+*/
+.map{
+  border-top: 2px solid #f6f6f6;
+}
+.contact-item {
+  border-right: 2px solid #f6f6f6;
+}
+
+/*------------------------------------------------------------------
+[11. Subscribe / .subscribe]
+*/
+.subscribe .form-control {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.subscribe .form-control::-webkit-input-placeholder { /* Chrome */
+  color: #f6f6f6;
+}
+.subscribe .form-control:-ms-input-placeholder { /* IE 10+ */
+  color: #f6f6f6;
+}
+.subscribe .form-control::-moz-placeholder { /* Firefox 19+ */
+  color: #f6f6f6;
+  opacity: 1;
+}
+.subscribe .form-control:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #f6f6f6;
+  opacity: 1;
+}
+.subscribe .input-group-btn .btn {
+    color: #ffffff;
+    border-color: #fff;
+}
+.subscribe .input-group-btn .btn:hover,
+.subscribe .input-group-btn .btn:focus,
+.subscribe .input-group-btn .btn:active {
+  background: #388e3c;  
+}
+
+/*------------------------------------------------------------------
+[12. Footer / footer]
+*/
+footer .block {
+    border-bottom: 2px solid #e7e7e7;
+}
+footer,
+.footer_social_area a {
+    color: #b7b7b7;
+}
+.footer_social_area a:hover {
+    color: #00c853;
+}

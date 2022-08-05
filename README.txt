@@ -1,1 +1,0 @@
-This folder contains temporary file uploads to Content Clarifier. 

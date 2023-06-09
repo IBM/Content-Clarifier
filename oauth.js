@@ -13,7 +13,7 @@ NS.getAccessToken = function(code, callback) {
 		{
 			'auth': {
 				'user': 'ibma_clarifier',
-				'pass': 'hQp9VcWTEAdRvpXH'
+				'pass': process.env.OATH_PASS
         	}
 		},
 		function(error, response, body) {
@@ -141,5 +141,3 @@ NS.checkAuthInst = function(instance, req, method, callback) {
         return;
     }
 }
-
-
